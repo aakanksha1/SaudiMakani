@@ -1,0 +1,8 @@
+<div class="sidebar-nav" ng-controller="SidebarController">
+    <ul class="sidebar-list">
+        <li ng-click="updateCrum($event,Eventsidebar.tab1.uri)" ng-class="{active: isCurrentPath(Eventsidebar.tab1.uri, Eventsidebar.tab1.name)}" ng-if="Eventsidebar.tab1.name!=''">{{Eventsidebar.tab1.name}}</li>
+        <li ng-click="updateCrum($event,Eventsidebar.tab2.uri)" ng-class="{active: isCurrentPath(Eventsidebar.tab2.uri, Eventsidebar.tab2.name)}" ng-if="Eventsidebar.tab2.name!=''">{{Eventsidebar.tab2.name}}</li>
+        <li ng-click="updateCrum($event,Eventsidebar.tab3.uri)" ng-class="{active: isCurrentPath(Eventsidebar.tab3.uri, Eventsidebar.tab3.name)}" ng-if="Eventsidebar.tab3.name!=''">{{Eventsidebar.tab3.name}}</li>
+        <li ng-click="updateCrum($event,Eventsidebar.tab4.uri)" ng-class="{active: isCurrentPath(Eventsidebar.tab4.uri, Eventsidebar.tab4.name)}" ng-if="Eventsidebar.tab4.name!=''">{{Eventsidebar.tab4.name}}</li>
+    </ul>
+</div>

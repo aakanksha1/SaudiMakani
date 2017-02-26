@@ -1,0 +1,88 @@
+﻿<div class="componentmonitoring" ng-controller="SystemSettingsController">
+    <div id="breadcrumb" class="right-data">
+        <ul class="crumbs">
+            <li><a href="#" class="first"><span></span>{{crum.tab}}</a></li>
+            <li><a href="#" class="second"><span></span>{{crum.sidebar}}</a></li>
+        </ul>
+    </div>
+    <div class="componentmonitoringheading"><h4 class="right-data">{{ComponentMonitor}}</h4></div>
+    <div class="componentdetails row">
+        <div class="event-box col-md-6 col-sm-6 systemtasks">
+            <h1>{{TaskStatus}}</h1>
+            <div class="row">
+                <span>{{OfflineTask}}</span>
+
+                <ul class="progressbar">
+                    <li class="progress-left">
+                    </li>
+                    <li class="progress-right" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                        <span class="lite-text left-data">{{OfflineTaskProgresscomplted}}</span>
+                    </li>
+                </ul>
+                <h6>{{PrintJob}}</h6>
+                <span class="lite-text">{{TimeElapsed}}</span>
+            </div>
+
+            <div class="row">
+                <span>{{BarcodeTask}}</span>
+
+                <ul class="progressbar">
+                    <li class="progress-left">
+                    </li>
+                    <li class="progress-rightsecond" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                        <span class="lite-text left-data">{{BarcodeTaskProgresscomplted}}</span>
+                    </li>
+                </ul>
+                <h6>{{PrintJob}}</h6>
+                <span class="lite-text">{{TimeElapsed}}</span>
+            </div>
+
+
+
+        </div>
+
+        <div class="event-box col-md-6 col-sm-6">
+            <table class="table details-stadium">
+
+                <thead>
+                    <tr>
+                        <th>{{Componentheader}}</th>
+                        <th>
+                            {{Status}}
+                        </th>
+                        <th>
+                            {{LastChecked}}
+                        </th>
+
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr ng-repeat="component in Components">
+                        <td>{{component.Compoenent}}</td>
+                        <!--<td>{{component.status}}</td>-->
+                        <td><div class="square">
+
+                                
+                        <div class="tooltiptext">
+                            
+                        <h4><a class="deleteicon" ng-click="remove()">Monitoring Stopped</a></h4>
+                        <p>Lorem Ipsum,Lorem Ipsum,Lorem Ipsum,Lorem Ipsum</p>
+
+                                    </div>
+                              
+                            </div><!-- Modal -->
+                        </td>
+                        <td>{{component.lastchecked}}</td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+
+
+    
+ </div>
+
+<div sidebar-page></div>

@@ -1,0 +1,62 @@
+﻿{
+    "TaskvsStatus": [
+        {
+            "Task": "Offline Printing",
+            "Progresscmplted": "78% Completed",
+            "TimeElapsed": "Last Checked : 13:02"
+        },
+
+        {
+            "Task": "BarCode Generation",
+            "Progresscmplted": "Stopped/Failed at 50%",
+            "TimeElapsed": "Last Checked : 13:02"
+        }
+    ],
+
+    "Compoenents": [
+        {
+            "id": 0,
+            "Compoenent": "Online Printing",
+            "status": true,
+            "lastchecked": "13:01",
+            "selected": false
+        },
+        {
+            "id": 1,
+            "Compoenent": "Notification Component",
+            "status": true,
+            "lastchecked": "13:01",
+            "selected": false
+        },
+        {
+            "id": 2,
+            "Compoenent": "SMS Service",
+            "status": true,
+            "lastchecked": "13:01",
+            "selected": false
+        },
+        {
+            "id": 3,
+            "Compoenent": "Billing Service",
+            "status": true,
+            "lastchecked": "13:01",
+            "selected": false
+        },
+        {
+            "id": 4,
+            "Compoenent": "SMTP",
+            "status": true,
+            "lastchecked": "13:01",
+            "selected": false
+        },
+        {
+            "id": 5,
+            "Compoenent": "CRM",
+            "status": false,
+            "lastchecked": "13:01",
+            "selected": false
+        }
+    ],
+    "selected": { }
+
+}

@@ -1,0 +1,257 @@
+﻿<div class="event-manage" ng-controller="OfflineTicketPrintingController">
+    <div id="breadcrumb" class="right-data">
+        <ul class="crumbs">
+            <li><a href="#" class="first"><span></span>{{crum.tab}}</a></li>
+            <li><a href="#" class="second"><span></span>{{crum.sidebar}}</a></li>
+        </ul>
+    </div>
+
+
+    <div class="form-group">
+
+        <span><a href="" data-toggle="modal" data-target="#myModal" ng-click="addCompetition('add')" class="icon-plus">{{CreateNewJob}}</a></span>
+        <span><a class="deleteicon competitiondeleteicon" ng-disabled="disableDelete()" value="{{DeactivateJob}}" ng-model="selected" ng-click="remove()">{{DeactivateJob}}</a></span>
+        <span class="Ename">{{OfflineTicketPrinting}}</span>
+
+
+
+        <table class="table tablehead">
+            <thead>
+                <tr>
+                    <th>
+                        {{DownloadTickets}}
+                    </th>
+                    <th>
+                        {{JobStatus}}
+                    </th>
+                    <th>
+                        <a ng-click="orderByField='numberoftickets'; reverseSort = !reverseSort">
+                            {{NumberofTickets}}<span ng-show="orderByField == 'numberoftickets'">
+                                <span ng-show="!reverseSort" class="icon-move-up"></span>
+                                <span ng-show="reverseSort" class="icon-move-down"></span>
+                            </span>
+                        </a>
+
+                    </th>
+                    <th>
+                        <a ng-click="orderByField='stadium'; reverseSort = !reverseSort">
+                            {{Stadium}} <span ng-show="orderByField == 'stadium'">
+                                <span ng-show="!reverseSort" class="icon-move-up"></span>
+                                <span ng-show="reverseSort" class="icon-move-down"></span>
+                            </span>
+                        </a>
+                    </th>
+                    <th>
+                        {{Event}}
+                    </th>
+                    <th>
+                        <a ng-click="orderByField='seatselectionmethod'; reverseSort = !reverseSort">
+                            {{SeatSelectionMethod}} <span ng-show="orderByField == 'seatselectionmethod'">
+                                <span ng-show="!reverseSort" class="icon-move-up"></span>
+                                <span ng-show="reverseSort" class="icon-move-down"></span>
+                            </span>
+                        </a>
+                    </th>
+                    <th>
+                        <a ng-click="orderByField='startdate'; reverseSort = !reverseSort">
+                            {{StartDate}} <span ng-show="orderByField == 'startdate'">
+                                <span ng-show="!reverseSort" class="icon-move-up"></span>
+                                <span ng-show="reverseSort" class="icon-move-down"></span>
+                            </span>
+                        </a>
+
+                    </th>
+                    <th>
+                        <input type="checkbox" ng-model="selectedAll" ng-click="checkAll()" />
+
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="ticket in Tickets.Tickets  | filter : paginate |orderBy:orderByField:reverseSort">
+                    <td><a style="color:#24A4D3"> {{ticket.downloadticket}}</a></td>
+                    <td>{{ticket.JobStatus}}</td>
+                    <td>{{ticket.numberoftickets}}</td>
+                    <td>{{ticket.stadium}}</td>
+                    <td>{{showHits(ticket)}}</td>
+                    <td>{{ticket.seatselectionmethod}}</td>
+                    <td>{{ticket.startdate   |  date:'yyyy/MM/dd'}}</td>
+                    <td><input type="checkbox" ng-model="ticket.selected" ng-checked="ticket.selected" ng-click="UnCheckMain()" /></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <pagination total-items="totalItems" ng-model="currentPage"
+                    max-size="20" boundary-links="true"
+                    items-per-page="numPerPage" first-text="<<" previous-text="<" next-text=">" last-text=">>" class="pagination-sm">
+        </pagination>
+
+
+    </div>
+    <div class="modal fade modalcompetition" id="myModal" role="dialog">
+        <form ng-submit="submit()" name="CreateNewJob1" novalidate>
+            <div class="modal-dialog offlinedata">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close left-data" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title right-data">{{Askfornewjob}}</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <input type="hidden" id="printing" ng-model="ticket.id" />
+                        <div class="row">
+                            <div class="col-md-5 col-sm-5">
+                                <label for="name" class="right-data">{{ticketsavailable}}</label><br />
+                                <span class="right-data"><input class="form-control" ng-model="ticket.numberoftickets" type="text" value="2345" /></span>
+                            </div>
+                            <div class="col-md-3 col-sm-3">
+                                <label for="name">{{stadium}}</label>
+                                <span><input type="text" ng-model="ticket.stadium" class="form-control" value="LorenIpsum" /></span>
+                            </div>
+                            <div class="col-md-4 col-sm-4">
+                                <div class="col-md-0" show-errors>
+                                    <label for="exampleSelect1">{{Event}}</label>
+
+                                    <select required ng-model="ticket.hits" name="Hit" class="form-control input-width templatmanage" ng-options="item.key as item.value for item in Tickets.Hits">
+                                        <option value="">-- {{Select}} --</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row offlineenterprise offlineenterprise" show-errors>
+                            <label for="exampleSelect1">{{Enterprise}}</label>
+
+                            <select required ng-model="enterprise" name="enterprise" class="form-control input-width templatmanage" ng-options="item.key as item.value for item in Tickets.Enterprises">
+                                <option value="">-- {{Select}} --</option>
+                            </select>
+                        </div>
+                        <div class="row selectingseatmodal">
+
+                            <label for="">{{Selectingseats}}</label>
+
+                            <table cellpadding="8" cellspacing="8">
+                                <tr>
+                                    <td class="radiobuttonalignment">
+                                        <input type="radio" ng-model="selectingseats" value="Manuallyselectedseat" name="createJob" /><br />
+
+                                    </td>
+                                    <td>
+                                        {{Manuallyselectedseats}}
+                                        <br /><div ng-show="isShown('Manuallyselectedseat')">
+                                            <button type="button" ng-model="ticket.seatselectionmethod" ng-click="ShowHideSelectedSeats()" value="noofselectedseat" class="btn btn-default">{{Selectionseats}}</button>
+                                            <div class="selectedSeats" ng-hide="isHiddenPercSelectedSeats">
+                                                <div id="selectedSeatDiv"><b>{{Numberofselectedseats}}</b></div>
+                                                <span>4</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="radiobuttonalignment"><input type="radio" ng-model="selectingseats" value="downloadingfile" name="createJob" /></td>
+                                    <td>
+                                        {{Downloadingfile}}<br />
+                                        <div ng-show="isShown('downloadingfile')" class="col-md-6 downloadSelectedSeats">
+
+                                            <input type="file" id="fileUpload" required ng-model="club.Logo" fileread="club.Logo" accept="image/*" multiple app-filereader class="custom-file-upload-hidden">
+                                            <input type="text" id="txtLogo" class="file-upload-input form-control" />
+                                            <span class="file-upload-button">{{Browse}}</span>
+                                        </div>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="radiobuttonalignment"><input type="radio" ng-model="selectingseats" value="percentagebox" name="createJob" /></td>
+                                    <td>
+                                        {{Percentagebox}}
+                                        <div ng-show="isShown('percentagebox')">
+                                            <table>
+                                                <tr><th></th><th>{{Square}}</th><th>For</th><th><div id="selectedSeatDiv" ng-hide="isPercBoxDiv">{{Numberofselectedseats}}</div></th></tr>
+                                                <tr>
+                                                    <td class="percentageBox">
+                                                        <button type="button" id="btnSelectedBox" ng-click="ShowHidePercBoxDiv()" value="{{SelectionBoxes}}" class="btn btn-default">{{SelectionBoxes}}</button>
+                                                    </td>
+                                                    <td class="percentageBox">
+                                                        <select ng-model="ticket.Square" class="form-control input-width templatmanage" ng-options="item.key as item.value for item in Tickets.Squares">
+                                                            <option value="">-- {{Select}} --</option>
+                                                        </select>
+                                                    </td>
+                                                    <td class="percentageBox">
+                                                        <!--<input type="text" class="form-control radioButtonText" value="10%" />-->
+                                                        <input type="radio" ng-model="selectseatsPerStadium" value="selectTotalSeatClass" name="totalSeatClass" />{{Oftotalseats}}<br /><input type="radio" ng-model="selectseatsPerStadium" value="selectSeatAvailableClass" name="totalSeatClass" />{{Oftotalavailable}}
+                                                    </td>
+                                                    <td class="percentageBox"><span id="noOfSeat" ng-hide="isPercBoxDiv">90</span></td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="radiobuttonalignment"><input type="radio" ng-model="selectingseats" value="percentagestadium" name="createJob" /></td>
+                                    <td>
+                                        {{Percentagestadium}}
+                                        <div ng-show="isShown('percentagestadium')">
+                                            <table>
+                                                <tr ng-show="isShownPerStadium('selectTotalSeat')"><th></th><th>{{Ratio}}</th><th>{{Numberofselectedseats}}</th></tr>
+                                                <tr>
+                                                    <td class="percentageBox"><input type="radio" ng-model="selectseatsPerStadium" value="selectTotalSeat" name="totalSeat" />{{Oftotalseats}}<br /><input type="radio" ng-model="selectseatsPerStadium" value="selectSeatAvailable" name="totalSeat" />{{Oftotalavailable}}</td>
+                                                    <td class="percentageBox" ng-show="isShownPerStadium('selectTotalSeat')">
+                                                        <input type="text" value="%10" class="form-control radioButtonText" />
+                                                    </td>
+                                                    <td ng-show="isShownPerStadium('selectTotalSeat')" class="percentageBox">
+                                                    </td>
+                                                    <td class="percentageBox">
+                                                        234
+
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="radiobuttonalignment"><input type="radio" name="createJob" ng-model="selectingseats" value="percentageclassstadium" /></td>
+                                    <td>
+                                        {{percentageclassstadium}}
+                                        <div ng-show="isShown('percentageclassstadium')">
+                                            <table>
+                                                <tr ng-show="isShownPerStadium('selectTotalSeatClass')"><th></th><th class="percentageBox">{{Ratio}}</th><th class="percentageBox">{{Category}}</th><th class="percentageBox">{{Selectedseats}}</th></tr>
+                                                <tr>
+                                                    <td class="percentageBox">
+                                                        <input type="radio" ng-model="selectseatsPerStadium" value="selectTotalSeatClass" name="totalSeatClass" />{{Oftotalseats}}<br /><input type="radio" ng-model="selectseatsPerStadium" value="selectSeatAvailableClass" name="totalSeatClass" />{{Oftotalavailable}}
+                                                    </td>
+                                                    <td class="percentageBox" ng-show="isShownPerStadium('selectTotalSeatClass')">
+                                                        <input type="text" value="%10" class="form-control radioButtonText" />
+                                                    </td>
+                                                    <td class="percentageBox" ng-show="isShownPerStadium('selectTotalSeatClass')">
+                                                        <select required ng-model="ticket.Group" name="selectedhit" class="form-control input-width templatmanage" ng-options="item.key as item.value for item in Tickets.Groups">
+                                                            <option value="">-- {{Select}} --</option>
+                                                        </select>
+                                                    </td>
+                                                    <td class="percentageBox" ng-show="isShownPerStadium('selectTotalSeatClass')">
+                                                        15
+
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </div>
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-default left-data" data-dismiss="modal" ng-click="reset()">{{Cancel}}</button>
+                        <input type="submit" class="btn btn-default left-data" ng-click="newJob()" value="{{Save}}" />
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+<div sidebar-page></div>

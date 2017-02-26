@@ -1,0 +1,641 @@
+﻿{
+  "Categories": [
+    {
+      "key": 1,
+      "value": "Gold1"
+    },
+    {
+      "key": 2,
+      "value": "Gold2"
+    },
+    {
+      "key": 3,
+      "value": "Gold3"
+    },
+    {
+      "key": 4,
+      "value": "Gold4"
+    }
+  ],
+
+  "BoxPriceCategory": [
+    {
+      "key": 1,
+      "value": "Lorem Ipsum1"
+    },
+    {
+      "key": 2,
+      "value": "Lorem Ipsum2"
+    },
+    {
+      "key": 3,
+      "value": "Lorem Ipsum3"
+    },
+    {
+      "key": 4,
+      "value": "Lorem Ipsum4"
+    }
+  ],
+
+  "OrientationManualseatsversion": [
+    {
+      "key": 1,
+      "value": "Lorem Ipsum1"
+    },
+    {
+      "key": 2,
+      "value": "Lorem Ipsum2"
+    },
+    {
+      "key": 3,
+      "value": "Lorem Ipsum3"
+    },
+    {
+      "key": 4,
+      "value": "Lorem Ipsum4"
+    }
+  ],
+
+  "Classification": [
+    {
+      "key": 1,
+      "value": "Lorem Ipsum1"
+    },
+    {
+      "key": 2,
+      "value": "Lorem Ipsum2"
+    },
+    {
+      "key": 3,
+      "value": "Lorem Ipsum3"
+    },
+    {
+      "key": 4,
+      "value": "Lorem Ipsum4"
+    }
+  ],
+
+
+
+
+  "Category": [
+    {
+      "key": "Lorem Ipsum1",
+      "value": "Lorem Ipsum1"
+    },
+    {
+      "key": "Lorem Ipsum2",
+      "value": "Lorem Ipsum2"
+    },
+    {
+      "key": "Lorem Ipsum3",
+      "value": "Lorem Ipsum3"
+    },
+    {
+      "key": "Lorem Ipsum4",
+      "value": "Lorem Ipsum4"
+    }
+
+  ],
+
+  "TicketPriceDetailstable": [
+    {
+      "id": 1,
+      "tabledata": [
+        {
+          "id": 1,
+          "ActivationDate": "27-09-2016",
+          "Price": "100",
+          "Category": "Gold1"
+        },
+        {
+          "id": 2,
+          "ActivationDate": "27-09-2016",
+          "Price": "100",
+          "Category": "Gold2"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "tabledata": [
+        {
+          "id": 1,
+          "ActivationDate": "27-09-2016",
+          "Price": "200",
+          "Category": "Gold12"
+        },
+        {
+          "id": 2,
+          "ActivationDate": "27-09-2016",
+          "Price": "200",
+          "Category": "Gold22"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "tabledata": [
+        {
+          "id": 1,
+          "ActivationDate": "27-09-2016",
+          "Price": "300",
+          "Category": "Gold13"
+        },
+        {
+          "id": 2,
+          "ActivationDate": "27-09-2016",
+          "Price": "300",
+          "Category": "Gold23"
+        }
+      ]
+    }
+  ],
+
+  "TicketEventPriceDetailstable": [
+    {
+      "id": 1,
+      "ActivationDate": "27-09-2016",
+      "Price": "100",
+      "Categories": "Gold1"
+    },
+    {
+      "id": 2,
+      "ActivationDate": "27-09-2016",
+      "Price": "100",
+      "Categories": "Gold2"
+    },
+    {
+      "id": 3,
+      "ActivationDate": "27-09-2016",
+      "Price": "100",
+      "Categories": "Gold3"
+    }
+
+  ],
+
+  "SuiteDetailstable": [
+    {
+      "id": 1,
+      "tabledata": [
+        {
+          "id": 1,
+          "Price": "100",
+          "Active": "",
+          "Name": "Lorem Ipsum1"
+        },
+        {
+          "id": 2,
+          "Price": "100",
+          "Active": "",
+          "Name": "Lorem Ipsum2"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "tabledata": [
+        {
+          "id": 1,
+          "Price": "200",
+          "Active": "",
+          "Name": "Lorem Ipsum12"
+        },
+        {
+          "id": 2,
+          "Price": "200",
+          "Active": "",
+          "Name": "Lorem Ipsum22"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "tabledata": [
+        {
+          "id": 1,
+          "Price": "300",
+          "Active": "",
+          "Name": "Lorem Ipsum13"
+        },
+        {
+          "id": 2,
+          "Price": "300",
+          "Active": "",
+          "Name": "Lorem Ipsum23"
+        }
+      ]
+    }
+  ],
+  "Sponsorstable": [
+    {
+      "id": 1,
+      "tabledata": [
+        {
+          "id": 1,
+          "Logo": "../../images/logo-icon.png#",
+          "LogoName": "logo-icon.png",
+          "Name": "Lorem Ipsum1",
+          "selected": false
+        },
+        {
+          "id": 2,
+          "Logo": "../../images/logo-icon.png#",
+          "LogoName": "logo-icon.png",
+          "Name": "Lorem Ipsum2",
+          "selected": false
+
+        }
+      ],
+      "selected": { }
+    },
+    {
+      "id": 2,
+      "tabledata": [
+        {
+          "id": 1,
+          "Logo": "../../images/logo-icon.png#",
+          "LogoName": "logo-icon.png",
+          "Name": "Lorem Ipsum12",
+          "selected": false
+        },
+        {
+          "id": 2,
+          "Logo": "../../images/logo-icon.png#",
+          "LogoName": "logo-icon.png",
+          "Name": "Lorem Ipsum22",
+          "selected": false
+
+        }
+      ],
+      "selected": { }
+    },
+    {
+      "id": 3,
+      "tabledata": [
+        {
+          "id": 1,
+          "Logo": "../../images/logo-icon.png#",
+          "LogoName": "logo-icon.png",
+          "Name": "Lorem Ipsum13",
+          "selected": false
+        },
+        {
+          "id": 2,
+          "Logo": "../../images/logo-icon.png#",
+          "LogoName": "logo-icon.png",
+          "Name": "Lorem Ipsum23",
+          "selected": false
+
+        }
+      ],
+      "selected": { }
+    }
+  ],
+
+  "RegulatedInstitutions": [
+    {
+      "id": 1,
+      "Name": "Lorem Ipsum1",
+      "selected": false
+    },
+    {
+      "id": 2,
+      "Name": "Lorem Ipsum2",
+      "selected": false
+    },
+    {
+      "id": 3,
+      "Name": "Lorem Ipsum3",
+      "selected": false
+    }
+  ],
+
+  "Mandatoryfields": [
+    {
+      "id": 1,
+      "fieldName": "Lorem Ipsum1",
+      "selected": false
+    },
+    {
+      "id": 2,
+      "fieldName": "Lorem Ipsum2",
+      "selected": false
+
+    },
+    {
+      "id": 3,
+      "fieldName": "Lorem Ipsum3",
+      "selected": false
+
+    }
+  ],
+
+  "FirstClub": [
+    {
+      "key": 1,
+      "value": "Lorem Ipsum1"
+    },
+    {
+      "key": 2,
+      "value": "Lorem Ipsum2"
+    },
+    {
+      "key": 3,
+      "value": "Lorem Ipsum3"
+    },
+    {
+      "key": 4,
+      "value": "Lorem Ipsum4"
+    },
+    {
+      "key": 5,
+      "value": "Lorem Ipsum5"
+    }
+
+  ],
+
+  "SecondClub": [
+    {
+      "key": 1,
+      "value": "Lorem Ipsum1"
+    },
+    {
+      "key": 2,
+      "value": "Lorem Ipsum2"
+    },
+    {
+      "key": 3,
+      "value": "Lorem Ipsum3"
+    },
+    {
+      "key": 4,
+      "value": "Lorem Ipsum4"
+    },
+    {
+      "key": 5,
+      "value": "Lorem Ipsum5"
+    }
+
+  ],
+
+  "Tickets": [
+    {
+      "key": 1,
+      "value": "900"
+    },
+    {
+      "key": 2,
+      "value": "800"
+    },
+    {
+      "key": 3,
+      "value": "700"
+    },
+    {
+      "key": 4,
+      "value": "600"
+    },
+    {
+      "key": 5,
+      "value": "500"
+    }
+  ],
+
+  "Stadiums": [
+    {
+      "key": 1,
+      "value": "Stadium1",
+      "TicketPriceDetails": 1,
+      "SuiteDetails": 1,
+      "Sponsors": 1
+    },
+    {
+      "key": 2,
+      "value": "Stadium2",
+      "TicketPriceDetails": 2,
+      "SuiteDetails": 2,
+      "Sponsors": 2
+    },
+    {
+      "key": 3,
+      "value": "Stadium3",
+      "TicketPriceDetails": 3,
+      "SuiteDetails": 3,
+      "Sponsors": 3
+    }
+  ],
+
+  "computerbrowser": [
+    {
+      "key": 1,
+      "value": "Lorem Ipsum1"
+    },
+    {
+      "key": 2,
+      "value": "Lorem Ipsum2"
+    },
+    {
+      "key": 3,
+      "value": "Lorem Ipsum3"
+    }
+  ],
+
+  "mobilebrowser": [
+    {
+      "key": 1,
+      "value": "Lorem Ipsum1"
+    },
+    {
+      "key": 2,
+      "value": "Lorem Ipsum2"
+    },
+    {
+      "key": 3,
+      "value": "Lorem Ipsum3"
+    }
+  ],
+
+  "emailtemplate": [
+    {
+      "key": 1,
+      "value": "Lorem Ipsum1"
+    },
+    {
+      "key": 2,
+      "value": "Lorem Ipsum2"
+    },
+    {
+      "key": 3,
+      "value": "Lorem Ipsum3"
+    }
+  ],
+
+  "mobilemessagetemplate": [
+    {
+      "key": 1,
+      "value": "Lorem Ipsum1"
+    },
+    {
+      "key": 2,
+      "value": "Lorem Ipsum2"
+    },
+    {
+      "key": 3,
+      "value": "Lorem Ipsum3"
+    }
+  ],
+
+
+  "Events": [
+    {
+      "id": 1,
+      "eventname": "Event1",
+      "status": "Loren Ipsum1",
+      "enddate": "2013-01-09",
+      "startdate": "2013-01-08",
+      "eventdate": "2013-01-08",
+      "championship": "Loren Ipsum1",
+      "eventstype": "Loren Ipsum1",
+      "selectedstadium": 1,
+      "FirstClubselected": 1,
+      "SecondClubselected": 1,
+      "Ticketsselected": 1,
+      "RegulatedInstitutions": 1,
+      "Mandatoryfields": 1,
+      "computerbrowserselected": 1,
+      "mobilebrowserselected": 1,
+      "emailtemplateselected": 1,
+      "mobilemessagetemplateselected": 1,
+      "selected": false
+    },
+    {
+      "id": 2,
+      "eventname": "Event2",
+      "status": "Loren Ipsum2",
+      "enddate": "2013-01-09",
+      "startdate": "2013-01-08",
+      "eventdate": "2013-01-08",
+      "championship": "Loren Ipsum2",
+      "eventstype": "Loren Ipsum2",
+      "selectedstadium": 2,
+      "FirstClubselected": 2,
+      "SecondClubselected": 2,
+      "Ticketsselected": 2,
+      "RegulatedInstitutions": 2,
+      "Mandatoryfields": 2,
+      "computerbrowserselected": 2,
+      "mobilebrowserselected": 2,
+      "emailtemplateselected": 2,
+      "mobilemessagetemplateselected": 2,
+      "selected": false
+    },
+    {
+      "id": 3,
+      "eventname": "Event3",
+      "status": "Loren Ipsum3",
+      "enddate": "2013-01-09",
+      "startdate": "2013-01-08",
+      "eventdate": "2013-01-08",
+      "championship": "Loren Ipsum3",
+      "eventstype": "Loren Ipsum3",
+      "selectedstadium": 1,
+      "FirstClubselected": 1,
+      "SecondClubselected": 1,
+      "Ticketsselected": 1,
+      "RegulatedInstitutions": 1,
+      "Mandatoryfields": 1,
+      "computerbrowserselected": 1,
+      "mobilebrowserselected": 1,
+      "emailtemplateselected": 1,
+      "mobilemessagetemplateselected": 1,
+      "selected": false
+    },
+    {
+      "id": 4,
+      "eventname": "Event4",
+      "status": "Loren Ipsum4",
+      "enddate": "2013-01-09",
+      "startdate": "2013-01-08",
+      "eventdate": "2013-01-08",
+      "championship": "Loren Ipsum4",
+      "eventstype": "Loren Ipsum4",
+      "selectedstadium": 2,
+      "FirstClubselected": 2,
+      "SecondClubselected": 2,
+      "Ticketsselected": 2,
+      "RegulatedInstitutions": 2,
+      "Mandatoryfields": 2,
+      "computerbrowserselected": 2,
+      "mobilebrowserselected": 2,
+      "emailtemplateselected": 2,
+      "mobilemessagetemplateselected": 2,
+      "selected": false
+    },
+    {
+      "id": 5,
+      "eventname": "Event5",
+      "status": "Loren Ipsum5",
+      "enddate": "2013-01-09",
+      "startdate": "2013-01-08",
+      "eventdate": "2013-01-08",
+      "championship": "Loren Ipsum5",
+      "eventstype": "Loren Ipsum5",
+      "selectedstadium": 3,
+      "FirstClubselected": 3,
+      "SecondClubselected": 3,
+      "Ticketsselected": 3,
+      "RegulatedInstitutions": 3,
+      "Mandatoryfields": 3,
+      "computerbrowserselected": 1,
+      "mobilebrowserselected": 1,
+      "emailtemplateselected": 1,
+      "mobilemessagetemplateselected": 1,
+      "selected": false
+    },
+    {
+      "id": 6,
+      "eventname": "Event6",
+      "status": "Loren Ipsum6",
+      "enddate": "2013-01-09",
+      "startdate": "2013-01-08",
+      "eventdate": "2013-01-08",
+      "championship": "Loren Ipsum6",
+      "eventstype": "Loren Ipsum6",
+      "selectedstadium": 2,
+      "FirstClubselected": 2,
+      "SecondClubselected": 2,
+      "Ticketsselected": 2,
+      "RegulatedInstitutions": 1,
+      "Mandatoryfields": 1,
+      "computerbrowserselected": 2,
+      "mobilebrowserselected": 2,
+      "emailtemplateselected": 2,
+      "mobilemessagetemplateselected": 2,
+      "selected": false
+    },
+    {
+      "id": 7,
+      "eventname": "Event7",
+      "status": "Loren Ipsum7",
+      "enddate": "2013-01-09",
+      "startdate": "2013-01-08",
+      "eventdate": "2013-01-08",
+      "championship": "Loren Ipsum7",
+      "eventstype": "Loren Ipsum7",
+      "selectedstadium": 3,
+      "FirstClubselected": 3,
+      "SecondClubselected": 3,
+      "Ticketsselected": 3,
+      "RegulatedInstitutions": 3,
+      "Mandatoryfields": 3,
+      "computerbrowserselected": 1,
+      "mobilebrowserselected": 1,
+      "emailtemplateselected": 1,
+      "mobilemessagetemplateselected": 1,
+      "selected": false
+    }
+  ],
+  "selected": { }
+
+}

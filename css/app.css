@@ -1,0 +1,2224 @@
+@font-face {
+  font-family: "Segoe UI";
+  font-weight: 200;
+  src: local("Segoe UI Light"); }
+
+  @font-face {
+    font-family: "Segoe UI";
+    font-weight: 300;
+    src: local("Segoe UI Semilight"); }
+
+    @font-face {
+      font-family: "Segoe UI";
+      font-weight: 400;
+      src: local("Segoe UI");
+    }
+
+      @font-face {
+        font-family: "Segoe UI";
+        font-weight: 600;
+        src: local("Segoe UI Semibold");
+      }
+
+        @font-face {
+          font-family: "Segoe UI";
+          font-weight: 700;
+          src: local("Segoe UI Bold"); 
+        }
+
+          @font-face {
+            font-family: "Segoe UI";
+            font-style: italic;
+            font-weight: 400;
+            src: local("Segoe UI Italic"); }
+
+            @font-face {
+              font-family: "Segoe UI";
+              font-style: italic;
+              font-weight: 700;
+              src: local("Segoe UI Bold Italic"); }
+
+   /*@font-face {
+    font-family: 'icomoon';
+    src: url('fonts/icomoon.eot?-x3wef6');
+    src: url('fonts/icomoon.eot?#iefix-x3wef6') format('embedded-opentype'), url('fonts/icomoon.woff?-x3wef6') format('woff'), url('fonts/icomoon.ttf?-x3wef6') format('truetype'), url('fonts/icomoon.svg?-x3wef6#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal; }*/
+
+   @font-face {
+        font-family: 'icomoon';
+        src:url('../fonts/icomoon.eot');
+        src:url('../fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+            url('../fonts/icomoon.woff') format('woff'),
+            url('../fonts/icomoon.ttf') format('truetype'),
+            url('../fonts/icomoon.svg#icomoon') format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    [class^="icon-"], [class*=" icon-"] {
+        font-family: 'icomoon';
+        content: attr(data-icon);
+        speak: none;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+    }
+
+  
+ .icon-move-up {
+    width: 0;
+    height: 0;
+    top: -7px;
+    margin-left: 5px;
+    position: relative;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-bottom: 6px solid #000;
+}
+ .icon-move-down {
+    width: 0;
+	height: 0;
+    margin-left:5px;
+    position:relative;
+    top:10px;
+	border-left: 3px solid transparent;
+	border-right: 3px solid transparent;
+	border-top: 6px solid #000;
+}
+ .form-group table.tablehead th a span span.icon-move-up, .form-group table.tablehead th a span span.icon-move-down{
+     padding:0px !important;
+     margin:-10px;
+ }
+
+    .icon-pencil::before {
+  content: "\e905";
+  font-size:8px;
+  margin-right:5px;
+  cursor:pointer;
+ }
+    .icon-plus::before {
+  content: "\ea0a";
+   margin-right:5px;
+   font-size:8px;
+   cursor:pointer;
+}
+    .icon-minus::before {
+  content: "\ea0b";
+   margin-right:5px;
+   font-size:8px;
+   cursor:pointer;
+}
+    /*span.icon-plus, span.icon-pencil{
+        direction:ltr;
+    }*/
+
+      html , body {
+        direction: rtl;
+        font-size: 11px !important;
+        font-family: "Segoe UI" !important;
+      }
+.left-data{
+    float:left;
+}
+.right-data{
+    float:right;
+}
+.error-msg{
+    color:red;
+    padding-right: 20px;
+    padding-left:20px;
+}
+.logo-img{
+    width:30px;
+    height:30px;
+}
+.modal-body{
+    background-color:#ccc;
+    padding-bottom: 35px;
+}
+.modal-body select{
+    width:100%;
+}
+
+      .profile-font{
+       font-size: 12px;
+       color: #fff;
+     }
+
+     .profile-font h6{
+      float: right;
+      position: relative;
+      left: 10px;
+      color: #fff;
+      top: -2px;
+      font-size: 13px !important;
+    }
+
+    .profile-font span{
+      display: block;
+      font-size: 12px;
+      position: relative;
+      /*top: -14px;
+      left: 10px;*/
+      color: #fff;
+    }
+
+    .navbar-brand{
+      margin-top: -5px;
+      position: relative;
+    }
+
+    #container{
+      position: relative;
+      top: 100%;
+    }
+
+
+    .navbar-brand > img {
+      display: inline-block !important;
+    }
+
+    .navbar{
+      margin-bottom: 0px !important;
+      border-radius: 0 !important;
+    }
+
+    .navbar-default , .dropdown-menu , .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:hover{
+      background-color: #ccc !important;
+      border: none !important;
+    }
+
+    .dropdown-menu a {
+      text-align: right;
+    }
+
+  /*.createEvent*/ select {
+  background-color: white;
+  border-radius: 4px;
+  display: inline-block;
+  font: inherit;
+  line-height: 1.5em;
+  padding: 0.5em 3.5em 0.5em 1em;
+  margin: 0;      
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+ /*-webkit-appearance: none;
+  -moz-appearance: none;*/
+}
+
+
+
+
+
+/*.createEvent*/ s/*elect.selectstyle {
+     background-image: linear-gradient(45deg, transparent 50%, #fff 50%), 
+ linear-gradient(135deg, #fff 50%, transparent 50%), 
+ linear-gradient(to right, #a4a4a4, #a4a4a4);
+    background-position: calc(5%) calc(1em + 3px), calc(6% + 1px) calc(1em + 3px), 0% 0px;
+    background-size: 5px 5px, 5px 5px, 3.5em 3.5em;
+    background-repeat: no-repeat;
+}*/
+    .brand-name {
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .navbar-inverse .navbar-nav > li > a {
+      color: #fff !important;
+    }
+    .navbar-right{
+     left:36px;
+     position: relative;
+   }
+   .caret{
+    margin-left: 4px !important;
+  }
+
+  .navbar-default .navbar-nav > li > a{
+    color: #333 !important;
+  }
+
+  .profile-img{
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+  }
+
+
+  ul li{
+    list-style-type: none;
+  }
+
+  .dropdown-menu{
+    font-size: 10px !important;
+  }
+
+  .events {
+    display: -webkit-flex;
+    display: flex;
+    width:100%;
+    position: relative;
+   /* top: 85px;*/
+    direction: rtl;
+    padding: 25px;
+  }
+
+  .events div.event-box {
+    width: 33%;
+    margin: 10px 10px;
+    background : #E7E7E7;
+    padding: 10px 20px;
+  }
+
+  .events div.event-box .row .col-md-4{
+    background: #FFF;
+    direction: ltr;
+    text-align: center;
+    display:flex;
+    color: #878282;
+  }
+
+  .events div.event-box .row .event-details .event-date{
+    float: left;
+    background: #ccc;
+    padding: 15px 5px;
+    position: relative;
+    left: -15px;
+  }
+  .event-details span img{
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+  }
+  .event-count{
+    padding: 10px;
+
+  }
+  li.event-count{
+      display:block !important;
+  }
+
+  .event-box span {
+    display: block;
+  }
+   .event-box h5 span {
+    display: inline-block;
+    float:right;
+  }
+ 
+input.calendar {
+    background-image: url('../Images/calendar-icon.png');
+    background-repeat: no-repeat;
+    background-size: 28px 28px;
+    cursor:pointer;
+}
+
+    
+  .lite-text{
+      font-size: 10px;
+    color: #878282;
+     }  
+ .events .lite-text {
+   font-style:italic; 
+  }
+         
+  .events h6 {
+    font-weight: 600;
+    line-height: 1.4;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+  }
+  .event-box h5{
+      width:100%;
+    font-weight: 600 !important;
+    font-size: 12px;
+    /*text-transform: uppercase;*/
+    position:relative;
+    left:8px;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+    color: #878282;
+    padding-bottom: 7px;
+    float:right;
+  }
+  .event-box .row{
+    padding: 5px;
+  }
+
+  .progressbar {
+    height: 26px;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .progress-left {
+    height: 10px;
+    overflow: hidden;
+    background-color: #ccc;
+    width: 100%;
+    float: left;
+  }
+
+  .progress-right{
+    height: 10px;
+    width: 70%;
+    background-color: #9C9898;
+    position: relative;
+  }
+  
+   .progress-rightsecond{
+    height: 10px;
+    width: 50%;
+    background-color: red;
+    position: relative;
+    float: left;
+    top: -10px;
+  }
+  .horz-line{
+    border-bottom: 1px solid #ccc;
+    padding-top: 10px;
+  }
+
+  .sortColor
+  {
+      color:white;
+  }
+.navbar.navbar-default, .navbar-default .container-fluid .nav.navbar-nav.navbar-right , .navbar-default .container-fluid .nav.navbar-nav.navbar-right li, .navbar-default .container-fluid .nav.navbar-nav.navbar-right li a{
+
+  min-height: 35px !important;
+  padding-top : 0px !important;
+  padding-bottom : 0px !important;
+}
+
+
+.navbar-default .container-fluid .nav.navbar-nav.navbar-right li a{
+  padding-top: 5px !important;
+}
+
+
+.navbar.navbar-default .nav.navbar-nav.navbar-right{
+  margin-right: -20px !important;
+}
+
+.navbar-right .dropdown-menu{
+  left: 0 !important;
+}
+
+
+
+.container{
+  position: relative;
+  top: 85px;
+  width:100%;
+}
+
+
+.event-manage, .template-manage{
+  width: 87%;
+position: relative;
+float: left;
+padding: 0px 15px;
+direction: ltr;
+}
+.Edit-createEvent,.createNewStadium{
+  width: 100% !important;
+position: relative;
+float: left;
+padding: 0px 15px;
+direction: rtl;
+border-left: 1px solid #ccc;
+}
+.templatemanage-wraper{
+    width:87% !important;
+    float:right;
+}
+.createEvent , .createNewStadium{
+  width: 87%;
+position: relative;
+float: left;
+padding: 0px 15px;
+/*direction: ltr;*/
+}
+
+.createNewStadium {
+     width: 87% !important;
+}
+
+.createNewStadium  .right-data .crumbs li a.first{
+    direction:rtl
+}
+
+.createNewStadium .newstadium select, select.templatmanage{
+    width:55%;
+}
+.event-manage a, .createEvent a, .template-manage a, .createNewStadium a{
+ color: #5A5757;
+ cursor:pointer;
+}
+
+.sidebar-nav{
+  width: 13%;
+  position:relative;
+}
+.sidebar-nav ul.sidebar-list{
+  padding: 0 !important;
+}
+
+.sidebar-nav ul.sidebar-list li{
+ padding: 10px;
+background: #ccc;
+width: 100%;
+float:left;
+cursor: pointer;
+text-align: left;
+}
+
+.sidebar-nav ul.sidebar-list li.active{
+  background-color: #a4a4a4;
+  color: #fff;
+}
+
+.dropdown-menu>.active>a, .dropdown-menu>.active>a:focus{
+  background-color: #e7e7e7 !important;
+  color: #000 !important;
+}
+
+
+ .sidebar-nav ul.sidebar-list > li.active:after {
+  content: "";
+    position: absolute;
+    border-bottom: 8px solid transparent;
+    border-top: 8px solid transparent;
+    border-left: 8px solid white;
+    /*right: 170px*/
+    left:0px;
+}
+
+.tablehead thead{
+  background: #a4a4a4;
+}
+
+
+.tablehead tbody{
+  background: #e4e1e1;
+  padding: 15px;
+}
+.form-group{
+  margin-bottom: 5px;
+  float:right;
+  width:100%;
+}
+.form-group span{
+  font-weight: 600;
+padding: 2px 10px;
+}
+.createEvent-align span.right-data{
+    padding:0px !important;
+}
+
+.Ename{
+float: right;
+font-size: 15px;
+}
+.tablehead tr th:last-child , .tablehead tr td:last-child{
+  position: relative;
+  /*width:30px;*/
+  }
+
+
+
+/*.breadcrumb{
+  margin: 10px 0px !important;
+}*/
+.crumbs li a.first{
+    z-index:9;
+}
+.crumbs li a.second{
+    z-index:8;
+}
+.crumbs li a.first::after{
+    content:">";
+    padding-left:10px;
+}
+.createNewStadium .crumbs li a.first::after{
+    content:"";
+}
+.createNewStadium .crumbs li a.first::before{
+    content:"<";
+    padding-left:10px;
+}
+
+.right-data .crumbs li a.first{
+    direction:ltr;
+}
+
+input[type="text"], textarea{
+    direction: ltr;
+    text-align: right;
+}
+#breadcrumb, #breadcrumb2 { float: left; display: block; width:100%;}
+#breadcrumb ul, #breadcrumb2 ul { list-style: none; }
+
+.crumbs { display: block;
+          float:right;
+}
+
+.crumbs li {  display: inline; }
+.crumbs li.first { padding-left: 8px; }
+.crumbs li a, .crumbs li a:link, .crumbs li a:visited {
+        color: #666;
+    display: block;
+    float: left;
+    font-size: 12px;
+    padding: 7px 5px 11px 5px;
+    position: relative;
+    text-decoration: none; 
+     }
+    .crumbs li a {
+        /*background-image: url('../img/bg-crumbs.png');*/
+        /*background-image: url('../Images/bg-crumbs.png');*/
+        background-repeat: no-repeat;
+        background-position: 100% 0;
+        position: relative;
+    }
+.crumbs li a:hover { color: #333; background-position: 100% -48px; cursor: pointer; }
+.crumbs li a:active { color: #333; background-position: 100% -96px; }
+.crumbs li.first a span { height: 29px; width: 3px; border-left: 1px solid #d9d9d9; position: absolute; top: 0px; left: 0px; }
+
+
+.crumbs2 { display: block; margin-left: -13px; padding: 0; }
+.crumbs2 li { display: inline; }
+.crumbs2 li a, .crumbs2 li a:link, .crumbs2 li a:visited { color: #666; display: block; float: left; font-size: 12px; padding: 7px 16px 7px 19px; position: relative; text-decoration: none; border: 1px solid #d9d9d9; border-right-width: 0px; }
+
+.crumbs2 li a  { 
+	background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0.45, rgb(241,241,241)),color-stop(0.73, rgb(245,245,245)));
+
+	background-image: -moz-linear-gradient( center bottom, rgb(241,241,241) 45%, rgb(245,245,245) 73%);
+	/* For Internet Explorer 5.5 - 7 */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#f1f1f1, endColorstr=#f5f5f5);
+	/* For Internet Explorer 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#f1f1f1, endColorstr=#f5f5f5)";
+}
+
+.crumbs2 li.first a { border-top-left-radius: 5px; -moz-border-radius-topleft: 5px; -webkit-border-top-left-radius: 5px; }
+.crumbs2 li.last a { border-right-width: 1px; border-bottom-right-radius: 5px; -moz-border-radius-bottomright: 5px; -webkit-border-bottom-right-radius: 5px; }
+
+.crumbs2 li a:hover { 
+	border-top-color: #c4c4c4;
+	border-bottom-color: #c4c4c4;	
+	background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0.45, rgb(241,241,241)),color-stop(0.73, rgb(248,248,248)));
+	background-image: -moz-linear-gradient( center bottom, rgb(241,241,241) 45%, rgb(248,248,248) 73%);
+	/* For Internet Explorer 5.5 - 7 */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#f8f8f8, endColorstr=#f1f1f1);
+	/* For Internet Explorer 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#f8f8f8, endColorstr=#f1f1f1)";	
+	color: #333;	
+	-moz-box-shadow: 0px 2px 2px #e8e8e8;
+	-webkit-box-shadow: 0px 2px 2px #e8e8e8;
+	box-shadow: 0px 2px 2px #e8e8e8;
+}
+
+.crumbs2 li a:active {
+	border-top-color: #c4c4c4;
+	border-bottom-color: #c4c4c4;	
+	background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0.45, rgb(224,224,224)),color-stop(0.73, rgb(235,235,235)));
+	background-image: -moz-linear-gradient( center bottom, rgb(224,224,224) 45%, rgb(235,235,235) 73%);
+	/* For Internet Explorer 5.5 - 7 */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ebebeb, endColorstr=#e0e0e0);
+	/* For Internet Explorer 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#ebebeb, endColorstr=#e0e0e0)";	
+	color: #333; 	
+	box-shadow: -1px 1px 1px 0px #dadada inset;
+	-webkit-box-shadow: -1px 1px 1px 0px #dadada inset;
+	-moz-box-shadow: -1px 1px 1px 0px #dadada inset;
+}
+
+
+
+
+
+/* Create Events*/
+
+.navtab>li.active>a, .navtab>li.active>a:focus, .navtab>li.active>a:hover {
+border-bottom: 4px solid red;
+color: blue;
+background-color : transparent;
+border-radius: 0
+}
+
+
+.navtab > li {
+    float: right;
+}
+
+
+/*.tab-content{
+direction: rtl;
+padding: 15px
+}*/
+
+
+.left-detail{
+    width: 60%;
+    background: #f5f5f5;
+    padding: 15px;
+    border: 1px solid #ccc;
+    float: right;
+}
+.CreateNewStadium{
+    width: 65%;
+    background: #f5f5f5;
+    padding: 15px;
+    border: 1px solid #ccc;
+    float: right;
+}
+.createEvent > .nav > li > a {
+padding: 0px 15px;
+}
+
+.createEvent > .nav{
+  padding-right: 10px;
+}
+ul.nav-pills{
+    padding-right:0px !important;
+}
+
+.nav-pills > li, .nav-pills > li + li {
+    margin: 0px 5px;
+}
+
+.rounded{
+   border-radius: 50%;
+border: 2px solid #ccc;
+padding: 0 5px;
+margin-left:10px;
+}
+
+#eve-details{
+display: flex;
+}
+
+#eve-details .row{
+  padding-top: 20px;
+  padding-bottom:20px
+}
+.navtab > li > a{
+  color: #5A5757;
+}
+.navtab > li.active > a, .navtab > li.active > a:focus, .navtab > li.active > a:hover{
+  color: #5A5757;
+  border-bottom: 4px solid #5A5757;
+  font-weight: 900;
+}
+
+
+.right-detail{
+width: 40%;
+padding: 0px 20px;
+background: #f5f5f5;
+    float: right;
+    border: 1px solid #ccc;
+    }
+ .details-stadium{
+  border: 1px solid #ccc;
+direction: ltr;
+}
+
+.details-stadium thead{
+  background-color:#a4a4a4;
+}
+
+.right-detail table input{
+  width: 50px;
+}
+
+/*.details-stadium thead th{
+width: calc(100% / 3);
+}*/
+
+
+.col-md-6 .col-md-12{
+  padding: 0 !important
+}
+
+
+.emptyfooter{
+    height:50px;
+    position:relative;
+    background-color:#ccc;
+    width:60%;
+    bottom:0px;
+}
+
+
+.createEvent .right-detail .footer{
+    height: 50px;
+    background: #ccc;
+    position: absolute;
+    width: 100%;
+    left: 14px;
+}
+
+.footer{
+    height: 50px;
+    background: #ccc;
+    position: relative;
+    width: 100%;
+}
+.editSuites-footer{ 
+    top: 15px;
+    height: 50px;
+    background: #ccc;
+    position: relative;
+    width: 100%;
+}
+
+
+
+.footer .btn{
+    position: relative;
+padding: 5px 20px;
+float: left;
+margin: 10px 15px;
+
+}
+
+
+
+    /* Create Events*/
+
+
+
+
+    /* Create New Stadium*/
+
+.file-upload-input {
+   position:relative;
+   /*right:14px;*/
+   width: 94%;
+    text-align:center;
+    font-size: 11px;
+    height:34px;
+    background-color: #fff;
+    -moz-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+    /*/ float: left; /*/
+    border: 1px solid #CCC;
+    top:1px;
+}
+
+
+.file-upload-button {
+    cursor: pointer;
+    height:34px;
+    padding:8px 20px;
+    display: inline-block;
+    color: #fff;
+    border: none;
+    position: absolute;
+    left: 28px;
+    background-color: #b3b3b3;
+    -moz-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+    /*height: 100%;*/
+    top:21px;
+}
+.custom-file-upload-hidden {
+  position: absolute;
+    z-index: 999;
+    width: 88%;
+    height: 100%;
+    direction: ltr;
+    opacity: 0;
+}
+
+.modal-logo-padding .file-upload-button{
+    left :0;
+}
+
+/*.modal-logo-padding .file-upload-input{
+    left :65px;
+}*/
+
+.modal-body .custom-file-upload-hidden{
+    position: absolute;
+    z-index: 999;
+    /*width: 26%;*/
+    direction: ltr;
+    opacity: 0;
+    top: 18px;
+    left: 0px;
+}
+
+.upload-logo{
+        padding:20px 
+    }
+
+    /*.input-width{
+        width:50%;
+    }*/
+    .input-width{
+        width:80%;
+    }
+    input#defineRowQty, input#defineColQty{
+        width:100%;
+    }
+    .row-col-modal{
+        padding-top:20px;
+    }
+    .paddingtop{
+    padding-top:30px;
+}
+
+    .newstadium{
+        width:90%;
+        margin-top:30px;
+    }
+    .EditSuits{
+        width:100%;
+    }
+    select.input-width{
+        direction:rtl;
+        padding:5px;
+    }
+    .newstadium-table{
+        background-color:#fff;
+    }
+ tbody.newstadium-table tr td{
+      border-top:none;
+  }
+
+    /* Create New Stadium*/
+    .red{
+  color:red;
+}
+
+.blue{
+  color:blue;
+}
+
+.event-manage input[type="button"]{
+    background:none;
+    border:none;
+}
+
+.icon-pencil input[type="button"]{
+    background:none;
+    border:none;
+}
+    
+.eventmanagementrow .form-control{
+    width: 89% !important
+
+}
+
+.editcompetitionfile{
+    top: -17px;
+    position: relative
+}
+.logo{
+    display:block;
+}
+.editcompetitionfile + .file-upload-button{
+   position: relative;
+    top: -50px;
+    padding: 9px 9px;
+    left: 0;
+}
+
+.left-data input[type="button"]{
+    background:none;
+    border:none;
+}
+
+input[type=file]{
+    height:40px;
+    direction:rtl;
+}
+
+
+.modal-content .file-upload-input{
+        height: 34px;
+        width:100%;
+    /*width: 75%;
+    top: 18px;
+    top:21px;*/
+    text-align:center;
+    direction:rtl;
+}
+/*input.club-manage{
+    top:21px;
+}*/
+.edit-stadium-file-upload-input{
+     height: 34px;
+     width: 100%;
+    top: 0px;
+    text-align:center;
+}
+
+.modal-content .file-upload-button{
+    padding: 8px 20px;
+    height: 34px;
+    top: 21px;
+    /*left: 15px;*/
+}
+#Add-EditSuites-Modal .modal-content .file-upload-button {
+    padding: 8px 20px;
+    height: 34px;
+    top: 21px;
+    left: 15px;
+}
+
+.modal-logo-padding{
+    padding-top:30px;
+}
+
+
+a.deleteicon {
+     opacity: 0.5;
+  position : relative;
+  cursor:pointer;
+}
+
+
+.deleteicon:hover {
+  opacity: 0.5;
+}
+.deleteicon:before, .deleteicon:after {
+    position: absolute;
+    content: ' ';
+    height: 10px;
+    left: -8px;
+    top: 3px;
+    width: 2px;
+    background-color: #333;
+}
+.deleteicon:before {
+  transform: rotate(45deg);
+}
+.deleteicon:after {
+  transform: rotate(-45deg);
+}
+
+
+
+a.deleteiconevespon {
+     opacity: 0.5;
+  position : relative;
+  cursor:pointer;
+}
+
+
+.deleteiconevespon:hover {
+  opacity: 0.5;
+}
+.deleteiconevespon:before, .deleteiconevespon:after {
+    position: absolute;
+    content: ' ';
+    height: 10px;
+    left: -10px;
+    top: 3px;
+    width: 2px;
+    background-color: #333;
+}
+.deleteiconevespon:before {
+  transform: rotate(45deg);
+}
+.deleteiconevespon:after {
+  transform: rotate(-45deg);
+}
+
+
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover{
+border-color: #ccc !important;
+    background: #ccc !important;
+}
+
+
+.left-data + .deleteicon:before, .left-data + .deleteicon:after{
+    right: 5px !important;
+}
+
+.col-md-12 label{
+    float:right
+}
+
+.EditSuits input[type="text"]{
+width:100% !important
+}
+
+a.icon-pencil, a.deleteicon{
+    opacity: 0.5;
+}
+
+
+a.popupdelete{
+    opacity: 0.5;
+     position : relative;
+  cursor:pointer;
+}
+
+
+
+
+.popupdelete:hover {
+  opacity: 0.5;
+}
+.popupdelete:before, .popupdelete:after {
+    position: absolute;
+    content: ' ';
+    height: 10px;
+    left: -10px;
+    top: 3px;
+    width: 2px;
+    background-color: #333;
+}
+.popupdelete:before {
+  transform: rotate(45deg);
+}
+.popupdelete:after {
+  transform: rotate(-45deg);
+}
+
+
+a.institutionsdelete{
+    opacity: 0.5;
+     position : relative;
+  cursor:pointer;
+}
+
+
+.institutionsdelete:hover {
+  opacity: 0.5;
+}
+.institutionsdelete:before, .institutionsdelete:after {
+    position: absolute;
+    content: ' ';
+    height: 10px;
+    left: -8px;
+    top: 3px;
+    width: 2px;
+    background-color: #333;
+}
+.institutionsdelete:before {
+  transform: rotate(45deg);
+}
+.institutionsdelete:after {
+  transform: rotate(-45deg);
+}
+
+
+
+
+#lblDescription
+{
+    font-weight:100;
+    font-family:Arial;
+}
+
+a.checked{
+    opacity: 1;
+  
+}
+
+/*.icon-calendar:before {
+  content: "\e953";
+}*/
+
+.stadium-block-details, .stadium-seat-details .seat-details{
+       display: flex;
+    direction: rtl;
+    position: relative;
+    padding: 0 10px
+}
+
+.seat-details .wrapper{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    bottom: 20px;
+    left: 20px;
+}
+
+.stadium-block-details .col-md-7, .stadium-seat-details .seat-details .col-md-7{
+    padding:0 !important;
+    /*min-height:750px;*/
+}
+
+.stadium-block-details .col-md-7 svg, .stadium-seat-details .seat-details .col-md-7 svg{
+    /*height:100%*/
+}
+
+/*Seat-detail-Table*/
+
+table.seat-detail-table{
+    width:100%;
+    text-align:center;
+    float:right;
+    background-color:#fff;
+}
+
+
+       table.seat-detail-table thead, table.seat-detail-table tbody, table.seat-detail-table tr, table.seat-detail-table td, table.seat-detail-table th { display: block; }
+
+        table.seat-detail-table tr:after {
+            content: ' ';
+            display: block;
+            visibility: hidden;
+            clear: both;
+        }
+
+        table.seat-detail-table thead th {
+            height: 30px;
+            text-align:center;
+        }
+
+        table.seat-detail-table tbody {
+            height: 200px;
+            overflow-y: auto;
+        }
+
+        table.seat-detail-table thead {
+            /* fallback */
+        }
+
+
+        table.seat-detail-table tbody td, table.seat-detail-table thead th {
+            width: 50%;
+            float: right;
+        }
+
+
+        /*End-Seat-detail-Table*/
+
+.seat-details b.right-data{
+    padding:15px;
+}
+
+
+.block-detail-footer input, .block-seat-footer input{
+    margin:8px
+}
+.block-detail-footer input.btn, .block-seat-footer input.btn{
+    display: inline-block;
+    padding: 6px 0px;
+    margin-bottom: 0;
+    /* font-size: 14px; */
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.stadium-block-details .col-md-4, .stadium-seat-details .seat-details .col-md-4{
+    background: rgb(237, 237, 237);
+    border: 1px solid rgb(204, 204, 204)
+}
+.stadium-block-details .block-detail-footer .col-md-4, .stadium-seat-details .seat-details .block-seat-footer .col-md-4{
+    border:none;
+}
+
+.stadium-block-details .col-md-4 h4, .stadium-seat-details .seat-details .col-md-4 h4{
+       color: rgba(153, 153, 153, 0.88);
+    padding: 0 10px;
+}
+.stadium-block-details div.col-md-12 input[type="text"], .stadium-block-details div.col-md-12 select
+.stadium-seat-details .seat-details div.col-md-12 input[type="text"], .stadium-seat-details .seat-details div.col-md-12 select{
+    margin:15px 0px;
+}
+.stadium-block-details .block-detail-footer, .stadium-seat-details .seat-details .block-seat-footer{
+       position: relative;
+    top: 20px;
+    padding: 0 !important;
+    /* margin: 0 !important; 
+    width: 100%;*/
+}
+
+
+/*.stadium-block-details .block-detail-footer input.btn-default {
+background-color:#ccc;
+}*/
+
+.stadium-block-details input[type="checkbox"], .stadium-seat-details .seat-details input[type="checkbox"]{
+    margin-left:8px;
+}
+   
+.stadium-seat-details{
+    border: 1px solid rgb(204, 204, 204);
+    background: rgb(237, 237, 237);
+}
+.stadium-seat-details h5 a.icon-pencil{
+    opacity:1;
+}
+
+.Add-custom-rows-cols{
+    position: relative;
+    top: -28px;
+    font-size: 12px;
+}
+
+/*input.date-input::after{
+    content: "\e109";
+    position: absolute;
+}*/
+
+
+.error-message{
+    padding-left:20px;
+     color:red;
+     padding-right:20px;
+}
+
+.checkbox-eventlast{
+   padding: 0;
+    float: right;
+    right: -12px;
+    position: relative;
+}
+
+.checkbox-eventlast .col-md-12 {
+    padding: 20px 0;
+}
+
+/*.table select{
+    background: none;
+    border: none;
+    box-shadow:none;
+}*/
+
+/*.table select::before{
+    width: 0;
+	height: 0;
+    margin-left:5px;
+    position:relative;
+    top:10px;
+	border-left: 3px solid transparent;
+	border-right: 3px solid transparent;
+	border-top: 6px solid #000;
+}*/
+
+
+#stadiumChance .left-data + .deleteicon{
+  bottom: 3px;
+    position: relative;
+}
+
+#stadiumChance .left-data + .deleteicon:before, .left-data + .deleteicon:after{
+    left: 7px
+}
+
+
+.blockbuttons{
+  position: relative;
+    left: 0;
+    top: -18px;
+
+}
+
+.blockdetailsshow{
+   min-height: 500px;
+}
+
+.blockbuttons .left-data{
+    padding:0 5px
+}
+
+
+
+.rowcol{
+    padding: 20px
+}
+
+.block-detail-footer a, .block-seat-footer a{
+    margin: 0 9px;
+}
+
+.block-detail-footer input[type="submit"], .block-seat-footer input[type="submit"]{
+   padding: 6px 19px;
+    /*top: -4px;*/
+    position: relative;
+    border: 1px solid #ccc;
+    /*left: -3px;*/     
+    margin: 0 !important
+}
+
+/*.modalclub .file-upload-input, .modalsponsor .file-upload-input{
+    left:18px;
+}*/
+
+.modalclub .glyphicon-link , .sponsorlink .glyphicon-link{
+    top: 20px;
+    padding: 12px 15px;
+    position: absolute;
+    background: #b3b3b3;
+
+}
+span.glyphicon-link{
+    position: relative;
+    top: -34px;
+    padding: 12px 12px;
+    background: #b3b3b3;
+}
+   
+.club-icons,tblPurchage {
+    padding:10px
+}
+
+.club-icons span{
+    padding-right:20px
+}
+
+.sponsorlink{
+    position: relative;
+    left: 40%;
+    width: 60%;
+}
+
+.componentmonitoring {
+    width: 87%;
+    position: relative;
+    /* top: 85px; */
+    direction: rtl;
+    float:left
+}
+.componentmonitoringheading{
+    height: 80px
+}
+
+.componentmonitoringheading h4{
+   padding-right: 40px
+}
+.componentdetails{
+        display: flex;
+    position: absolute;
+    direction: rtl;
+    width:100%
+}
+
+    /*.componentdetails .event-box{
+        padding : 40px;
+         top: 40px
+    }*/
+
+     .componentdetails .event-box table{
+    height: 100%;
+}
+.square {
+	width: 10px;
+	height: 10px;
+	background: green;
+}
+
+tr:last-child .square{
+    background: red;
+}
+
+/*.square:hover, .square:focus, .square:after, .square:active{
+    background: green
+}*/
+.systemtasks{
+       position: relative;
+    top: 0 !important;
+    border: 1px solid #b3b3b3;
+    padding: 0 0 40px 0 !important;
+    margin: 0 40px;
+}
+
+.systemtasks h1{
+   background: #b3b3b3;
+    font-size: 15px;
+    padding: 9px;
+    direction: ltr;
+    position: relative;
+    width: 100%;
+    font-weight: 600;
+    top: -20px;
+}
+
+.systemtasks .row{
+    padding: 5px 35px !important    ;
+
+}
+.disabled {
+    cursor: not-allowed;
+}
+    
+.systemtasks .row span{
+        padding: 10px 2px;
+    direction: ltr;
+    font-size: 14px;
+}
+
+.systemtasks .row span.lite-text{
+    position:absolute
+}
+
+.systemtasks .progressbar span.lite-text{
+    width:100%;
+    /*text-align:left*/
+}
+
+.systemtasks .progress-right{
+       background: green;
+    float: left;
+    top: -10px;    
+}
+
+.square .tooltiptext {
+display: none;
+}
+
+tr:last-child .square .tooltiptext {
+    visibility: hidden;
+    background-color: #b3b3b3;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+     margin: 4px;
+     display: block
+}
+
+tr:last-child .square:hover .tooltiptext{
+    visibility: visible;
+}
+
+tr:last-child .square .tooltiptext h4 a{
+        color: #fff;
+    opacity: 1;
+    text-decoration: none;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 10px;
+
+}
+
+
+.glympiconsdashboard{
+    position: absolute !important;
+    color: #fff;
+    font-size: 10px !important;
+}
+
+.glympiconsdashboard img{
+        top: -31px;
+    position: absolute;
+    transform: rotate(45deg);
+    width: 15px;
+    right: 0px;
+}
+
+
+.usermanagementheading{
+    height:90px
+}
+
+.usermanagementheading h4 {
+font-weight: 600
+    }
+
+.userpurchases .customerinfo input, .userpurchases .invoicesearch input{
+    margin-left: 10px
+}
+
+
+.square .deleteicon:before, .deleteicon:after{
+   right: -10px;
+    left: auto;
+    background-color: #fff;
+}
+.square .tooltiptext p {
+    padding: 10px
+}
+
+.offlinedata label{
+    width:100%;
+}
+
+
+.offlinedata .modal-content{
+       direction: rtl;
+}
+
+.offlinedata .modal-body{
+       direction: rtl;
+}
+
+/*.offlinedata .modal-body .col-md-4{
+       right:10px
+}*/
+
+
+.offlinedata .modal-body .col-md-4 select{
+      width: 100%;
+}
+
+
+.offlinedata .modal-body .col-md-4 td:first-child{
+      padding: 0 5px
+}
+
+.offlinedata .modal-body div {
+    padding: 0 15px;
+}
+.anchordisabled{
+ cursor: not-allowed;
+  pointer-events: none;
+  opacity: .65;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+
+.offlinedata .selectingseatmodal {
+    padding-top: 15px !important;
+}
+
+
+.offlinedata .col-md-3, .offlinedata .col-md-4, .offlinedata .col-md-4>.col-md-0{
+    padding-right: 0 !important;
+}
+
+.offlinedata .col-md-3 label, .offlinedata .col-md-4 label{
+    line-height: 30px
+}
+
+.error {
+  border:1px solid red;
+}
+
+
+.form-group .help-block {
+  display: none;
+}
+ 
+.form-group.has-error .help-block {
+  display: block;
+}
+
+.createEvent-align{
+    padding-right:1px !important;
+    padding-left:2px!important;
+}
+.internet-browse-tkts{
+    margin-right:16px;
+}
+.Selectingseats{
+    margin-top:20px;
+}
+
+input.form-control{
+    direction : rtl;
+}
+.season-city{
+    padding-top:30px;
+}
+
+
+/*.square .tooltiptext .deleteicon:before, .deleteicon:after{
+        background-color: #fff;
+    right: -10px;
+    left: auto;
+     
+}*/
+
+.modal-dialog.modal-sm .modal-header{
+    background: #fff;
+}
+.modal-header{
+    background: #fff;
+}
+
+.modal-dialog.modal-sm .modal-body .input-width{
+    width: 100%
+}
+
+.modal-dialog.modal-sm .footer{
+    background: #fff
+}
+
+.modal-dialog.modal-sm{
+    position: absolute;
+    left: 30%;
+    top: 30%;
+}
+
+.board.col-md-7.col-sm-7{
+    background: rgba(0, 0, 0, 0.8);
+     overflow: auto;
+    max-height: 600px;
+    min-height: 500px;
+}
+
+.board.col-md-7.col-sm-7 svg{
+    background:transparent !important
+    /*padding:14px 0;*/
+    /*background:transparent !important;
+        width: 90%;
+        height: 90%;
+        right: 0;
+        left: 0;
+        padding: 30px 0 !important;*/
+}
+
+span.disable-links {
+    pointer-events: none;
+    cursor:none;
+}
+.has-errormessge{
+    border:1px solid maroon;
+}
+.addsponsors-browse{
+    left: 15px;
+}
+
+.browseinline{
+    padding: 8px 20px;
+    position: absolute;
+    height: 34px;
+    top: 9px !important;
+    left: 8px;
+}
+
+.browseinlinepopup {
+    position: relative;
+    /* display: inline-block; */
+    top: -33px !important;
+    left: 0px
+}
+
+.downloadSelectedSeats {
+        width: 100%;
+    height: 40px;
+    display: block;
+}
+
+
+.downloadSelectedSeats .custom-file-upload-hidden{
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+.in-active{
+     pointer-events: none;
+       cursor: default;
+}
+.downloadSelectedSeats .file-upload-input{
+        top: -40px;
+    position: relative;
+    text-align:right;
+}
+
+.downloadSelectedSeats .file-upload-button{
+   position: relative;
+    display: inline-block;
+    float: left;
+    top: -74px;
+    left: 0;
+}
+
+.offlineenterprise{
+    padding:23px;
+}
+
+.offlineenterprise select{
+   width:30%
+}
+
+
+.percentageBox{
+    padding-top:3px;
+    padding-left:12px;
+    padding-right:12px;
+}
+td.percentageBox select{
+    width: 100%
+}
+.radiobuttonalignment{
+    vertical-align:top;
+}
+
+.offlineenterprise th {
+    text-align: right
+}
+.radioButtonText{
+        width: 100px;
+}
+.selectedSeats
+{
+    float:left;
+    text-align:center;
+    padding-left:15px;
+    padding-right:15px
+}
+
+#stadiumChance .newstadium .deleteicon:before, #stadiumChance .newstadium .deleteicon:after {
+    right: 38px;
+    left: 0;
+
+}
+
+
+
+.form-check-align input{
+    display: inline-block;
+    float: left;
+    position: absolute;
+    top: -2px;
+    left: 7px;
+}
+
+.createEvent-align-left{
+    display: inline-block;
+    padding: 0 2px !important;
+    float: right;
+    position: absolute;
+}
+
+.createEvent-align-right{
+    right:9px;
+}
+
+.col-md-6.location {
+width: 47%;
+display: inline-block
+}
+
+.col-md-6.location input {
+    width: 100%;
+    float: left;
+    /*top: -34px;*/
+    position: relative;
+}
+
+.blockdetailsshow .blockbuttons{
+    position:absolute;
+}
+
+.blockdetailsshow{
+    min-height: 500px
+}
+
+
+.col-md-6.locationleft{
+    width: 50%;
+    display:inline-block;
+    float: right;
+}
+
+
+.createEvent-align .icon-plus::before {
+    margin-right : 0
+}
+
+.createEvent-align .deleteicon::before, .createEvent-align .deleteicon::after{
+    left : -6px
+}
+
+.createEvent-align .form-group span{
+    padding : 2px 7px
+}
+
+
+input:required:invalid{
+outline-color:maroon;
+outline-width:0.5px;
+}
+input:required:invalid {
+    outline: none;
+
+   
+}
+select:required:invalid {
+    outline: none;
+
+   
+}
+select:required:invalid {
+    outline: none;
+
+   
+}
+:invalid {
+  box-shadow: none;
+}
+
+:-moz-submit-invalid {
+  box-shadow: none;
+   outline: none;
+ 
+}
+
+:-moz-ui-invalid {
+  box-shadow:none;
+}
+/*select:invalid {
+    box-shadow: none;
+}*/
+
+/*:-moz-ui-invalid:not(output) {
+    box-shadow: none;
+}*/
+/*.ng-pristine.ng-invalid {
+  box-shadow: none;
+}*/
+
+ /*select#ddlFirstClub 
+    {
+        border:0px;
+        outline:0px;
+    }
+  select#ddlSecondClub 
+    {
+        border:0px;
+        outline:0px;
+    }*/
+
+ .ddlSelect
+ {
+      border:0px;
+        outline:0px;
+ }
+ .has-errormessgeselect{
+     border:1px solid maroon;
+ }
+
+ .CreateNewStadium .details-stadium input#txtPriceSchema{
+    width: 60%;
+}
+
+.CreateNewStadium .details-stadium select{
+    width: 100%;
+}
+
+.CreateNewStadium .details-stadium input[type="button"]{
+    width: 100%;
+}
+
+
+div#define-block .footer{
+    top : 10px
+
+}
+
+.cssCircle {
+  -webkit-border-radius: 999px;
+  -moz-border-radius: 999px;
+  border-radius: 999px;
+  behavior: url(PIE.htc);
+  
+  width: 13px;
+  height: 13px;
+  padding: 0px;
+  
+  background: #777777;
+  border: 1px solid #777777;
+  color: #003580;
+  text-align: center;
+  
+  font: 13px Arial, sans-serif
+}
+
+.cssCircle:hover {
+  background: #777777;
+  cursor: pointer;
+}
+
+.minusSign {
+  line-height: 0.9em;
+  margin-bottom: 1px;
+  color: white;
+}
+
+.plusSign {
+  line-height: 1.1em;
+}
+
+.minusSign:hover,
+.plusSign:hover {
+  color: white;
+}
+
+
+#define-block .col-md-5{
+    float:right
+}
+
+
+.myCheckBox{
+    cursor:default;
+}
+#boardForDefineBlocks {
+    width: 400px !important;
+    height: 400px !important;
+    border: none !important;
+    left: 30px;
+    position: relative;
+}
+
+
+#editStadiumHolder{
+float : right
+}
+
+.editblockinfo{
+    padding : 0 30px
+}
+
+.checkbox-align .col-md-6{
+    padding : 0 !important;
+}
+
+
+#define-block .details-stadium input[type="number"]{
+        width: 66px;
+    /* height: 15px; */
+    top: 1px;
+    position: relative;
+}
+
+
+#define-block .details-stadium, .ticketeventstime .col-md-4.right-data input{
+direction : rtl;
+}
+
+#define-block .details-stadium th, #define-block .details-stadium td{
+text-align: center;
+}
+
+
+#define-block .left-data{
+padding: 1px !important;
+padding-left:20px;
+}
+
+#define-block .right-data{
+padding: 2px 0px !important;
+padding-right:20px;
+}
+
+#define-block .footer{
+top : 10px
+}
+
+.radiooptions{
+        padding: 0 !important;
+}
+
+.radiooptions .radio{
+    width: 100%;
+    display: inline-block;
+}
+
+#define-block .radiooptions .radio span.left-data {
+        padding-right: 20px !important;
+        direction: ltr;
+    }
+
+#define-block input[type=checkbox]{
+    position:relative;
+    top: 3px
+}
+
+#define-block .details-stadium.activationtable{
+direction:ltr
+}
+
+.eventdropalign label{
+       width: 40%;
+    padding: 3px;
+}
+
+.eventdropalign select{
+    width: 60%
+}
+
+.ticketeventstime label{
+    width: 100%;
+    text-align: right;
+}
+
+.ticketeventstime input{
+        width: 35%;
+    float: right;
+    display: block;
+}
+
+#tblSearchResult a{
+    color: #24A4D3;
+}
+
+.userpurchasessearch>h4{
+text-align:right;
+}
+
+.userpurchases{
+    width: 60%;
+    float: right;
+    padding-left:15px;
+    font-weight:bold
+}
+.userpurchases>h4{
+    width: 100%;
+    text-align: right;
+    border-bottom : 1px solid #878282;
+    padding: 10px;
+    font-weight:bold
+}
+
+.triangle-icon {
+     position: absolute;
+    right: 85%;
+}
+
+.triangle-icon.after {
+    content: '';
+    position: absolute;
+    margin-left: -50px;
+        right: 55%;
+    width: 0;
+    height: 0;
+    border-top: solid 8px #000;
+    border-left: solid 8px transparent;
+    border-right: solid 8px transparent;
+}
+
+
+.triangle-icon.before {
+   border-bottom: 8px solid #000;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  width: 0;
+  height: 0;
+  right: 55%;
+}
+
+.userpurchases .collapsable{
+    direction: rtl
+}
+
+.collapsable label{
+    width: 100%
+}
+
+
+.collapsable{
+    
+    overflow: hidden;
+    height: 0;
+    transition: height 1s;
+   
+        width: 100%;
+}
+
+
+
+  .collapsable.showMe {
+ visibility: visible;
+  position: relative;
+    overflow: hidden;
+    height: 100%;
+    -webkit-transition-timing-function: ease;
+    -o-transition-timing-function: ease;
+    transition-timing-function: ease;
+    -webkit-transition-duration: .35s;
+    -o-transition-duration: .35s;
+    transition-duration: .35s;
+    -webkit-transition-property: height,visibility;
+    -o-transition-property: height,visibility;
+    transition-property: height,visibility
+   /*overflow: hidden;*/
+    /*-moz-transition: height 2s; /* Firefox 4 */
+    /*-webkit-transition: height 2s;*/ /* Safari and Chrome */
+    /*-o-transition: height 2s;*/ /* Opera */*/   
+    }
+
+
+  .collapsable.showMe .event-count{
+      padding : 10px 35px
+      
+  }
+  .glyphicon {
+    position: relative;
+    top: 20px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    border: none;
+    font-size: 15px;
+}
+
+  .selectedMainDiv{
+      background-color:#DEDEDE;
+      width: 450px;
+  }
+  .btnIcon{
+      height:40px;
+      width:60px;
+      float:left
+  }
+
+  .methodDiv{
+       width:360px;
+  }
+  .tblPurchage{
+      left:50px;
+  }
+
+  .create-event-padding{
+  padding: 0 !important;
+    width: auto;
+    }
+
+
+  .last-search-user{
+      padding: 10px 20px;
+  }
+  
+  .drawn-block.saved rect:hover{
+      cursor: not-allowed
+  }
+
+.CreateSeasonalTicket table{
+    float: right;
+}
+
+.CreateSeasonalTicket .right-data, .seasonticketsheader th a{
+   padding-right: 15px;
+}
+
+.seasonticketsmodalfooter{
+    background: #fff;
+}
+
+.seasonticketsmodalfooter input[type="button"]{
+    border: 1px solid #ccc !important;
+}

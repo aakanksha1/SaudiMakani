@@ -1,0 +1,23 @@
+﻿{
+
+   "RunningTask" : [
+        {
+            "Task": "Task: Print Tickets1",
+            "Progresscmplted": "78% Completed",
+            "PrintJob": "King Abdullah Sports City Stadium: Category ‘A’ Tickets Print Job",
+            "TimeElapsed": "Time Elapsed : 3 hours"
+        },
+        {
+            "Task": "Task: Print Tickets2",
+            "Progresscmplted": "78% Completed",
+            "PrintJob": "King Abdullah Sports City Stadium: Category ‘A’ Tickets Print Job",
+            "TimeElapsed": "Time Elapsed : 2 hours"
+        },
+        {
+            "Task": "Task: Print Tickets3",
+            "Progresscmplted": "78% Completed",
+            "PrintJob": "King Abdullah Sports City Stadium: Category ‘A’ Tickets Print Job",
+            "TimeElapsed": "Time Elapsed : 3 hours"
+        }
+    ]
+}

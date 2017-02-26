@@ -1,0 +1,158 @@
+﻿<div class="event-manage" ng-controller="SeasonManagementController">
+    <div id="breadcrumb" class="right-data">
+        <ul class="crumbs">
+            <li><a href="#" class="first"><span></span>{{crum.tab}}</a></li>
+            <li><a href="#" class="second"><span></span>{{crum.sidebar}}</a></li>
+        </ul>
+    </div>
+
+
+    <div class="form-group">
+
+        <span><a href="" data-toggle="modal" data-target="#myModal" ng-click="addSeason('add')" class="icon-plus">{{CreateNewSeason}}</a></span>
+        <span><a ng-disabled="disableEdit()" class="icon-pencil" data-toggle="modal" data-target="#myModal" ng-click="editSeason('edit')" type="button" value="{{EditSeason}}">{{EditSeason}}</a></span>
+        <span><a class="deleteicon competitiondeleteicon" ng-disabled="disableDelete()" value="{{DeactivateSeason}}" ng-model="selected" ng-click="remove()">{{DeactivateSeason}}</a></span>
+        <span class="Ename">{{Season}}</span>
+
+
+
+        <table class="table tablehead">
+            <thead>
+                <tr>
+                    <th>
+                        <a ng-click="orderByField='enddate'; reverseSort = !reverseSort">
+                            {{EndDate}} <span ng-show="orderByField == 'enddate'">
+                                <span ng-show="!reverseSort" class="icon-move-up"></span>
+                                <span ng-show="reverseSort" class="icon-move-down"></span>
+                            </span>
+                        </a>
+                    </th>
+                    <th>
+                        <a ng-click="orderByField='startdate'; reverseSort = !reverseSort">
+                            {{StartDate}} <span ng-show="orderByField == 'startdate'">
+                                <span ng-show="!reverseSort" class="icon-move-up"></span>
+                                <span ng-show="reverseSort" class="icon-move-down"></span>
+                            </span>
+                        </a>
+
+                    </th>
+                    <th>
+                        {{Enable}}
+                    </th>
+                    <th>
+
+                        <a ng-click="orderByField='competition'; reverseSort = !reverseSort">
+                            {{Competition}}<span ng-show="orderByField == 'competition'">
+                                <span ng-show="!reverseSort" class="icon-move-up"></span>
+                                <span ng-show="reverseSort" class="icon-move-down"></span>
+                            </span>
+                        </a>
+                    </th>
+
+                    <th>
+                        <a ng-click="orderByField='description'; reverseSort = !reverseSort">
+                            {{Description}}<span ng-show="orderByField == 'description'">
+                                <span ng-show="!reverseSort" class="icon-move-up"></span>
+                                <span ng-show="reverseSort" class="icon-move-down"></span>
+                            </span>
+                        </a>
+
+                    </th>
+                    <th>
+                        <a ng-click="orderByField='name'; reverseSort = !reverseSort">
+                            {{Name}} <span ng-show="orderByField == 'name'">
+                                <span ng-show="!reverseSort" class="icon-move-up"></span>
+                                <span ng-show="reverseSort" class="icon-move-down"></span>
+                            </span>
+                        </a>
+                    </th>
+                    <th>
+                        <input type="checkbox" ng-model="selectedAll" ng-click="checkAll()" />
+
+                    </th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="season in Seasons.Seasons  | filter : paginate |orderBy:orderByField:reverseSort">
+                    <td>{{season.enddate   |  date:'yyyy/MM/dd'}}</td>
+                    <td>{{season.startdate   |  date:'yyyy/MM/dd'}}</td>
+                    <td><input type="checkbox" ng-model="season.enable" class="myCheckBox" style="cursor:default" ng-disabled="!ng-disabled" id="myCheck" ng-checked="season.enable" ng-click=""/></td>
+                    <td>{{showCompetition(season)}}</td>
+                    <td>{{season.description}}</td>
+                    <td>{{season.name}}</td>
+                    <td><input type="checkbox" ng-model="season.selected" ng-checked="season.selected" ng-click="UnCheckMain()" /></td>
+
+                </tr>
+            </tbody>
+        </table>
+
+        <pagination total-items="totalItems" ng-model="currentPage"
+                    max-size="20" boundary-links="true"
+                    items-per-page="numPerPage" first-text="<<" previous-text="<" next-text=">" last-text=">>" class="pagination-sm">
+        </pagination>
+
+
+    </div>
+    <div class="modal fade modalcompetition" id="myModal" role="dialog">
+        <form ng-submit="submit()" name="CreateSeason">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close left-data" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title right-data">{{CreateEditSeasontitle}}</h4>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" ng-model="season.id" />
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                                <label for="name" class="right-data">{{Description}}</label>
+                                <textarea class="form-control" rows="4" ng-model="season.description" placeholder="{{Description}}"></textarea>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <div class="col-md-12 col-sm-12 commontext" show-errors>
+                                    <label for="name" class="right-data">{{Name}}</label>
+                                    <input type="text" name="Names" ng-model="season.name" class="form-control" placeholder="{{EnterName}}" required>
+                                </div>
+                                <div class="col-md-12 col-sm-12 commontext" show-errors>
+                                    <label for="exampleSelect1" class="right-data">{{Competition}}</label>         
+                                    <select ng-model="season.competition" name="selectedCompetition" required class="form-control" ng-options="item.key as item.value for item in Competitions">
+                                        <option value="">-- {{select}} --</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 commontext" show-errors>
+                                <label for="exampleSelect1" class="right-data">{{EndDate}}</label>
+                                <input type="text" id="endDate" name="endDate" ng-change="checkSeasonDateValidation(startDate,endDate)" ng-model="season.enddate" class="form-control date-input calendar" required />                               
+                                <span class="left-data error-message">{{errMessage}}</span>
+                            </div>
+                            <div class="col-md-6 col-sm-6 commontext" show-errors>
+                                <label for="exampleSelect1" class="right-data">{{StartDate}}</label>
+                                <input type="text" id="startDate" name="startDate" ng-change='checkSeasonDateValidation(startDate,endDate)' ng-model="season.startdate" class="form-control date-input calendar" required />
+                                <span class="right-data error-message">{{errMessageStartDate}}</span>
+                            </div>
+                           
+                           
+                        </div>
+                        <div class="row">
+                            <div align="right" style="padding:15px;">
+                                <label for="exampleSelect1" class="right-data">{{Enabled}}</label>
+                                <input type="checkbox"  ng-model="season.enable" ng-checked="season.enable"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer">
+                        <button class="btn btn-default" data-dismiss="modal" ng-click="reset()">{{Cancel}}</button>
+                        <button class="btn btn-default" ng-click="save()">{{Save}}</button>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+<div sidebar-page></div>

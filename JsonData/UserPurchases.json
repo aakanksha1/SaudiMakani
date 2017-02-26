@@ -1,0 +1,362 @@
+﻿{
+    "UserPurchases": [
+        {
+            "id": 0,
+            "tickets": "Tickets1",
+            "season": "Lorem Ipsum1",
+            "competition": "Lorem Ipsum1",
+            "event": "Lorem Ipsum1",
+            "case": "Incl",
+            "methodOfPayment": "Paying off",
+            "paymentDate": "2016/11/22",
+            "totalAmount": "120",
+            "applicationNumber": "3432431",
+            "purchaseDate": "2016/10/22",
+            "invoiceNumber": "3432431",
+            "identityNumber": "11111",
+            "mobileNumber": "0123456789",
+            "email": "abc@gmail.com"
+
+        },
+        {
+            "id": 1,
+            "tickets": "Tickets2",
+            "season": "Lorem Ipsum2",
+            "competition": "Lorem Ipsum2",
+            "event": "Lorem Ipsum2",
+            "case": "Incl",
+            "methodOfPayment": "Paying off",
+            "paymentDate": "2016/11/22",
+            "totalAmount": "120",
+            "applicationNumber": "3432432",
+            "purchaseDate": "2016/10/22",
+            "invoiceNumber": "3432432",
+            "identityNumber": "22222",
+            "mobileNumber": "1023456789",
+            "email": "abc1@gmail.com"
+        },
+        {
+            "id": 2,
+            "tickets": "Tickets3",
+            "season": "Lorem Ipsum3",
+            "competition": "Lorem Ipsum3",
+            "event": "Lorem Ipsum3",
+            "case": "Incl",
+            "methodOfPayment": "Points of sale",
+            "paymentDate": "2016/11/22",
+            "totalAmount": "120",
+            "applicationNumber": "3432433",
+            "purchaseDate": "2016/11/22",
+            "invoiceNumber": "3432434",
+            "identityNumber": "33333",
+            "mobileNumber": "1203456789",
+            "email": "abc2@gmail.com"
+        },
+        {
+            "id": 3,
+            "tickets": "Tickets4",
+            "season": "Lorem Ipsum4",
+            "competition": "Lorem Ipsum4",
+            "event": "Lorem Ipsum4",
+            "case": "Incl",
+            "methodOfPayment": "Points of sale",
+            "paymentDate": "2016/11/22",
+            "totalAmount": "120",
+            "applicationNumber": "3432434",
+            "purchaseDate": "2016/11/22",
+            "invoiceNumber": "3432434",
+            "identityNumber": "44444",
+            "mobileNumber": "1230456789",
+            "email": "abc3@gmail.com"
+        },
+        {
+            "id": 4,
+            "tickets": "Tickets5",
+            "season": "Lorem Ipsum5",
+            "competition": "Lorem Ipsum5",
+            "event": "Lorem Ipsum5",
+            "case": "Incl",
+            "methodOfPayment": "Credit card",
+            "paymentDate": "2016/11/22",
+            "totalAmount": "120",
+            "applicationNumber": "3432435",
+            "purchaseDate": "2016/11/22",
+            "invoiceNumber": "3432434",
+            "identityNumber": "55555",
+            "mobileNumber": "1234056789",
+            "email": "abc4@gmail.com"
+        },
+        {
+            "id": 5,
+            "tickets": "Tickets5",
+            "season": "Lorem Ipsum5",
+            "competition": "Lorem Ipsum5",
+            "event": "Lorem Ipsum5",
+            "case": "Incl",
+            "methodOfPayment": "Credit card",
+            "paymentDate": "2016/11/22",
+            "totalAmount": "120",
+            "applicationNumber": "3432435",
+            "purchaseDate": "2016/11/22",
+            "invoiceNumber": "3432434",
+            "identityNumber": "66666",
+            "mobileNumber": "1234506789",
+            "email": "abc5@gmail.com"
+        },
+        {
+            "id": 6,
+            "tickets": "Tickets5",
+            "season": "Lorem Ipsum5",
+            "competition": "Lorem Ipsum5",
+            "event": "Lorem Ipsum5",
+            "case": "Incl",
+            "methodOfPayment": "Credit card",
+            "paymentDate": "2016/11/22",
+            "totalAmount": "120",
+            "applicationNumber": "3432435",
+            "purchaseDate": "2016/11/22",
+            "invoiceNumber": "3432434",
+            "identityNumber": "77777",
+            "mobileNumber": "1234560789",
+            "email": "abc6@gmail.com"
+        },
+        {
+            "id": 7,
+            "tickets": "Tickets5",
+            "season": "Lorem Ipsum5",
+            "competition": "Lorem Ipsum5",
+            "event": "Lorem Ipsum5",
+            "case": "Incl",
+            "methodOfPayment": "Credit card",
+            "paymentDate": "2016/11/22",
+            "totalAmount": "120",
+            "applicationNumber": "3432435",
+            "purchaseDate": "2016/11/22",
+            "invoiceNumber": "3432434",
+            "identityNumber": "88888",
+            "mobileNumber": "1234567089",
+            "email": "abc7@gmail.com"
+        },
+        {
+            "id": 8,
+            "tickets": "Tickets5",
+            "season": "Lorem Ipsum5",
+            "competition": "Lorem Ipsum5",
+            "event": "Lorem Ipsum5",
+            "case": "Incl",
+            "methodOfPayment": "Credit card",
+            "paymentDate": "2016/11/22",
+            "totalAmount": "120",
+            "applicationNumber": "3432435",
+            "purchaseDate": "2016/11/22",
+            "invoiceNumber": "3432434",
+            "identityNumber": "99999",
+            "mobileNumber": "1234567809",
+            "email": "abc8@gmail.com"
+        }
+    ],
+
+  "BillNumberTickets": [
+    {
+      "id": 0,
+      "tickets": [
+        {
+          "id": 0,
+          "seatNumber": 1,
+          "rowNumber": 1,
+          "boxNumber": 118,
+          "Price": 240,
+          "ticketCategory": "Golden1"
+
+        },
+        {
+          "id": 1,
+          "seatNumber": 2,
+          "rowNumber": 1,
+          "boxNumber": 118,
+          "Price": 120,
+          "ticketCategory": "Silver1"
+        },
+        {
+          "id": 2,
+          "seatNumber": 3,
+          "rowNumber": 1,
+          "boxNumber": 118,
+          "Price": 40,
+          "ticketCategory": "Uniform1"
+        },
+        {
+          "id": 3,
+          "seatNumber": 4,
+          "rowNumber": 1,
+          "boxNumber": 118,
+          "Price": 60,
+          "ticketCategory": "Uniform1"
+        }
+
+      ]
+
+    },
+    {
+      "id": 1,
+      "tickets": [
+        {
+          "id": 0,
+          "seatNumber": 1,
+          "rowNumber": 2,
+          "boxNumber": 118,
+          "Price": 240,
+          "ticketCategory": "Golden2"
+
+        },
+        {
+          "id": 1,
+          "seatNumber": 2,
+          "rowNumber": 2,
+          "boxNumber": 118,
+          "Price": 240,
+          "ticketCategory": "Silver2"
+        },
+        {
+          "id": 2,
+          "seatNumber": 3,
+          "rowNumber": 2,
+          "boxNumber": 118,
+          "Price": 240,
+          "ticketCategory": "Uniform2"
+        },
+        {
+          "id": 3,
+          "seatNumber": 4,
+          "rowNumber": 2,
+          "boxNumber": 118,
+          "Price": 240,
+          "ticketCategory": "Uniform2"
+        }
+
+      ]
+
+    },
+    {
+      "id": 2,
+      "tickets": [
+        {
+          "id": 0,
+          "seatNumber": 1,
+          "rowNumber": 3,
+          "boxNumber": 118,
+          "Price": 240,
+          "ticketCategory": "Golden3"
+
+        },
+        {
+          "id": 1,
+          "seatNumber": 2,
+          "rowNumber": 3,
+          "boxNumber": 118,
+          "Price": 240,
+          "ticketCategory": "Silver3"
+        },
+        {
+          "id": 2,
+          "seatNumber": 3,
+          "rowNumber": 3,
+          "boxNumber": 118,
+          "Price": 240,
+          "ticketCategory": "Golden3"
+        },
+        {
+          "id": 3,
+          "seatNumber": 4,
+          "rowNumber": 3,
+          "boxNumber": 118,
+          "Price": 240,
+          "ticketCategory": "Uniform3"
+        }
+
+      ]
+
+    },
+    {
+      "id": 3,
+      "tickets": [
+        {
+          "id": 0,
+          "seatNumber": 1,
+          "rowNumber": 4,
+          "boxNumber": 118,
+          "Price": 240,
+          "ticketCategory": "Golden4"
+
+        },
+        {
+          "id": 1,
+          "seatNumber": 2,
+          "rowNumber": 4,
+          "boxNumber": 118,
+          "Price": 240,
+          "ticketCategory": "Silver4"
+        },
+        {
+          "id": 2,
+          "seatNumber": 2,
+          "rowNumber": 4,
+          "boxNumber": 118,
+          "Price": 240,
+          "ticketCategory": "Golden4"
+        },
+        {
+          "id": 3,
+          "seatNumber": 4,
+          "rowNumber": 4,
+          "boxNumber": 118,
+          "Price": 240,
+          "ticketCategory": "Uniform4"
+        }
+
+      ]
+
+    },
+    {
+      "id": 4,
+      "tickets": [
+        {
+          "id": 0,
+          "seatNumber": 1,
+          "rowNumber": 5,
+          "boxNumber": 118,
+          "Price": 240,
+          "ticketCategory": "Golden5"
+
+        },
+        {
+          "id": 1,
+          "seatNumber": 2,
+          "rowNumber": 5,
+          "boxNumber": 118,
+          "Price": 240,
+          "ticketCategory": "Silver5"
+        },
+        {
+          "id": 2,
+          "seatNumber": 3,
+          "rowNumber": 5,
+          "boxNumber": 118,
+          "Price": 240,
+          "ticketCategory": "Golden5"
+        },
+        {
+          "id": 3,
+          "seatNumber": 4,
+          "rowNumber": 5,
+          "boxNumber": 118,
+          "Price": 240,
+          "ticketCategory": "Uniform5"
+        }
+
+      ]
+
+    }
+  ]
+
+}

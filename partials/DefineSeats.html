@@ -1,0 +1,102 @@
+﻿<div class="createEvent" ng-controller="DefineSeatsController">
+
+    <div>
+        <div id="breadcrumb" class="right-data">
+            <ul class="crumbs">
+                <li><a href="#" class="first"><span></span>{{crum.tab}}</a></li>
+                <li><a href="#" class="second"><span></span>{{crum.sidebar}}</a></li>
+            </ul>
+        </div>
+        <h4>{{Event}}</h4>
+        <ul class="nav nav-pills navtab">
+            <li id="eventDetails"><a data-toggle="pill" href="/eventmanage/events/CreateNewEvent" ng-click="eventDetail()">{{EventDetailsHeader}} <span class="rounded">1</span></a></li>
+            <li id="defineBlocks"><a data-toggle="pill" href="/eventmanage/events/defineblocks" ng-click="defineBlock()">{{DefineBlock}} <span class="rounded">2</span></a></li>
+            <li class="active" id="defineSeats"><a data-toggle="pill" href="/eventmanage/events/defineseats" ng-click="defineSeat()">{{DefineSeats}}<span class="rounded">3</span></a></li>
+        </ul>
+    </div>
+    <div class="tab-content">
+
+        <div class="stadium-seat-details" id="seat-details">
+            <div class="col-md-12 col-sm-12 seat-details">
+                <div class="board col-md-7 col-sm-7">
+                    <div id="defineSeatsView">     
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4" ng-hide="SeatSelected">
+                    <form ng-submit="selectedSeatDetails()">
+                        <div class="row seat-details"><b class="right-data">{{Detailsoftheseat}}</b></div>
+
+                        <table class="table table-striped seat-detail-table col-md-6 col-sm-6">
+                            <thead>
+                                <tr>
+                                    <th>{{class}}</th>
+                                    <th>{{Seatnumber}}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="seat in selectedSeats">
+                                    <td>{{seat.row}}</td>
+                                    <td>{{seat.id}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="col-md-12 col-sm-12 defineseats-custom">
+                            <label for="Condition" class="ng-binding">{{SeatCondition}}</label>
+                            <select class="form-control">
+                                <option value="" class="" selected="selected">{{Select}}</option>
+                            </select>
+                        </div>
+                        <div class="col-md-12 col-sm-12 ng-binding defineseats-custom">
+                            <div class="form-group checkbox-align">
+                                <input type="checkbox" ng-model="seats.isDefined"><span>{{Usethedefaultpriceplan}}</span>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12 defineseats-custom">
+                            <label class="ng-binding">{{Priceoftheseat}}</label>
+                            <input class="form-control input-width" type="number" ng-model="defineSeats.seattPrice" id="seatPrice" />
+                        </div>
+                        <div class="col-md-12 col-sm-12 defineseats-custom">
+                            <label for="Seating" class="ng-binding">{{Seating}}</label>
+                            <select id="defineColorToSeatSelected" class="form-control">
+                                <option value="" class="" selected="selected">{{Select}}</option>
+                            </select>
+                        </div>
+                        <div class="col-md-12 col-sm-12 block-seat-footer">
+                            <span class="col-md-4 col-sm-4"><a class="btn btn-default ng-binding" ng-click="cancelSeatsInfo()">{{Cancel}}</a></span>
+                            
+
+                            <span class="col-md-4 col-sm-4"><input id="btnSaveBlockDetails" type="submit" class="btn btn-default" value="Save"></span>
+
+                            <span class="col-md-4 col-sm-4"><a class="btn btn-default ng-binding" href="" ng-click="editSetas()">{{Edit}}</a></span>
+
+                            
+                            <!--btn-remove-this-block-->
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+</div>
+
+
+
+
+<div sidebar-page></div>
+
+<!--begin:scripts
+==================================================================================== -->
+<script src="../MakaniJS/SvgScripts/stadium-configurable-elements.js"></script>
+<script src="../MakaniJS/SvgScripts/stadium-initial.js"></script>
+<script src="../MakaniJS/SvgScripts/stadium-define-block.js"></script>
+<script src="../MakaniJS/SvgScripts/stadium-draw.js"></script>
+<script src="../MakaniJS/SvgScripts/stadium-block-events.js"></script>
+<script src="../MakaniJS/SvgScripts/stadium-print-seats-by-colrows.js"></script>
+<script src="../MakaniJS/SvgScripts/stadium-print-seats-in-custom-shape.js"></script>

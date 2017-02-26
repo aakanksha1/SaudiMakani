@@ -1,0 +1,616 @@
+﻿{
+    "Stadiums": [
+        {
+            "key": 0,
+            "value": "Stadium0"
+        },
+        {
+            "key": 1,
+            "value": "Stadium1"
+        },
+        {
+            "key": 2,
+            "value": "Stadium2"
+        }
+
+    ],
+
+  "eventCategories": [
+    {
+      "id": 0,
+      "category": [
+        {
+          "id": 0,
+          "categoryTypeId": 0,
+          "price":100,
+          "activationDate": "2016-11-07T10:41:59.529Z"
+        },
+        {
+          "id": 1,
+          "categoryTypeId": 1,
+          "price": 100,
+          "activationDate": "2016-11-07T10:41:59.529Z"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "category": [
+        {
+          "id": 0,
+          "categoryTypeId": 0,
+          "price": 200,
+          "activationDate": "2016-11-07T10:41:59.529Z"
+        },
+        {
+          "id": 1,
+          "categoryTypeId": 1,
+          "price": 200,
+          "activationDate": "2016-11-07T10:41:59.529Z"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "category": [
+        {
+          "id": 0,
+          "categoryTypeId": 0,
+          "price": 300,
+          "activationDate": "2016-11-07T10:41:59.529Z"
+        },
+        {
+          "id": 1,
+          "categoryTypeId": 1,
+          "price": 230,
+          "activationDate": "2016-11-07T10:41:59.529Z"
+        }
+      ]
+    }
+  ],
+
+  "eventSuites": [
+    {
+      "id": 0,
+      "suite": [
+        {
+          "id": 0,
+          "suiteName": "Loren Ipsum10",
+          "numberOfSeats": 0,
+          "suitePrice": 100,
+          "isActive": true,
+          "area": 0
+        },
+        {
+          "id": 1,
+          "suiteName": "Loren Ipsum11",
+          "numberOfSeats": 0,
+          "suitePrice": 100,
+          "isActive": true,
+          "area": 0
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "suite": [
+        {
+          "id": 0,
+          "suiteName": "Loren Ipsum20",
+          "numberOfSeats": 0,
+          "suitePrice": 200,
+          "isActive": true,
+          "area": 0
+        },
+        {
+          "id": 1,
+          "suiteName": "Loren Ipsum21",
+          "numberOfSeats": 0,
+          "suitePrice": 200,
+          "isActive": true,
+          "area": 0
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "suite": [
+        {
+          "id": 0,
+          "suiteName": "Loren Ipsum30",
+          "numberOfSeats": 0,
+          "suitePrice": 300,
+          "isActive": true,
+          "area": 0
+        },
+        {
+          "id": 1,
+          "suiteName": "Loren Ipsum31",
+          "numberOfSeats": 0,
+          "suitePrice": 300,
+          "isActive": true,
+          "area": 0
+        }
+      ]
+    }
+  ],
+
+  "eventSponsors": [
+    {
+      "id": 0,
+      "sponsor": [
+        {
+          "sponsorId": 0,
+          "sponsorName": "Loren Ipsum0",
+          "sponsorimageUri": "../images/logo-icon.png#",
+          "fileName": "logo-icon.png"
+
+        },
+        {
+          "sponsorId": 1,
+          "sponsorName": "Loren Ipsum1",
+          "sponsorimageUri": "../images/logo-icon.png#",
+          "fileName": "logo-icon.png"
+
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "sponsor": [
+        {
+          "sponsorId": 0,
+          "sponsorName": "Loren Ipsum0",
+          "sponsorimageUri": "../images/logo-icon.png#",
+          "fileName": "logo-icon.png"
+
+        },
+        {
+          "sponsorId": 1,
+          "sponsorName": "Loren Ipsum1",
+          "sponsorimageUri": "../images/logo-icon.png#",
+          "fileName": "logo-icon.png"
+
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "sponsor": [
+        {
+          "sponsorId": 0,
+          "sponsorName": "Loren Ipsum0",
+          "sponsorimageUri": "../images/logo-icon.png#",
+          "fileName": "logo-icon.png"
+
+        },
+        {
+          "sponsorId": 1,
+          "sponsorName": "Loren Ipsum1",
+          "sponsorimageUri": "../images/logo-icon.png#",
+          "fileName": "logo-icon.png"
+
+        }
+      ]
+    }
+  ],
+
+  "FirstClub": [
+    {
+      "key": 0,
+      "value": "Lorem Ipsum0"
+    },
+    {
+      "key": 1,
+      "value": "Lorem Ipsum1"
+    },
+    {
+      "key": 2,
+      "value": "Lorem Ipsum2"
+    },
+    {
+      "key": 3,
+      "value": "Lorem Ipsum3"
+    },
+    {
+      "key": 4,
+      "value": "Lorem Ipsum4"
+    }
+  ],
+
+  "SecondClub": [
+
+    {
+      "key": 0,
+      "value": "Lorem Ipsum0"
+    },
+    {
+      "key": 1,
+      "value": "Lorem Ipsum1"
+    },
+    {
+      "key": 2,
+      "value": "Lorem Ipsum2"
+    },
+    {
+      "key": 3,
+      "value": "Lorem Ipsum3"
+    },
+    {
+      "key": 4,
+      "value": "Lorem Ipsum4"
+    }
+
+  ],
+
+  "maxNumberOfTickets": [
+    {
+      "key": 0,
+      "value": "900"
+    },
+    {
+      "key": 1,
+      "value": "800"
+    },
+    {
+      "id": 2,
+      "value": "700"
+    },
+    {
+      "key": 3,
+      "value": "600"
+    },
+    {
+      "key": 4,
+      "value": "500"
+    }
+  ],
+
+  "RegulatedInstitutions": [
+    {
+      "id": 0,
+      "name": "Lorem Ipsum1",
+      "selected": false
+    },
+    {
+        "id": 1,
+        "name": "Lorem Ipsum2",
+        "selected": false
+    },
+    {
+        "id": 2,
+        "name": "Lorem Ipsum3",
+        "selected": false
+    }
+  ],
+
+  "Mandatoryfields": [
+    {
+        "id": 0,
+        "name": "Lorem Ipsum1",
+        "selected": false
+    },
+    {
+        "id": 1,
+        "name": "Lorem Ipsum2",
+        "selected": false
+
+    },
+    {
+        "id": 2,
+        "name": "Lorem Ipsum3",
+        "selected": false
+
+    }
+  ],
+
+  "Category": [
+    {
+      "key": 0,
+      "value": "Lorem Ipsum1"
+    },
+    {
+      "key": 1,
+      "value": "Lorem Ipsum2"
+    },
+    {
+      "key": 2,
+      "value": "Lorem Ipsum3"
+    },
+    {
+      "key": 3,
+      "value": "Lorem Ipsum4"
+    }
+  ],
+
+  "ticketTemplateBrowserPC": [
+    {
+      "key": 0,
+      "value": "Lorem Ipsum1"
+    },
+    {
+      "key": 1,
+      "value": "Lorem Ipsum2"
+    },
+    {
+      "key": 2,
+      "value": "Lorem Ipsum3"
+    }
+  ],
+
+  "ticketTemplateBrowserMobile": [
+    {
+      "key": 0,
+      "value": "Lorem Ipsum1"
+    },
+    {
+      "key": 1,
+      "value": "Lorem Ipsum2"
+    },
+    {
+      "key": 2,
+      "value": "Lorem Ipsum3"
+    }
+  ],
+
+  "ticketTemplateEmail": [
+    {
+      "key": 0,
+      "value": "Lorem Ipsum1"
+    },
+    {
+      "key": 1,
+      "value": "Lorem Ipsum2"
+    },
+    {
+      "key": 2,
+      "value": "Lorem Ipsum3"
+    }
+  ],
+
+  "ticketTemplateSMS": [
+    {
+      "key": 0,
+      "value": "Lorem Ipsum1"
+    },
+    {
+      "key": 1,
+      "value": "Lorem Ipsum2"
+    },
+    {
+      "key": 2,
+      "value": "Lorem Ipsum3"
+    }
+  ],
+
+
+  "Events": [
+    {
+      "id": 0,
+      "firstClubId": 0,
+      "secondClubId": 0,
+      "eventDateTime": "2016-11-07T10:41:59.529Z",
+      "stadiumId": 0,
+      "purchaseStartTime": "2016-11-07T10:41:59.529Z",
+      "purchaseEndTime": "2016-11-07T10:41:59.529Z",
+      "maxNumberOfTickets": 0,
+      "isEnabledForPurchase": true,
+      "name": "Lorem Ipsum1",
+      "defaultPrice": 0,
+      "competitionId": 0,
+      "competitionName": "Lorem Ipsum1",
+      "enableProfile": true,
+      "billDurationForSuites": "Lorem Ipsum1",
+      "billDuration": "Lorem Ipsum1",
+      "enableSuites": true,
+      "eventImage": "Lorem Ipsum1",
+      "isActive": true,
+      "enablePurchaseForOtherClubFans": true,
+      "description": "Lorem Ipsum1",
+      "isFreeEvent": true,
+      "purchaseSessionTimeout": 0,
+      "ticketTemplateBrowserPCId": 0,
+      "ticketTemplateBrowserMobileId": 0,
+      "ticketTemplateEmailId": 0,
+      "ticketTemplateSMSId": 0,
+      "relatedEventId": 0,
+
+
+
+      "userName": "Lorem Ipsum1",
+      "templateId": 0,
+      "status": "Lorem Ipsum1",
+      "selected": false
+
+    },
+
+    {
+      "id": 1,
+      "firstClubId": 1,
+      "secondClubId": 1,
+      "eventDateTime": "2016-11-07T10:41:59.529Z",
+      "stadiumId": 1,
+      "purchaseStartTime": "2016-11-07T10:41:59.529Z",
+      "purchaseEndTime": "2016-11-07T10:41:59.529Z",
+      "maxNumberOfTickets": 1,
+      "isEnabledForPurchase": true,
+      "name": "Lorem Ipsum2",
+      "defaultPrice": 1,
+      "competitionId": 1,
+      "competitionName": "Lorem Ipsum2",
+      "enableProfile": true,
+      "billDurationForSuites": "Lorem Ipsum2",
+      "billDuration": "Lorem Ipsum2",
+      "enableSuites": true,
+      "eventImage": "Lorem Ipsum2",
+      "isActive": true,
+      "enablePurchaseForOtherClubFans": true,
+      "description": "Lorem Ipsum2",
+      "isFreeEvent": true,
+      "purchaseSessionTimeout": 0,
+      "ticketTemplateBrowserPCId": 1,
+      "ticketTemplateBrowserMobileId": 1,
+      "ticketTemplateEmailId": 1,
+      "ticketTemplateSMSId": 1,
+      "relatedEventId": 1,
+
+      "userName": "string",
+      "templateId": 1,
+      "status": "string",
+      "selected": false
+
+    },
+
+    {
+      "id": 2,
+      "firstClubId": 2,
+      "secondClubId": 2,
+      "eventDateTime": "2016-11-07T10:41:59.529Z",
+      "stadiumId": 2,
+      "purchaseStartTime": "2016-11-07T10:41:59.529Z",
+      "purchaseEndTime": "2016-11-07T10:41:59.529Z",
+      "maxNumberOfTickets": 2,
+      "isEnabledForPurchase": true,
+      "name": "Lorem Ipsum3",
+      "defaultPrice": 2,
+      "competitionId": 2,
+      "competitionName": "Lorem Ipsum3",
+      "enableProfile": true,
+      "billDurationForSuites": "Lorem Ipsum3",
+      "billDuration": "Lorem Ipsum3",
+      "enableSuites": true,
+      "eventImage": "Lorem Ipsum3",
+      "isActive": true,
+      "enablePurchaseForOtherClubFans": true,
+      "description": "Lorem Ipsum3",
+      "isFreeEvent": true,
+      "purchaseSessionTimeout": 2,
+      "ticketTemplateBrowserPCId": 2,
+      "ticketTemplateBrowserMobileId": 2,
+      "ticketTemplateEmailId": 2,
+      "ticketTemplateSMSId": 2,
+      "relatedEventId": 1,
+
+
+      "userName": "string",
+      "templateId": 1,
+      "status": "string",
+      "selected": false
+
+    },
+
+    {
+      "id": 3,
+      "firstClubId": 3,
+      "secondClubId": 3,
+      "eventDateTime": "2016-11-07T10:41:59.529Z",
+      "stadiumId": 0,
+      "purchaseStartTime": "2016-11-07T10:41:59.529Z",
+      "purchaseEndTime": "2016-11-07T10:41:59.529Z",
+      "maxNumberOfTickets": 3,
+      "isEnabledForPurchase": true,
+      "name": "Lorem Ipsum4",
+      "defaultPrice": 3,
+      "competitionId": 3,
+      "competitionName": "Lorem Ipsum4",
+      "enableProfile": true,
+      "billDurationForSuites": "Lorem Ipsum4",
+      "billDuration": "Lorem Ipsum4",
+      "enableSuites": true,
+      "eventImage": "Lorem Ipsum4",
+      "isActive": true,
+      "enablePurchaseForOtherClubFans": true,
+      "description": "Lorem Ipsum4",
+      "isFreeEvent": true,
+      "purchaseSessionTimeout": 2,
+      "ticketTemplateBrowserPCId": 0,
+      "ticketTemplateBrowserMobileId": 0,
+      "ticketTemplateEmailId": 0,
+      "ticketTemplateSMSId": 0,
+      "relatedEventId": 1,
+
+
+      "userName": "Lorem Ipsum4",
+      "templateId": 1,
+      "status": "Lorem Ipsum4",
+      "selected": false
+
+    },
+
+    {
+      "id": 4,
+      "firstClubId": 4,
+      "secondClubId": 4,
+      "eventDateTime": "2016-11-07T10:41:59.529Z",
+      "stadiumId": 1,
+      "purchaseStartTime": "2016-11-07T10:41:59.529Z",
+      "purchaseEndTime": "2016-11-07T10:41:59.529Z",
+      "maxNumberOfTickets": 4,
+      "isEnabledForPurchase": true,
+      "name": "Lorem Ipsum5",
+      "defaultPrice": 4,
+      "competitionId": 4,
+      "competitionName": "Lorem Ipsum5",
+      "enableProfile": true,
+      "billDurationForSuites": "Lorem Ipsum5",
+      "billDuration": "Lorem Ipsum5",
+      "enableSuites": true,
+      "eventImage": "Lorem Ipsum5",
+      "isActive": true,
+      "enablePurchaseForOtherClubFans": true,
+      "description": "Lorem Ipsum5",
+      "isFreeEvent": true,
+      "purchaseSessionTimeout": 4,
+      "ticketTemplateBrowserPCId": 0,
+      "ticketTemplateBrowserMobileId": 0,
+      "ticketTemplateEmailId": 0,
+      "ticketTemplateSMSId": 0,
+      "relatedEventId": 1,
+
+      "userName": "Lorem Ipsum5",
+      "templateId": 1,
+      "status": "Lorem Ipsum5",
+      "selected": false
+
+    },
+
+    {
+      "id": 5,
+      "firstClubId": 0,
+      "secondClubId": 0,
+      "eventDateTime": "2016-11-07T10:41:59.529Z",
+      "stadiumId": 2,
+      "purchaseStartTime": "2016-11-07T10:41:59.529Z",
+      "purchaseEndTime": "2016-11-07T10:41:59.529Z",
+      "maxNumberOfTickets": 0,
+      "isEnabledForPurchase": true,
+      "name": "Lorem Ipsum6",
+      "defaultPrice": 5,
+      "competitionId": 0,
+      "competitionName": "Lorem Ipsum6",
+      "enableProfile": true,
+      "billDurationForSuites": "Lorem Ipsum6",
+      "billDuration": "Lorem Ipsum6",
+      "enableSuites": true,
+      "eventImage": "Lorem Ipsum6",
+      "isActive": true,
+      "enablePurchaseForOtherClubFans": true,
+      "description": "Lorem Ipsum6",
+      "isFreeEvent": true,
+      "purchaseSessionTimeout": 5,
+      "ticketTemplateBrowserPCId": 2,
+      "ticketTemplateBrowserMobileId": 2,
+      "ticketTemplateEmailId": 2,
+      "ticketTemplateSMSId": 2,
+      "relatedEventId": 1,
+      "userName": "Lorem Ipsum6",
+      "templateId": 1,
+      "status": "Lorem Ipsum6",
+      "selected": false
+
+    }
+  ],
+  "selected": { }
+}
+
+

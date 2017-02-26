@@ -1,0 +1,139 @@
+﻿<div class="event-manage" ng-controller="SponsorsController">
+    <div id="breadcrumb" class="right-data">
+        <ul class="crumbs">
+            <li><a href="#" class="first"><span></span>{{crum.tab}}</a></li>
+            <li><a href="#" class="second"><span></span>{{crum.sidebar}}</a></li>
+        </ul>
+    </div>
+
+
+    <div class="form-group">
+
+        <span><a href="" data-toggle="modal" data-target="#myModal" ng-click="addSponsor('add')" class="icon-plus">{{CreateNewSponsor}}</a></span>
+        <span><a ng-disabled="disableEdit()" class="icon-pencil" data-toggle="modal" data-target="#myModal" ng-click="editSponsor('edit')" type="button" value="{{EditSponsor}}">{{EditSponsor}}</a></span>
+        <span><a class="deleteicon competitiondeleteicon" ng-disabled="disableDelete()" value="{{DeleteSponsor}}" ng-model="selected" ng-click="remove()">{{DeleteSponsors}}</a></span>
+        <span class="Ename">{{SponsorHeader}}</span>
+
+
+
+        <table class="table tablehead">
+            <thead>
+                <tr>
+                    <th>
+                        <a ng-click="orderByField='link'; reverseSort = !reverseSort">
+                            {{Link}} <span ng-show="orderByField == 'link'">
+                                <span ng-show="!reverseSort" class="icon-move-up"></span>
+                                <span ng-show="reverseSort" class="icon-move-down"></span>
+                            </span>
+                        </a>
+                    </th>
+                    <!--<th>
+                        <a ng-click="orderByField='city'; reverseSort = !reverseSort">
+                            {{City}} <span ng-show="orderByField == 'city'">
+                                <span ng-show="!reverseSort" class="icon-move-up"></span>
+                                <span ng-show="reverseSort" class="icon-move-down"></span>
+                            </span>
+                        </a>
+
+                    </th>-->
+                    <th>
+                        {{Logo}}
+                    </th>
+                    <th>
+                        <a ng-click="orderByField='Pricing'; reverseSort = !reverseSort">
+                            {{Description}}<span ng-show="orderByField == 'Pricing'">
+                                <span ng-show="!reverseSort" class="icon-move-up"></span>
+                                <span ng-show="reverseSort" class="icon-move-down"></span>
+                            </span>
+                        </a>
+
+                    </th>
+                    <th>
+                        <a ng-click="orderByField='name'; reverseSort = !reverseSort">
+                            {{Name}} <span ng-show="orderByField == 'name'">
+                                <span ng-show="!reverseSort" class="icon-move-up"></span>
+                                <span ng-show="reverseSort" class="icon-move-down"></span>
+                            </span>
+                        </a>
+                    </th>
+                    <th>
+                        <input type="checkbox" ng-model="selectedAll" ng-click="checkAll()" />
+
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="sponsor in Sponsor.Sponsors  | filter : paginate |orderBy:orderByField:reverseSort">
+                    <td><a class="clublink">{{sponsor.link}}</a></td>
+                    <!--<td>
+                        <select id="colorPickerForStadium" class="form-control input-width templatmanage" ng-model="sponsor.city" ng-options="item.key as item.value for item in Sponsor.City">
+                            <option value="">-- choose city --</option>
+                        </select>
+                    </td>-->
+                    <td><img ng-src="{{sponsor.Logo}}" class="logo-img" /></td>
+                    <td>{{sponsor.description}}</td>
+                    <td>{{sponsor.name}}</td>
+                    <td><input type="checkbox" ng-model="sponsor.selected" ng-checked="sponsor.selected" ng-click="UnCheckMain()" /></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <pagination total-items="totalItems" ng-model="currentPage"
+                    max-size="20" boundary-links="true"
+                    items-per-page="numPerPage" first-text="<<" previous-text="<" next-text=">" last-text=">>" class="pagination-sm">
+        </pagination>
+
+
+    </div>
+    <div class="modal fade modalsponsor" id="myModal" role="dialog">
+        <form ng-submit="submit()" name="CreateSponsor">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content" style="border:none;">
+                    <div class="modal-header">
+                        <button type="button" class="close left-data" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title right-data">{{CreateEditSponsortitle}}</h4>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" ng-model="sponsor.id" />
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                                <label for="name" class="right-data">{{Description}}</label>
+                                <textarea class="form-control" rows="4" ng-model="sponsor.description" placeholder="{{Description}}"></textarea>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <div class="col-md-12 col-sm-12 commontext" show-errors>
+                                    <label for="name" class="right-data">{{Name}}</label>
+                                    <input type="text" name="Names" ng-model="sponsor.name" class="form-control" placeholder="{{EnterName}}" required>
+                                    <!--<span class="error-msg" ng-show="CreateEventForm.Names.$touched && CreateEventForm.Names.$invalid">{{Thenameisrequired}}</span>-->
+                                </div>
+                                <div class="col-md-12 modal-logo-padding commontext" show-errors>
+                                    <label class="right-data">{{Logo}}</label>                   
+                                    <input type="file" id="fileUpload" required name="filepath" fileread="sponsor.Logo" accept="image/*" multiple app-filereader class="custom-file-upload-hidden" ng-model="sponsor.Logo">
+                                    <input type="text" id="txtLogo" ng-model="sponsor.LogoName" class="file-upload-input right-data form-control" readonly/>
+                                      <span class="file-upload-button">{{Browse}}</span>
+                                </div>
+   
+                            </div>
+                        </div>
+                        <div class="row">                 
+                            <div style="float:right;padding-right:17px;" class="commontext" show-errors>
+                                <label for="exampleSelect1" class="right-data">{{Link}}</label>
+                                <input type="text" class="form-control " width="500" name="link" ng-model="sponsor.link" required />
+                                <span class="glyphicon glyphicon-link"></span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="footer">
+
+                    <button class="btn btn-default" data-dismiss="modal" ng-click="reset()">{{Cancel}}</button>
+                    <input type="submit" class="btn btn-default" ng-click="saveSponser()" value="{{Save}}" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div sidebar-page></div>

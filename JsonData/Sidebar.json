@@ -1,0 +1,29 @@
+﻿[
+    {
+        "Title" :  "Eventsidebar",
+        "sidebaritem": [
+            "Events1",
+            "Offline Tickets Printing1",
+            "Competitions1",
+            "Import offline sold tickets1"
+        ]
+    },
+    {
+        "Title": "Templatesidebar",
+        "sidebaritem": [
+            "Stadiums",
+            "Suites",
+            "Tickets QR Pool",
+            "Tickets Templates",
+            "Event Templates"
+        ]
+    },
+    {
+        "Title": "ClubEntitysidebar",
+        "sidebaritem": [
+            "Clubs",
+            "Sponsors",
+            "Offline Entities"
+        ]
+    }
+]

@@ -1,0 +1,170 @@
+﻿<div class="event-manage" ng-controller="ClubManagementController">
+    <div id="breadcrumb" class="right-data">
+        <ul class="crumbs">
+            <li><a href="#" class="first"><span></span>{{crum.tab}}</a></li>
+            <li><a href="#" class="second"><span></span>{{crum.sidebar}}</a></li>
+        </ul>
+    </div>
+
+
+    <div class="form-group">
+
+        <span><a href="" data-toggle="modal" data-target="#myModal" ng-click="addClub('add')" class="icon-plus">{{CreateNewClub}}</a></span>
+        <span><a ng-disabled="disableEdit()" class="icon-pencil" data-toggle="modal" data-target="#myModal" ng-click="editClub('edit')" type="button" value="{{EditClub}}">{{EditClub}}</a></span>
+        <span><a class="deleteicon" ng-disabled="disableDelete()" value="{{DeleteClub}}" ng-model="selected" ng-click="remove()">{{DeleteClub}}</a></span>
+        <span class="Ename">{{ClubHeader}}</span>
+        <table class="table tablehead">
+            <thead>
+                <tr>
+                    <th>
+                        <a ng-click="orderByField='link'; reverseSort = !reverseSort">
+                            {{Link}} <span ng-show="orderByField == 'link'">
+                                <span ng-show="!reverseSort" class="icon-move-up"></span>
+                                <span ng-show="reverseSort" class="icon-move-down"></span>
+                            </span>
+                        </a>
+                    </th>
+                    <th>
+                        <a ng-click="orderByField='city'; reverseSort = !reverseSort">
+                            {{City}} <span ng-show="orderByField == 'city'">
+                                <span ng-show="!reverseSort" class="icon-move-up"></span>
+                                <span ng-show="reverseSort" class="icon-move-down"></span>
+                            </span>
+                        </a>
+
+                    </th>
+                    <th>
+                        {{LogoName}}
+                    </th>
+                    <th>
+                        <a ng-click="orderByField='Pricing'; reverseSort = !reverseSort">
+                            {{Description}}<span ng-show="orderByField == 'Pricing'">
+                                <span ng-show="!reverseSort" class="icon-move-up"></span>
+                                <span ng-show="reverseSort" class="icon-move-down"></span>
+                            </span>
+                        </a>
+
+                    </th>
+                    <th>
+                        <a ng-click="orderByField='name'; reverseSort = !reverseSort">
+                            {{Name}} <span ng-show="orderByField == 'name'">
+                                <span ng-show="!reverseSort" class="icon-move-up"></span>
+                                <span ng-show="reverseSort" class="icon-move-down"></span>
+                            </span>
+                        </a>
+                    </th>
+                    <th>
+                        <input type="checkbox" ng-model="selectedAll" ng-click="checkAll()" />
+
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="club in Club.Clubs  | filter : paginate |orderBy:orderByField:reverseSort">
+                    <td><a class="clublink">{{club.link}}</a></td>
+                    <td>
+                        <!--<select id="colorPickerForStadium" class="form-control input-width templatmanage" ng-model="club.city" ng-options="item.key as item.value for item in Club.City">
+                            <option value="">-- {{select}} --</option>
+                        </select>-->
+                        {{ showClubCity(club) }}
+                   </td>
+                    <td><img ng-src="{{club.Logo}}" class="logo-img" /></td>
+                    <td>{{club.description}}</td>
+                    <td>{{club.name}}</td>
+                    <td><input type="checkbox" ng-model="club.selected" ng-checked="club.selected" ng-click="UnCheckMain()" /></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <pagination total-items="totalItems" ng-model="currentPage"
+                    max-size="20" boundary-links="true"
+                    items-per-page="numPerPage" first-text="<<" previous-text="<" next-text=">" last-text=">>" class="pagination-sm">
+        </pagination>
+    </div>
+    <div class="modal fade modalclub" id="myModal" role="dialog">
+        <form ng-submit="submit()" name="CreateClub">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close left-data" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title right-data">{{CreateEditClubtitle}}</h4>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" ng-model="club.id" />
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                                <label for="name" class="right-data">{{Description}}</label>
+                                <textarea class="form-control" rows="4" ng-model="club.description" placeholder="{{Description}}"></textarea>
+                            </div>         
+                            <div class="col-md-6 col-sm-6">
+                                <div class="col-md-12 col-sm-12 commontext" show-errors>
+                                    <label for="name" class="right-data">{{Name}}</label>
+                                    <input type="text" name="Names" ng-model="club.name" class="form-control commontext" placeholder="{{EnterName}}" required>
+                                    <!--<span class="error-msg" ng-show="CreateEventForm.Names.$touched && CreateEventForm.Names.$invalid">{{Thenameisrequired}}</span>-->
+                                </div>
+                                <div class="col-md-12 col-sm-12 modal-logo-padding commontext" show-errors>
+                                    <label class="right-data">{{LogoName }}</label>
+                                    <input type="file" id="fileUpload" required name="filepath" ng-model="club.Logo" fileread="club.Logo" accept="image/*" multiple app-filereader class="custom-file-upload-hidden">
+                                    <input type="text" id="txtLogo" class="file-upload-input right-data form-control" ng-model="club.LogoName" readonly/>
+                                    <span class="file-upload-button">{{Browse}}</span>
+                                 </div>                            
+                             
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 commontext" show-errors>
+                                <label for="exampleSelect1" class="right-data">{{City}}</label>
+                                <select ng-model="club.city" name="selectedCompetition" required class="form-control" ng-options="item.key as item.value for item in Club.City">
+                                    <option value="">-- {{select}} --</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 col-sm-6 commontext" show-errors>
+                                <label for="exampleSelect1" class="right-data">{{Link}}</label>
+                                <input type="text" class="form-control col-sm-5" name="link" ng-model="club.link" required />
+                                <span class="glyphicon glyphicon-link"></span>
+                            </div>
+                            
+                        </div>
+                        <div class="row">
+                            <div class="col-md-10 col-sm-10 club-icons">
+                                <span><a class="icon-plus" ng-click="AddnewStadium()">{{CreateNewStadium}}</a></span>
+                                <!--<span><a class="deleteicon competitiondeleteicon">{{DeleteStadium}}</a></span>-->
+                                <span ng-disabled="Stadiums_disableDelete()"><a class="popupdelete"  value="{{DeleteStadium}}" ng-model="selected" ng-click="Stadiums_remove()">{{DeleteStadium}}</a></span>
+                                <span class="Ename">{{Stadiumsheader}}</span>
+                                <table class="table tablehead">
+                                    <thead>
+                                        <tr>
+                                            <th>{{Name}}</th>
+                                            <th>{{LogoName}}</th>
+                                            <th><input type="checkbox" ng-model="Stadiums_selectedAll" ng-click="Stadiums_checkAll()" /></th>
+                                        </tr>
+                                    </thead>               
+                                    <tbody id="idstadium">
+
+                                        <tr ng-repeat="stadium in templatemanageStadium.Stadiums">
+                                            <td>{{stadium.Name}}</td>
+                                            <td><img src="" ng-src="{{stadium.Logo}}" class="logo-img" /></td>
+                                            <td>
+                                                <input type="checkbox" ng-bind="stadium.Logo" ng-model="stadium.selected" ng-checked="stadium.selected" ng-click="Stadiums_UnCheckMain()" />
+
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer">
+                        <button class="btn btn-default" data-dismiss="modal" ng-click="reset()">{{Cancel}}</button>
+                        <button class="btn btn-default" ng-click="save()">{{Save}}</button>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+<div sidebar-page></div>

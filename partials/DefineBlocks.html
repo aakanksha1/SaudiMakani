@@ -1,0 +1,293 @@
+﻿<div class="createEvent" ng-controller="DefineBlocksController">
+    <form name="CreateEventForm" ng-submit="submitForm()">
+        <div>
+            <div id="breadcrumb" class="right-data">
+                <ul class="crumbs">
+                    <li><a href="#" class="first"><span></span>{{crum.tab}}</a></li>
+                    <li><a href="#" class="second"><span></span>{{crum.sidebar}}</a></li>
+                </ul>
+            </div>
+            <h4>{{Event}}</h4>
+            <ul class="nav nav-pills navtab">
+                <li id="eventDetails"><a data-toggle="pill" href="/eventmanage/events/CreateNewEvent" ng-click="eventDetail()">{{EventDetailsHeader}} <span class="rounded">1</span></a></li>
+                <li class="active" id="defineBlocks"><a data-toggle="pill" href="/eventmanage/events/defineblocks" ng-click="defineBlock()">{{DefineBlock}} <span class="rounded">2</span></a></li>
+                <li id="defineSeats"><a data-toggle="pill" href="/eventmanage/events/defineseats" ng-click="defineSeat()">{{DefineSeats}}<span class="rounded">3</span></a></li>
+            </ul>
+        </div>
+        <div class="tab-content">
+
+            <!-- Event Details start -->
+            <!--<div class="emptyfooter"></div>-->
+            <!-- Seat Details end-->
+            <!--saddam-->
+            <div id="define-block">
+
+
+
+                <div class="col-md-12">
+
+                    <div class="col-md-5" id="editStadiumHolder" ng-show="editEventDetailsInfo">
+
+                        <svg class="boardSvg" id="boardForDefineBlocks"></svg>
+
+                    </div>
+
+
+
+
+                    <div class="col-md-7" ng-switch="" ng-show="defineBlocklInformation">
+
+
+                        <h5>Block {{selectedBlockId}}</h5>
+
+
+                        <div class="form-group checkbox-align">
+
+
+                            <div class="col-md-6 col-sm-6">
+                                <input type="checkbox"> Box is available for sale online
+                            </div>
+
+                            <div class="col-md-6 col-sm-6">
+                                <input type="checkbox"> Manual box is available for sale
+
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="form-group">
+                            <span class="right-data"><b>Details of box</b></span>
+                        </div>
+
+
+                        <div class="row">
+                            <table class="table details-stadium">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Information
+                                        </th>
+                                        <th>Total</th>
+                                        <th>
+                                            Online
+                                        </th>
+                                        <th>Flashlight</th>
+                                        <th>Suspended</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <tr>
+                                        <td>Available</td>
+                                        <td>2000</td>
+                                        <td>1000</td>
+                                        <td>500</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sold</td>
+                                        <td>3000</td>
+                                        <td>500</td>
+                                        <td>200</td>
+                                        <td></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Total</td>
+                                        <td>5000</td>
+                                        <td>1500</td>
+                                        <td><input type="number" /></td>
+                                        <td><input type="number" /></td>
+                                    </tr>
+
+
+                                </tbody>
+                            </table>
+                        </div>
+
+
+
+                        <div class="form-group checkbox-align">
+                            <input type="checkbox"> Seat Sold Box
+                        </div>
+
+
+
+                        <div class="form-group">
+
+
+                            <span class="left-data"><a href="" class="icon-plus" data-toggle="modal" data-target="#categoryEventPrice-Add-Modal" ng-click="addEventCategoryprice()">{{AddCategory}}</a></span>
+                            <span class="left-data"><a href="" class="icon-plus" data-toggle="modal" data-target="#categoryEventPrice-Add-Modal" ng-click="addEventCategoryprice()">{{Addnewprice}}</a></span>
+
+
+                            <span class="left-data"><a class="icon-pencil">Edit</a></span>
+                            <span class="right-data"><b>Details of Ticket Prices</b></span>
+                        </div>
+
+                        <div class="row">
+                            <table class="table details-stadium">
+
+                                <thead>
+                                    <tr>
+                                        <th>Date of Activation Price</th>
+                                        <th>Price</th>
+                                        <th>Category</th>
+                                        <th><input type="checkbox" ng-model="EventPriceDetail_selectedAll" ng-click="EventPriceDetail_checkAll()" class="right-data"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <tr ng-repeat="EventPriceDetail in TPEDetails |orderBy:orderByField:reverseSort">
+                                        <td>{{EventPriceDetail.ActivationDate | date:'yyyy-MM-dd'}}</td>
+                                        <td><input type="number" ng-value="{{EventPriceDetail.Price}}" /></td>
+                                        <td>{{EventPriceDetail.Categories}}</td>
+                                        <td>
+                                            <input type="checkbox" ng-model="EventPriceDetail.selected" ng-checked="EventPriceDetail.selected" ng-click="EventPriceDetail_UnCheckMain()" />
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="col-md-12" ng-show="defineBlocklInformation">
+
+                    <div class="form-group">
+                        <span class="right-data"><b>Pricing Details</b></span>
+                    </div>
+
+                    <div class="form-group checkbox-align">
+
+
+
+                        <input type="checkbox">Use the default Price Plan
+
+
+                        <div class="col-md-12">
+
+                            <div class="col-md-4">
+
+                                <label for="sel1">Box Price Category</label>
+                                <!--<select class="form-control">
+                                    <option>Golden</option>
+                                    <option>Silver</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                </select>-->
+                                <select required ng-model="EventPriceDetail.BoxPriceCategory" name="BoxPriceCategoryselected" class="form-control selectstyle" ng-options="item.key as item.value for item in EventDetails.BoxPriceCategory">
+                                    <option value="">-- {{select}} --</option>
+                                </select>
+
+                            </div>
+                            <div class="col-md-4">
+                                <label for="sel1">Orientation Manual seats version</label>
+                                <!--<select class="form-control">
+                                    <option>Boost</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                </select>-->
+                                <select required ng-model="EventPriceDetail.OrientationManualseatsversion" name="OrientationManualseatsversionselected" class="form-control selectstyle" ng-options="item.key as item.value for item in EventDetails.OrientationManualseatsversion">
+                                    <option value="">-- {{select}} --</option>
+                                </select>
+
+                            </div>
+                            <div class="col-md-4">
+
+                                <label for="sel1">Classification</label>
+                                <!--<select class="form-control">
+                                    <option>MapleStory</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                </select>-->
+                                <select required ng-model="EventPriceDetail.Classification" name="Classificationselected" class="form-control selectstyle" ng-options="item.key as item.value for item in EventDetails.Classification">
+                                    <option value="">-- {{select}} --</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+
+                        <div class="col-md-12 footer">
+                            <a class="btn btn-default" href="" ng-click="reset()">{{Cancel}}</a>
+                            <button id="btnLoadSavedStadium" class="btn btn-default" ng-click="save()">{{Save}}</button>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+    </form>
+
+
+    <div class="modal fade modalcompetition" id="categoryEventPrice-Add-Modal" role="dialog">
+        <form ng-submit="submitEventCategoryprice()" name="addEventCategoryprice">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close left-data" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title right-data">{{AddEventCategoryPriceheader}}</h4>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" ng-model="EventPriceDetail.id" />
+                        <div class="row">
+                            <div class="col-md-6 col-sm-12" show-errors>
+                                <label for="name">{{Price}}</label>
+                                <input type="text" min="0" class="form-control" required name="price" ng-model="EventPriceDetail.Price" placeholder="{{EnterPrice}}">
+                            </div>
+                            <div class="col-md-6 col-sm-12" show-errors>
+                                <label for="name">{{Category}}</label>
+                                <select ng-model="EventPriceDetail.Categories" name="selectedCategories" required class="form-control input-width" ng-options="item.key as item.value for item in EventDetails.Categories">
+                                    <option value="">-- {{select}} --</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="footer">
+                        <button class="btn btn-default" data-dismiss="modal" ng-click="resetCategoryprice()">{{Cancel}}</button>
+                        <input type="submit" class="btn btn-default" ng-click="saveCategoryPrice()" value="{{Save}}" />
+
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+
+</div>
+
+
+
+
+<div sidebar-page></div>
+
+<!--begin:scripts
+==================================================================================== -->
+<script src="../MakaniJS/SvgScripts/stadium-configurable-elements.js"></script>
+<script src="../MakaniJS/SvgScripts/stadium-initial.js"></script>
+<script src="../MakaniJS/SvgScripts/stadium-define-block.js"></script>
+<script src="../MakaniJS/SvgScripts/stadium-draw.js"></script>
+<script src="../MakaniJS/SvgScripts/stadium-block-events.js"></script>
+<script src="../MakaniJS/SvgScripts/stadium-print-seats-by-colrows.js"></script>
+<script src="../MakaniJS/SvgScripts/stadium-print-seats-in-custom-shape.js"></script>

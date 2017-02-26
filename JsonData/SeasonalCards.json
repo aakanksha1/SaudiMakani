@@ -1,0 +1,139 @@
+﻿{
+    "event1": {
+        "id": 0,
+        "firstClubId": 0,
+        "secondClubId": 0,
+        "eventDateTime": "2016-11-07T10:41:59.529Z",
+        "stadiumId": 0,
+        "purchaseStartTime": "2016-11-07T10:41:59.529Z",
+        "purchaseEndTime": "2016-11-07T10:41:59.529Z",
+        "maxNumberOfTickets": 0,
+        "isEnabledForPurchase": true,
+        "name": "string",
+        "defaultPrice": 0,
+        "competitionId": 0,
+        "competitionName": "string",
+        "enableProfile": true,
+        "billDurationForSuites": "string",
+        "billDuration": "string",
+        "enableSuites": true,
+        "eventImage": "string",
+        "isActive": true,
+        "enablePurchaseForOtherClubFans": true,
+        "description": "string",
+        "isFreeEvent": true,
+        "purchaseSessionTimeout": 0,
+        "ticketTemplateBrowserPCId": 0,
+        "ticketTemplateBrowserMobileId": 0,
+        "ticketTemplateEmailId": 0,
+        "ticketTemplateSMSId": 0,
+        "relatedEventId": 0,
+        "eventCategories": [
+            {
+                "id": 0,
+                "eventId": 0,
+                "categoryTypeId": 0,
+                "price": 0,
+                "activationDate": "2016-11-07T10:41:59.529Z"
+            }
+        ],
+        "eventSponsors": [
+            {
+                "id": 0,
+                "eventId": 0,
+                "sponsorId": 0
+            }
+        ],
+        "eventSuites": [
+            {
+                "id": 0,
+                "stadiumId": 0,
+                "suiteName": "string",
+                "numberOfSeats": 0,
+                "suitePrice": 0,
+                "area": 0,
+                "eventId": 0,
+                "isActive": true
+            }
+        ],
+        "eventEntities": [
+            {
+                "id": 0,
+                "eventId": 0,
+                "entityId": 0
+            }
+        ],
+        "userName": "string",
+        "templateId": 0,
+        "status": "string"
+    },
+
+    "event2": {
+        "id": 0,
+        "firstClubId": 0,
+        "secondClubId": 0,
+        "eventDateTime": "2016-11-07T10:41:59.529Z",
+        "stadiumId": 0,
+        "purchaseStartTime": "2016-11-07T10:41:59.529Z",
+        "purchaseEndTime": "2016-11-07T10:41:59.529Z",
+        "maxNumberOfTickets": 0,
+        "isEnabledForPurchase": true,
+        "name": "string",
+        "defaultPrice": 0,
+        "competitionId": 0,
+        "competitionName": "string",
+        "enableProfile": true,
+        "billDurationForSuites": "string",
+        "billDuration": "string",
+        "enableSuites": true,
+        "eventImage": "string",
+        "isActive": true,
+        "enablePurchaseForOtherClubFans": true,
+        "description": "string",
+        "isFreeEvent": true,
+        "purchaseSessionTimeout": 0,
+        "ticketTemplateBrowserPCId": 0,
+        "ticketTemplateBrowserMobileId": 0,
+        "ticketTemplateEmailId": 0,
+        "ticketTemplateSMSId": 0,
+        "relatedEventId": 0,
+        "eventCategories": [
+            {
+                "id": 0,
+                "eventId": 0,
+                "categoryTypeId": 0,
+                "price": 0,
+                "activationDate": "2016-11-07T10:41:59.529Z"
+            }
+        ],
+        "eventSponsors": [
+            {
+                "id": 0,
+                "eventId": 0,
+                "sponsorId": 0
+            }
+        ],
+        "eventSuites": [
+            {
+                "id": 0,
+                "stadiumId": 0,
+                "suiteName": "string",
+                "numberOfSeats": 0,
+                "suitePrice": 0,
+                "area": 0,
+                "eventId": 0,
+                "isActive": true
+            }
+        ],
+        "eventEntities": [
+            {
+                "id": 0,
+                "eventId": 0,
+                "entityId": 0
+            }
+        ],
+        "userName": "string",
+        "templateId": 0,
+        "status": "string"
+    }
+}

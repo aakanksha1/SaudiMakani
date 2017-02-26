@@ -1,0 +1,557 @@
+﻿<div class="createNewStadium" ng-controller="CreateNewStadiumController">
+
+    <div id="breadcrumb" class="right-data">
+        <ul class="crumbs">
+            <li><a href="#" class="first"><span></span>{{crum.tab}}</a></li>
+            <li><a href="#" class="second"><span></span>{{crum.sidebar}}</a></li>
+        </ul>
+    </div>
+
+
+    <div id="add-edit-stadium">
+
+        <div>
+
+            <h4>{{CreateEditStadium}}</h4>
+
+            <ul class="nav nav-pills navtab">
+                <li id="stadiumDetails" class="active"><a data-toggle="pill" href="" ng-click="stadiumInfo()">{{StadiumDetails}} <span class="rounded">1</span></a></li>
+                <li id="blockDetails" class="disabled"><a data-toggle="pill" class="in-active" href=""  ng-click="blockInfo()">{{BlockDetails}}<span class="rounded">2</span></a></li>
+                <li id="seatDetails" class="disabled"><a data-toggle="pill" class="in-active" href="" ng-click="seatInfo()" >{{SeatDetails}}<span class="rounded">3</span></a></li>
+            </ul>
+        </div>
+
+        <div id="stadiumChance" class="tab-content">
+            <!-- Stadium Details start -->
+            <div id="eve-details" class="tab-pane fade in active" ng-show="stadiumInformation">
+
+                <div class="CreateNewStadium">
+                    <form data-ng-submit="newStadiumInfo()" name="StadiumDetailsForm">
+                        <div>{{GeneralDetails}}</div>
+                        <div class="row">
+
+                            <div class="col-md-6 col-sm-6">
+                                <div class="col-md-12 col-sm-12">
+                                    <div class="col-md-6 locationleft">
+                                        <label for="">{{Location}}</label>
+                                        <input class="form-control input-group-md" ng-model="stadium.longitude" type="text" placeholder="{{Longitude}}" />
+                                    </div>
+                                    <div class="col-md-6 location">
+                                        <label for="">&nbsp;</label>
+                                        <input class="form-control input-group-md" name="" type="text" ng-model="stadium.latitude" placeholder="{{Latitude}}" />
+                                    </div>
+                                    </div>
+                                </div>
+                            <div class="col-md-6 col-sm-6 commontext" show-errors>
+                                <label for="">{{Name}}</label>
+                                <input class="form-control input-group-md input-width" name="Name" type="text"  required ng-model="stadium.Name" placeholder="{{LoremIpsum}}" />
+
+                            </div>
+
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-md-6 col-sm-6 commontext" show-errors>
+
+                                <label class="logo">{{Logo}}</label>
+
+
+                                <input type="file" id="fileUpload" required name="filepath" fileread="stadium.Logo" accept="image/*" multiple app-filereader class="custom-file-upload-hidden" ng-model="stadium.Logo">
+                                <input type="text" id="txtLogo" class="file-upload-input right-data form-control" readonly/>
+
+                                <!--<input type="file" id="fileLogo" name="Logo" multiple="" accept='image/*' ng-model="stadium.Logo" class="custom-file-upload-hidden" fd-input file-names="fileNames">
+                                <input type="text" ng-value="{{stadium.Logo}}" ng-model="stadium.Logo"class="file-upload-input right-data form-control uploadImage" name="Logo" required value="{{fileNames}}" id="filename" ng-bind="filepath" />-->
+
+                                <span class="file-upload-button">{{Browse}}</span>
+                         
+                            </div>
+
+                            <div class="col-md-6 col-sm-6 commontext" show-errors>
+                                <label for="exampleSelect1">{{City}}</label>
+                                <select id="ddlCity" required ng-model="stadium.City" name="selectcity" class="form-control input-width selectstyle" ng-options="item.key as item.value for item in Stadium">
+                                    <option value="">-- {{select}} --</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="col-md-6 col-sm-6 commontext" show-errors>
+
+                                <label class="logo">{{UploadstadiumImage}}</label>
+                                <input type="file" id="chooseStadiumPic"  name="Image" multiple="" accept='image/*' ng-model="stadium.stadiumImage" class="custom-file-upload-hidden" fl-input file-name="fileName">
+                                <input type="text" class="file-upload-input right-data form-control" name="Image" required value="{{fileName}}" id="filestadiumImage" ng-bind="filepath" readonly/>
+
+                                <span class="file-upload-button">{{Browse}}</span>
+
+
+                            </div>
+
+                            <div class="col-md-6 col-sm-6 commontext" show-errors>
+                                <label for="">{{Capacity}}</label>
+                                <input class="form-control input-group-md input-width" name="capacity" ng-model="stadium.capacity" required type="number" min="0" placeholder="{{Seats}}" />
+                            </div>
+                        </div>
+
+
+                        <div class="newstadium">
+                            <div class="form-group">
+                                <span class="left-data"><a class="icon-plus" id="ancherAdd" ng-click="addPricingSchema()">{{Add}}</a></span>
+                                <span class="left-data">
+                                    <a class="deleteicon" ng-disabled="create_stadium_disableDelete()" value="{{Delete}}" ng-model="selected" ng-click="removePricingSchemas()">{{Delete}}</a>
+                                </span>
+                                <span class="right-data"><b>{{DefaultPricing}}</b></span>
+                            </div>
+
+                            <!--DefaultPricingSchema-->
+                            <table class="table details-stadium">
+
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            <a ng-click="orderPricingSchema='Pricing'; reversePricingSchema = !reversePricingSchema">
+                                                {{Pricing}} <span ng-show="orderPricingSchema == 'Pricing'">
+                                                    <span ng-show="!reversePricingSchema" class="icon-move-up"></span>
+                                                    <span ng-show="reversePricingSchema" class="icon-move-down"></span>
+                                                </span>
+                                            </a>
+                                        </th>
+                                        <th>{{Category}}</th>
+                                        <th><input type="checkbox" ng-model="DefaultPricingselectedAll" ng-click="create_stadium_checkAll()"></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="idstadium">
+
+                                    <tr ng-repeat="PricingSchema in DefaultPricingSchema" |orderBy:orderPricingSchema:reversePricingSchema">
+                                        <td ng-if="PricingSchema.isNew"><input type="text" id="txtPriceSchema" class="form-control" ng-model="PricingSchema.Defaultpricingdata" required/></td>
+                                        <td ng-if="!PricingSchema.isNew">{{PricingSchema.Defaultpricingdata}}</td>
+                                        <td>
+                                            <span ng-if="!PricingSchema.isNew">
+                                                {{ showPricingSchema(PricingSchema) }}                                               
+                                            </span>
+                                           
+                                            <!--{{PricingSchema.selectedCategory}}-->
+                                            <span  ng-if="PricingSchema.isNew" >
+                                                <select id="ddlSelect" name="ddlSelect" ng-model="PricingSchema.selectedCategory" ng-change="checkDuplicateCategory(PricingSchema)" class="form-control input-width" ng-options="item.id as item.name for item in templatemanageStadium.DefaultPricingSchemacategories" required>
+                                                    <option value="">-- {{select}} --</option>
+                                                </select>
+                                                <span class="error-msg">{{errorMessage}}</span>
+                                            </span>
+                                        </td>
+                                        <td ng-if="!PricingSchema.isNew">
+                                            <input type="checkbox" ng-model="PricingSchema.selected" ng-checked="PricingSchema.selected" ng-click="create_stadium_UnCheckMain()" />
+                                            <!--<label></label>-->
+                                       
+                                        </td>
+                                        <td ng-if="PricingSchema.isNew">
+                                            <input type="button" id="btnSubmitPriceSchema" class="btn btn-default" ng-click="submitDefaultPricing(PricingSchema)" value="{{Save}}" />
+                                            <input type="button"  class="btn btn-default" ng-click="cancelDefaultPricing(PricingSchema)" value="{{Cancel}}" />
+                                                      
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                            
+
+                            <div class="EditSuits">
+                                <div class="form-group">
+                                    <span class="left-data"><a href="" class="icon-plus" ng-click="addsuites('add')" data-toggle="modal" data-target="#Add-EditSuites-Modal">{{Add}}</a></span>
+                                    <span class="left-data"><a class="icon-pencil" ng-disabled="create_stadium_disableEdit()" data-toggle="modal" data-target="#Add-EditSuites-Modal" ng-click="editEditSuite('edit')">{{Edit}}</a></span>
+                                    <span class="right-data"><b>{{EditSuitesheader}}</b></span>
+                                </div>
+
+                                <!--Edit Suites-->
+                                <table class="table details-stadium">
+
+                                    <thead>
+
+                                        <tr>
+                                            <th>
+                                                {{Image}} 
+                                            </th>
+                                            <th>
+                                                <a ng-click="orderEditSuite='Size'; reverseEditSuite = !reverseEditSuite">
+                                                    {{Size}} <span ng-show="orderEditSuite == 'Size'">
+                                                        <span ng-show="!reverseEditSuite" class="icon-move-up"></span>
+                                                        <span ng-show="reverseEditSuite" class="icon-move-down"></span>
+                                                    </span>
+                                                </a>
+                                            </th>
+                                            <th>
+                                                <a ng-click="orderEditSuite='Seats'; reverseEditSuite = !reverseEditSuite">
+                                                    {{Seats}} <span ng-show="orderEditSuite == 'Seats'">
+                                                        <span ng-show="!reverseEditSuite" class="icon-move-up"></span>
+                                                        <span ng-show="reverseEditSuite" class="icon-move-down"></span>
+                                                    </span>
+                                                </a>
+                                            </th>
+                                            <th>
+                                                <a ng-click="orderEditSuite='Price'; reverseEditSuite = !reverseEditSuite">
+                                                    {{Price}} <span ng-show="orderEditSuite == 'Price'">
+                                                        <span ng-show="!reverseEditSuite" class="icon-move-up"></span>
+                                                        <span ng-show="reverseEditSuite" class="icon-move-down"></span>
+                                                    </span>
+                                                </a>
+                                            </th>
+                                            <th>
+                                                <a ng-click="orderEditSuite='Name'; reverseEditSuite = !reverseEditSuite">
+                                                    {{Name}} <span ng-show="orderEditSuite == 'Name'">
+                                                        <span ng-show="!reverseEditSuite" class="icon-move-up"></span>
+                                                        <span ng-show="reverseEditSuite" class="icon-move-down"></span>
+                                                    </span>
+                                                </a>
+                                            </th>
+                                            <th>
+                                                <!--<input type="checkbox" ng-model="editsiuteselectedAll" ng-click="checkAll()">-->
+                                                <!--<label></label>-->
+                                            </th>
+                                        </tr>
+
+                                    </thead>
+                                    <tbody>
+
+                                        <tr ng-repeat="editSuite in EditSuite |orderBy:orderEditSuite:reverseEditSuite">
+                                            <td><img ng-src="{{editSuite.Image}}" fd-input file-name="fileLogoName" class="logo-img" /></td>
+                                            <td>{{editSuite.Size}}</td>
+                                            <td>{{editSuite.Seats}}</td>
+                                            <td>{{editSuite.Price}}</td>
+                                            <td>{{editSuite.Name}}</td>
+                                            <td>
+                                                <input type="checkbox" ng-model="editSuite.selected" ng-checked="editSuite.selected" ng-click="edit_siute_UnCheckMain()" />
+                                                <!--<label></label>-->
+                                            </td>
+                                        </tr>
+                                    </tbody>
+
+                                </table>
+
+                                <div class="footer">
+
+                                    <a class="btn btn-default" href="/templatemanage"  ng-click="reset()">{{Cancel}}</a>
+                                    <input id="btnSaveStadiumDetails" type="submit" class="btn btn-default" ng-click="save()" value="{{Save}}" />
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+            <!--Block Details start-->
+            <div class="row stadium-block-details" id="block-details" ng-show="blockInformation">
+
+                <!-- Stadium data-->
+
+                <!--<div>
+                    <img ng-src="http://localhost:49653/Uploads/3885BFEA.png"/>
+                </div>-->
+
+                <div class="col-md-7 col-sm-7" id="stadiumHolder">
+                    <svg class="boardSvg" id="boardSvg">{{blocksInfo.blockname}}</svg>
+                </div>
+
+                <div class="col-md-4 col-sm-4 blockdetailsshow">
+
+                    <div class="row blockbuttons">
+                        <span class="left-data" id="addCustomBlock" ng-click="customForm()"><a href="" class="icon-plus">Add Custom Blocks</a></span>
+                        <span class="left-data" id="addRectangularBlock" ng-click="rectForm()"><a href="" class="icon-plus">Add Rectangular Blocks</a></span>
+                    </div>
+
+                    <form ng-submit="newBlockInfo()" ng-show="blockFormDetails">
+
+                        <h4>{{BlockDetails}}</h4>
+                        <div class="col-md-12 col-sm-12">
+                            <label for="name">{{Name}}</label>
+                            <input type="text" class="form-control" id="name" ng-model="selectedBlockData.blockname" value="{{selectedBlockData.blockname}}"  placeholder="{{EnterBlockName}}" required>
+                        </div>
+                        
+                        <div class="col-md-12 col-sm-12">
+                            <label for="name">{{NoofSeats}}</label>
+                            <input type="number" class="form-control" id="defineSeatQty" ng-model="selectedBlockData.numseats" placeholder="No. of Seats" min="0" required>
+                        </div>
+
+
+
+                        <div class="col-md-12 col-sm-12">
+                            <label for="Color">{{Color}}</label>
+                            
+                            <select class="form-control" id="colorPickerForStadium" ng-model="selectedBlockData.Colors" ng-options="item.name for item in colors.Colors">
+                                <option value="">--{{Select}}--</option>
+                            </select>
+
+                        </div>
+                        <div class="col-md-12 col-sm-12 ng-hide">
+                            <label for="name">Selected Block Points</label>
+                            <input ng-model="selectedBlockData.selectedBlockPoints" id="selectedBlockPoints" value="{{blockData}}" />
+                        </div>
+                        <div class="col-md-12 col-sm-12">
+                            <label for="Gate">{{Gate}}</label>
+                            <input type="text" class="form-control" id="defineGate" ng-model="selectedBlockData.Gates" placeholder="Gate" required>
+                        </div>
+
+
+                        <div class="col-md-12 col-sm-12">
+                            <label for="E-Gate/Ramp">{{EGateRamp}}</label>
+                            <input type="text" class="form-control" id="defineEGate" ng-model="selectedBlockData.EGates"  placeholder="Ramp" required>
+                            <!--<select ng-model="blockData.EGates" ng-change="isShowHide()" class="form-control selectstyle" ng-options="item.name for item in gateENames.EGates">
+                                <option value="">-- {{Select}} --</option>
+                            </select>-->
+                        </div>
+
+                        <div class="col-md-12 col-sm-12 ng-binding">
+                            <input type="checkbox" ng-model="seats.isDefined" /><span>{{Seatshasdefined}}</span>
+                        </div>
+                        <div class="col-md-12 col-sm-12">
+                            <label for="Color">{{Classbox}}</label>
+
+                            <select class="form-control" id="colorPickerForStadium" ng-model="selectedBlockData.Classbox" ng-options="item.name for item in classBox.Classbox">
+                                <option value="">--{{Select}}--</option>
+                            </select>
+
+                        </div>
+
+                        <div class="col-md-12 col-sm-12 block-detail-footer">
+
+                            <span class="col-md-4 col-sm-4"><a class="btn btn-default" href="" ng-click="newblockCancel()">{{Cancel}}</a></span>
+
+                            <span class="col-md-4 col-sm-4"><a class="btn btn-default" ng-click="blockInfo();blockRemove();">{{Delete}}</a></span>
+
+                            <span class="col-md-4 col-sm-4"><input id="btnSaveBlockDetails" type="submit" class="btn btn-default" value="Save" ng-disabled="!seats.isDefined" /></span>
+
+                            <!--btn-remove-this-block-->
+
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+            <!--Seat Details start-->
+
+            <div class="stadium-seat-details" id="seat-details" ng-show="seatInformation">
+                <div class="col-md-12 col-sm-12" ng-show="activeCustomSeat">
+                    <input type="button" id="btnUpdateRowsColsForCustomShape" class="btn btn-default" value="Print seats for custom block" />
+                </div>
+
+
+                <div class="col-md-12 col-sm-12" ng-show="activeRectSeat">
+                    <h5 class="left-data"><a href="" class="ui-icon-pencil icon-pencil" data-toggle="modal" data-target="#create-rows-cols">Creation of rows and columns</a> </h5>
+                    <h4 class="right-data"><a href="">{{selectedBlockData.blockname}}</a> </h4>
+                </div>
+
+                <div class="col-md-12 col-sm-12 seat-details">
+                    <!--show Seat Details-->
+                    <div id="stadiumBlockHolder" class="board block-holder col-md-7 col-sm-7">
+                        
+                    </div>
+                  
+                        <!--show Seat content Details-->
+                        <div class="col-md-4 col-sm-4" ng-hide="SeatSelected">
+                            <form ng-submit="selectedSeatDetails()">
+                                <div class="row seat-details"><b class="right-data">{{Detailsseat}}</b></div>
+
+                                <table class="table table-striped seat-detail-table col-md-6 col-sm-6">
+                                    <thead>
+                                        <tr>
+                                            <th>{{class}}</th>
+                                            <th>{{Seatnumber}}</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="seat in selectedSeats">
+                                            <td>{{seat.row}}</td>
+                                            <td>{{seat.id}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="col-md-12 col-sm-12">
+                                    <label for="Color" class="ng-binding">{{Gateway}}</label>
+                                    <select class="form-control" ng-model="seatdata.gateway" ng-options="item.name for item in gateENames.EGates">
+                                        <option value="" class="" selected="selected">--{{select}}--</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-12 col-sm-12">
+                                    <label for="Color" class="ng-binding">{{Color}}</label>
+                                    <select id="defineColorToSeatSelected" class="form-control" ng-model="seatdata.SeatColors" ng-options="item.name for item in seatColors.SeatColors">
+                                        <option value="" class="" selected="selected">--{{select}}--</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-12 col-sm-12 block-seat-footer">
+
+                                    <span class="col-md-4 col-sm-4"><a class="btn btn-default ng-binding" href="" ng-click="stadiumInfo()">{{Cancel}}</a></span>
+
+                                    <span class="col-md-4 col-sm-4"><a class="btn btn-default ng-binding" ng-click="deleteSeatsInfo()">{{Delete}}</a></span>
+
+                                    <span class="col-md-4 col-sm-4"><input id="btnSaveBlockDetails" type="submit" class="btn btn-default" value="{{Save}}"></span>
+                                    <!--btn-remove-this-block-->
+
+                                </div>
+                            </form>
+                        </div>
+
+</div>
+                <div class="col-md-12 col-sm-12 footer" ng-show="seatInformationfooter">
+
+                    <a class="btn btn-default ng-binding" href="/templatemanage" ng-click="reset()">Cancel</a>
+                    <input id="btnSaveStadiumDetails" type="button" class="btn btn-default" ng-click="saveDefinedSeats()" value="Save">
+                </div>
+
+
+                <!-- Modal for Define rows and columns -->
+                <div id="create-rows-cols" class="modal fade" role="dialog">
+                    <form ng-submit="colrowseatInfo()">
+
+                        <div class="modal-dialog modal-md">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">{{Creatrowscolumns}}</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row row-col-modal">
+                                    <div class="col-md-6 col-sm-6">
+                                        <label for="name" class="right-data">{{NumberofColumns}}</label>
+
+                                        <input class="form-control input-width" type="number" ng-model="defineSeats.cloumnData" id="defineColQty" />
+                                    </div>
+                                    <div class="col-md-6 col-sm-6">
+                                        <label for="name" class="right-data">{{NumberofRows}}</label>
+                                        <input class="form-control input-width" type="number" ng-model="defineSeats.rowData" id="defineRowQty" />                                    </div>
+                                </div>
+                                <div class="row row-col-modal">
+                                    <div class="col-md-6 col-sm-6">
+                                        <label for="name" class="right-data">{{Increasingcolumns}}</label>
+                                        <select id="entranceX" name="Gate" ng-model="defineSeats.columnPosition" class="form-control input-width">
+                                            <option value="Right">Right</option>
+                                            <option value="Left">Left</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6">
+                                        <label for="name" class="right-data">{{Increasingrows}}</label>
+                                        <select id="entranceY" name="Gate" ng-model="defineSeats.rowPosition" class="form-control input-width">
+                                            <option value="Top">{{Top}}</option>
+                                            <option value="Bottom">{{Bottom}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="footer">
+
+                                <button class="btn btn-default" data-dismiss="modal">{{Cancel}}</button>
+                                <input type="submit" id="btnUpdateRowsCols" class="btn btn-default" value="Save" />
+                             </div>
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <!--</form>-->
+    <div class="modal fade modalcompetition" id="DefaultPricing-Add-Modal" role="dialog">
+        <form ng-submit="submitDefaultPricing()" name="AddDefaultPricingForm">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close left-data" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title right-data">{{AddDefaultPricingSchema}}</h4>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" ng-model="PricingSchema.id" />
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6" show-errors>
+                                <label for="name">{{Pricing}}</label>
+                                <input type="text" class="form-control" required name="Defaultpricingdata" ng-model="PricingSchema.Defaultpricingdata" id="Pricing" placeholder="{{EnterName}}">
+                            </div>
+                            <div class="col-md-6 col-sm-6" show-errors>
+                                <label for="name">{{Category}}</label>
+                                <select ng-model="PricingSchema.selectedCategory" name="selectedCategory" required class="form-control input-width" ng-options="item.id as item.name for item in templatemanageStadium.DefaultPricingSchemacategories">
+                                    <option value="">-- {{select}} --</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="footer">
+                        <button class="btn btn-default" data-dismiss="modal">{{Cancel}}</button>
+                        <input type="submit" class="btn btn-default" ng-click="PricingSchemaValidation()" value="{{Save}}" />
+
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+
+    <div class="modal fade modalcompetition" id="Add-EditSuites-Modal" role="dialog">
+        <form ng-submit="submitEditSuites()" name="EditSuitesForm">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close left-data" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title right-data">{{AddEditSuitesheader}}</h4>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" ng-model="editSuite.id" />
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 commontext" show-errors>
+                                <label for="name">{{Name}}</label>
+                                <input type="text" required class="form-control" name="EditSuiteName" ng-model="editSuite.Name" id="name" placeholder="{{EnterName}}">
+                            </div>
+                            <div class="col-md-6 col-sm-6 commontext" show-errors>
+                                <label for="name">{{Price}}</label>
+                                <input type="number" class="form-control" name="Price" ng-model="editSuite.Price" required id="name" placeholder="{{EnterPrice}}">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 commontext" show-errors>
+                                <label for="name">{{Seats}}</label>
+                                <input type="number" required class="form-control" name="Seats" ng-model="editSuite.Seats" id="name" placeholder="{{EnterSeats}}">
+                            </div>                         
+                            <div class="col-md-6 col-sm-6 commontext" show-errors>
+                                <label class="right-data">{{Logo}}</label>
+                                <input type="file" id="fileUpload" required name="filepath" fileread="editSuite.Image" accept="image/*" multiple app-filereader class="custom-file-upload-hidden" ng-model="editSuite.Image">
+                                <input type="text" id="txtSuiteLogo" ng-model="editSuite.LogoName" class="file-upload-input right-data form-control" readonly/>
+                                <span class="file-upload-button">{{Browse}}</span>
+                           </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 commontext" show-errors>
+                                <label for="name">{{Size}}</label>
+                                <input type="text" class="form-control" name="Size" required ng-model="editSuite.Size" id="name" placeholder="{{EnterSize}}">
+                            </div>
+                        </div>
+
+                        <div class="footer">
+                            <button class="btn btn-default" data-dismiss="modal" ng-click="resetEditSuite()">{{Cancel}}</button>
+                            <button class="btn btn-default" ng-click="EditSuites()" value="{{Save}}">{{Save}}</button>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div sidebar-page></div>
+<!--begin:scripts
+==================================================================================== -->
+<script src="../MakaniJS/SvgScripts/stadium-initial.js"></script>
+<script src="../MakaniJS/SvgScripts/stadium-define-block.js"></script>
+<script src="../MakaniJS/SvgScripts/stadium-draw.js"></script>
+<script src="../MakaniJS/SvgScripts/stadium-block-events.js"></script>
+<script src="../MakaniJS/SvgScripts/stadium-print-seats-by-colrows.js"></script>
+<script src="../MakaniJS/SvgScripts/stadium-print-seats-in-custom-shape.js"></script>

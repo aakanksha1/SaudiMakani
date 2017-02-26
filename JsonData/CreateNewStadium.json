@@ -1,0 +1,334 @@
+﻿[
+
+  {
+    "City": [
+      {
+        "key": 1,
+        "value": "Lorem Ipsum1"
+      },
+      {
+        "key": 2,
+        "value": "Lorem Ipsum2"
+      },
+      {
+        "key": 3,
+        "value": "Lorem Ipsum3"
+      },
+      {
+        "key": 4,
+        "value": "Lorem Ipsum4"
+      },
+      {
+        "key": 5,
+        "value": "Lorem Ipsum5"
+      }
+
+    ],
+
+    "DefaultPricingSchemacategories": [
+      {
+        "id": 1,
+        "name": "Lorem Ipsum1"
+      },
+      {
+        "id": 2,
+        "name": "Lorem Ipsum2"
+      },
+      {
+        "id": 3,
+        "name": "Lorem Ipsum3"
+      },
+      {
+        "id": 4,
+        "name": "Lorem Ipsum4"
+      },
+      {
+        "id": 5,
+        "name": "Lorem Ipsum5"
+      }
+
+    ],
+    "DefaultPricingSchemas": [
+      {
+        "id": 1,
+        "Defaultpricingdata": "Lorem Ipsum1",
+        "selectedCategory": 1,
+        "selected": false,
+        "isNew": false
+
+      },
+      {
+        "id": 2,
+        "Defaultpricingdata": "Lorem Ipsum2",
+        "selectedCategory": 2,
+        "selected": false,
+        "isNew": false
+      },
+      {
+        "id": 3,
+        "Defaultpricingdata": "Lorem Ipsum3",
+        "selectedCategory": 3,
+        "selected": false,
+        "isNew": false
+      },
+      {
+        "id": 4,
+        "Defaultpricingdata": "Lorem Ipsum4",
+        "selectedCategory": 4,
+        "selected": false,
+        "isNew": false
+      }
+    ],
+
+    "EditSuites": [
+      {
+        "id": 1,
+        "Image": "../../images/logo-icon.png#",
+        "LogoName": "logo-icon.png",
+        "Size": "Lorem Ipsum1",
+        "Seats": 1,
+        "Price": 100,
+        "Name": "Lorem Ipsum1",
+        "selected": false
+
+
+      },
+      {
+        "id": 2,
+        "Image": "../../images/logo-icon.png#",
+        "LogoName": "logo-icon.png",
+        "Size": "Lorem Ipsum2",
+        "Seats": 2,
+        "Price": 200,
+        "Name": "Lorem Ipsum2",
+        "selected": false
+
+      },
+      {
+        "id": 3,
+        "Image": "../../images/logo-icon.png#",
+        "LogoName": "logo-icon.png",
+        "Size": "Lorem Ipsum3",
+        "Seats": 3,
+        "Price": 300,
+        "Name": "Lorem Ipsum3",
+        "selected": false
+
+      },
+      {
+        "id": 4,
+        "Image": "../../images/logo-icon.png#",
+        "LogoName": "logo-icon.png",
+        "Size": "Lorem Ipsum4",
+        "Seats": 4,
+        "Price": 400,
+        "Name": "Lorem Ipsum4",
+        "selected": false
+
+      }
+    ],
+    "selected": { },
+
+    "Stadiums": [
+      {
+        "id": 1,
+        "Name": "Lorem Ipsum dolor sit1",
+        "Logo": "../../images/logo-icon.png#",
+        "LogoName": "logo-icon.png",
+        "City": 1,
+        "capacity": 200,
+        "longitude": 20,
+        "latitude": 40,
+        "stadiumImage": "../../images/logo-icon.png#",
+        "stadiumImageName": "logo-icon.png",
+        "selectedDefaultPricingSchemas": 1,
+        "selectedEditSuites": 1,
+        "selected": false
+
+      },
+      {
+        "id": 2,
+        "Name": "Lorem Ipsum dolor sit2",
+        "Logo": "../../images/logo-icon.png#",
+        "LogoName": "logo-icon.png",
+        "City": 2,
+        "capacity": 200,
+        "longitude": 20,
+        "latitude": 40,
+        "stadiumImage": "../../images/logo-icon.png#",
+        "stadiumImageName": "logo-icon.png",
+        "selectedDefaultPricingSchemas": 2,
+        "selectedEditSuites": 2,
+        "selected": false
+
+      },
+      {
+        "id": 3,
+        "Name": "Lorem Ipsum dolor sit3",
+        "Logo": "../../images/logo-icon.png#",
+        "LogoName": "logo-icon.png",
+        "City": 3,
+        "capacity": 200,
+        "longitude": 20,
+        "latitude": 40,
+        "stadiumImage": "../../images/logo-icon.png#",
+        "stadiumImageName": "logo-icon.png",
+        "selectedDefaultPricingSchemas": 3,
+        "selectedEditSuites": 3,
+        "selected": false
+
+      },
+      {
+        "id": 4,
+        "Name": "Lorem Ipsum dolor sit4",
+        "Logo": "../../images/logo-icon.png#",
+        "LogoName": "logo-icon.png",
+        "City": 4,
+        "capacity": 200,
+        "longitude": 20,
+        "latitude": 40,
+        "stadiumImage": "../../images/logo-icon.png#",
+        "stadiumImageName": "logo-icon.png",
+        "selectedDefaultPricingSchemas": 4,
+        "selectedEditSuites": 4,
+        "selected": false
+
+      },
+      {
+        "id": 5,
+        "Name": "Lorem Ipsum dolor sit5",
+        "Logo": "../../images/logo-icon.png#",
+        "LogoName": "logo-icon.png",
+        "City": 5,
+        "capacity": 200,
+        "longitude": 20,
+        "latitude": 40,
+        "stadiumImage": "../../images/logo-icon.png#",
+        "stadiumImageName": "logo-icon.png",
+        "selectedDefaultPricingSchemas": 1,
+        "selectedEditSuites": 1,
+        "selected": false
+
+      },
+      {
+        "id": 6,
+        "Name": "Lorem Ipsum dolor sit6",
+        "Logo": "../../images/logo-icon.png#",
+        "LogoName": "logo-icon.png",
+        "City": 2,
+        "capacity": 200,
+        "longitude": 20,
+        "latitude": 40,
+        "stadiumImage": "../../images/logo-icon.png#",
+        "stadiumImageName": "logo-icon.png",
+        "selectedDefaultPricingSchemas": 1,
+        "selectedEditSuites": 1,
+        "selected": false
+
+      }
+    ]
+  },
+
+
+  {
+    "Colors": [
+      {
+
+        "name": "Gray"
+
+      },
+      {
+
+        "name": "Silver"
+
+      },
+      {
+
+        "name": "Black"
+
+      }
+    ]
+  },
+
+  {
+    "Gates": [
+      {
+        "id": 1,
+        "name": "Gate1"
+
+      },
+      {
+        "id": 2,
+        "name": "Gate2"
+      },
+      {
+        "id": 3,
+        "name": "Gate3"
+      }
+    ]
+
+  },
+
+  {
+    "EGates": [
+      {
+        "id": 1,
+        "name": "EGate1"
+      },
+      {
+        "id": 2,
+        "name": "EGate2"
+      },
+      {
+        "id": 3,
+        "name": "EGate3"
+      }
+    ]
+
+
+  },
+
+  {
+    "SeatColors": [
+      {
+        "id": 1,
+        "name": "Gold"
+
+      },
+      {
+        "id": 2,
+        "name": "Orange"
+
+      },
+      {
+        "id": 2,
+        "name": "Green"
+
+      },
+      {
+        "id": 2,
+        "name": "Red"
+
+      }
+    ]
+  },
+  {
+    "Classbox": [
+      {
+        "id": 1,
+        "name": "Golden"
+
+      },
+      {
+        "id": 2,
+        "name": "Silver"
+
+      },
+      {
+        "id": 3,
+        "name": "Bronze"
+
+      }
+    ]
+  }
+]

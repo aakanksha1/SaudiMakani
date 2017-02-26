@@ -1,0 +1,98 @@
+/*#stadiumHolder{
+	width: 400px;
+	height: 400px;
+}*/
+#editStadiumHolder{
+	height: 400px;
+    width: 400px;
+}
+.blockName{
+    fill: rgba(255,255,255,0.5);
+}
+.drawn-block > circle[is-handle]{
+	fill: rgba(0,0,0,0.0);
+}
+.drawn-block:hover > circle,
+.drawn-block.selected > circle{
+	fill: #ccc;
+}
+.drawn-block > .is-handle{
+	fill: rgba(0,0,0,0.5);
+	cursor: e-resize;
+}
+.drawn-block > .is-block{
+	fill: rgba(0,0,0,0.5);
+}
+.drawn-block.selected > .is-block{
+	fill: rgba(0,0,0,0.8);
+}
+.drawn-block:hover > circle:hover{
+	fill: yellow;
+}
+.drawn-block > .btn-remove-block{
+	fill: rgba(255,0,0,0);
+}
+.drawn-block:hover > .btn-remove-block{
+	fill: rgba(255,0,0,0.5);
+}
+.drawn-block:hover > .btn-remove-block:hover{
+	fill: rgba(255,0,0,1);
+}
+.drawn-block > .is-block,
+.seat,
+.is-seat-real,
+.drawn-block > .btn-remove-block{
+	cursor: pointer;
+}
+.is-seat-base{
+    fill: rgba(0,0,0,0);
+    /*fill: rgba(255,255,255,0.2);*/
+}
+.is-seat-real {
+    fill: rgb(187, 187, 187);
+}
+.is-seat-real.selected {
+    fill: rgb(44, 147, 232);
+}
+
+.block-holder{
+/*	display: inline-block;*/
+	/*text-align: center;*/
+	background: rgba(0,0,0,0.8);
+}
+.block-holder svg{
+	border: 1px solid rgba(255,255,255,0.2);
+}
+.is-seat-label{
+	font-size: 60%;
+	font-family: sans-serif;
+}
+.is-block-saved{
+    fill: rgba(255, 0, 0, 0.1);
+}
+.drawn-block.selected > .is-block-saved{
+    stroke: rgba(0, 0, 0, 0.6);
+    stroke-width: 1px;
+}
+
+
+.block-holder{
+    position: relative;
+}
+.block-holder .wrapper{
+    /*border: 2px solid rgba(255,0,0,0.5);*/
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    overflow: auto;
+}
+
+.wrap-in{
+    /*border: 2px solid yellow;*/
+}
+
+.block-holder > .wrapper > .wrap-in > svg{
+    position: absolute;
+}

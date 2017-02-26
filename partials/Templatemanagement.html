@@ -1,0 +1,77 @@
+﻿<div class="template-manage" ng-controller="TemplatemanagementController">
+    <div id="breadcrumb" class="right-data">
+        <ul class="crumbs">
+            <li><a href="" class="first"><span></span>{{crum.tab}}</a></li>
+            <li><a href="" class="second"><span></span>{{crum.sidebar}}</a></li>
+        </ul>
+    </div>
+
+    <div class="templatemanage-wraper" id="template-stadium" ng-hide="showstadium">
+        <div class="form-group">
+            <span><a class="icon-plus" ng-click="createnewstadium('add')">{{CreateNewStadium}}</a></span>      
+            <span>
+                <a ng-disabled="disableEdit()" class="icon-pencil" value="{{EditStadium}}" ng-click="editStadiums('edit')">{{EditStadium}}</a>
+            </span>
+          
+            <span class="Ename">{{Stadiums}}</span>
+        </div>
+        <table class="table tablehead">
+            <thead>
+                <tr>
+                    <th>
+                        <a ng-click="orderByField='status'; reverseSort = !reverseSort">
+                            {{Name}}<span ng-show="orderByField == 'Name'">
+                                <span ng-show="!reverseSort" class="icon-move-up"></span>
+                                <span ng-show="reverseSort" class="icon-move-down"></span>
+                            </span>
+                        </a>
+                    </th>
+                    <th>
+                        {{Logo}}
+
+                    </th>
+                    <th>
+                        <a ng-click="orderByField='City'; reverseSort = !reverseSort">
+                            {{City}}<span ng-show="orderByField == 'City'">
+                                <span ng-show="!reverseSort" class="icon-move-up"></span>
+                                <span ng-show="reverseSort" class="icon-move-down"></span>
+                            </span>
+                        </a>
+                    </th>
+                    <th>
+                        <input type="checkbox" ng-model="selectedAll" ng-click="checkAll()">
+
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr ng-repeat="stadium in templatemanageStadium.Stadiums  | filter : paginate |orderBy:orderByField:reverseSort">
+                    <td>{{stadium.Name}}</td>
+                    <td><img src="" ng-src="{{stadium.Logo}}" class="logo-img" /></td>
+                    <td>{{showStadiumCity(stadium)}}</td>
+                    <!--<td>
+
+                        <select ng-model="stadium.City" class="form-control input-width templatmanage" ng-options="item.key as item.value for item in Stadium">
+                        </select>
+                    </td>-->
+                    <td>
+
+                        <input type="checkbox" ng-model="stadium.selected" ng-checked="stadium.selected" ng-click="UnCheckMain()" />
+
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+
+        <pagination total-items="totalItems" ng-model="currentPage"
+                    max-size="5" boundary-links="true" first-text="<<" previous-text="<" next-text=">" last-text=">>"
+                    items-per-page="numPerPage" class="pagination-sm">
+        </pagination>
+    </div>
+
+</div>
+
+
+<div sidebar-page></div>

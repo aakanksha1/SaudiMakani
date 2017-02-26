@@ -1,0 +1,118 @@
+<div class="event-manage" ng-controller="EventmanagementController">
+    <div id="breadcrumb" class="right-data">
+        <ul class="crumbs">
+            <li><a href="" class="first"><span></span>{{crum.tab}}</a></li>
+            <li><a href="" class="second"><span></span>{{crum.sidebar}}</a></li>
+        </ul>
+    </div>
+
+    <div id="eventmanagment-create-event">
+        <form ng-submit="addNew()">
+
+            <div class="form-group">
+
+
+                <!--<span><a href="#/CreateNewEvent" class="icon-plus">{{CreateNewEvent}}</a></span>
+                <span><a class="icon-pencil" ng-disabled="disableEdit()" value="{{EditEvent}}" data-toggle="modal" data-target="#eventmanage-edit-modal" ng-click="editEvent()">{{EditEvent}}</a></span>
+                <span><a class="deleteicon" ng-disabled="disableDelete()" value="{{DeactivateEvent}}" ng-model="selected" ng-click="remove()">{{DeactivateEvent}}</a></span>
+                <span class="Ename">{{Events}}</span>-->
+
+                <span>
+                    <a class="icon-plus" value="{{CreateNewEvent}}" ng-click="CreateNewEvents('add')">{{CreateNewEvent}}</a>
+                </span>
+                <span>
+                    <a ng-disabled="disableEdit()" class="icon-pencil" value="{{EditEvent}}" ng-click="editEvent('edit')">{{EditEvent}}</a>
+                </span>
+                <!--<span>
+                    <button ng-disabled="disableEdit()" class="icon-pencil btn-link"><a href="" ng-click="editEvent('edit')" value="{{EditEvent}}">{{EditEvent}}</a></button>
+                </span>-->
+               
+                <span>
+                    <a class="deleteicon" ng-disabled="disableDelete()" value="{{DeactivateEvent}}" ng-model="selected" ng-click="remove()">{{DeactivateEvent}}</a>
+                </span>
+                <span class="Ename">{{Events}}</span>
+            </div>
+
+            <table class="table tablehead eventmanagementrow">
+                <thead>
+                    <tr>
+                        <th>
+                            <a ng-click="orderByField='status'; reverseSort = !reverseSort">
+                                {{Status}} <span ng-show="orderByField == 'status'">
+                                    <span ng-show="!reverseSort" class="icon-move-up"></span>
+                                    <span ng-show="reverseSort" class="icon-move-down"></span>
+                                </span>
+                            </a>
+                        </th>
+                        <th>
+                            <a ng-click="orderByField='enddate'; reverseSort = !reverseSort">
+                                {{EndDate}} <span ng-show="orderByField == 'enddate'">
+                                    <span ng-show="!reverseSort" class="icon-move-up"></span>
+                                    <span ng-show="reverseSort" class="icon-move-down"></span>
+                                </span>
+                            </a>
+                        </th>
+                        <th>
+                            <a ng-click="orderByField='startdate'; reverseSort = !reverseSort">
+                                {{StartDate}} <span ng-show="orderByField == 'startdate'">
+                                    <span ng-show="!reverseSort" class="icon-move-up"></span>
+                                    <span ng-show="reverseSort" class="icon-move-down"></span>
+                                </span>
+                            </a>
+                        </th>
+                        <th>
+                            <a ng-click="orderByField='eventdate'; reverseSort = !reverseSort">
+                                {{EventDate}} <span ng-show="orderByField == 'eventdate'">
+                                    <span ng-show="!reverseSort" class="icon-move-up"></span>
+                                    <span ng-show="reverseSort" class="icon-move-down"></span>
+                                </span>
+                            </a>
+                        </th>
+                        <th>
+                            <a ng-click="orderByField='championship'; reverseSort = !reverseSort">
+                                {{Championship}} <span ng-show="orderByField == 'championship'">
+                                    <span ng-show="!reverseSort" class="icon-move-up"></span>
+                                    <span ng-show="reverseSort" class="icon-move-down"></span>
+                                </span>
+                            </a>
+                        </th>
+                        <th>
+                            <a ng-click="orderByField='eventstype'; reverseSort = !reverseSort">
+                                {{Events}} <span ng-show="orderByField == 'eventstype'">
+                                    <span ng-show="!reverseSort" class="icon-move-up"></span>
+                                    <span ng-show="reverseSort" class="icon-move-down"></span>
+                                </span>
+                            </a></th>
+                        <th>
+                            <input type="checkbox" ng-model="selectedAll" ng-click="checkAll()" />
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="eventDetail in EventDetails.Events | filter : paginate | orderBy:orderByField:reverseSort">
+                        <td>{{eventDetail.status}}</td>
+                        <td>{{eventDetail.enddate | date:'yyyy/MM/dd'}}</td>
+                        <td>{{eventDetail.startdate|  date:'yyyy/MM/dd'}}</td>
+                        <td>{{eventDetail.eventdate|   date:'yyyy/MM/dd'}}</td>
+                        <td>{{eventDetail.championship}}</td>
+                        <td>{{eventDetail.eventstype}}</td>
+                        <td>
+                            <input type="checkbox" ng-model="eventDetail.selected" ng-checked="eventDetail.selected" ng-click="UnCheckMain()" />
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+            <pagination total-items="totalItems" ng-model="currentPage"
+                        max-size="5" boundary-links="true"
+                        items-per-page="numPerPage" first-text="<<" previous-text="<" next-text=">" last-text=">>" class="pagination-sm">
+            </pagination>
+        </form>
+    </div>
+
+</div>
+
+
+<div sidebar-page></div>

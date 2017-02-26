@@ -1,0 +1,46 @@
+<div class="events" ng-controller="DashboardController">
+	<div class="event-box">
+	<h5>{{ RunningTask }} <span>(2)</span></h5>
+		<div class="row" ng-repeat="Tasks in RunningTasks">
+			<span class="lite-text">{{Tasks.Task}}</span>
+			
+			<ul class="progressbar">
+				<li class="progress-left">
+				</li> 
+				<li class="progress-right" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+					<span class="lite-text left-data">{{Tasks.Progresscmplted}}</span>
+				</li> 
+			</ul>
+			<h6>{{Tasks.PrintJob}}</h6>
+			<span class="lite-text">{{Tasks.TimeElapsed}}</span>
+			<span class="horz-line"></span>
+		</div>
+	</div>
+	<div class="event-box">
+		<h5>{{UpcomingEvent}} <span>(23)</span></h5>
+		<ul class="row" ng-repeat="Events in UpcomingEvents">
+			<li class="col-md-8 col-sm-8"><h6>{{Events.competition}}</h6>
+				<span class="lite-text">{{Events.title}}</span>
+				<span>{{Events.stadium}}</span>
+			</li>
+			<li class="col-md-4 col-sm-4 event-details">
+				<span class="event-date">{{Events.Eventdate}}</span>
+				<span>
+					<img src="../../Images/SVG/cricket.svg"/>
+					{{Events.Eventname}}</span>							
+				</li>
+			</ul> 
+		</div>
+
+		<div class="event-box"><h5>{{ActiveEvent}} <span>(7)</span></h5>
+			<ul class="row" ng-repeat="Events in ActiveEvents">
+				<li class="col-md-8 col-sm-8"><h6>{{Events.competition}}</h6>
+					<span class="lite-text">{{Events.title}}</span>
+					<span>{{Events.stadium}}</span>
+				</li>
+				<li class="col-md-4 col-sm-4 event-count">{{Events.statustotal}}<span class="lite-text">{{Events.status}}</span></li>
+			</ul> 		
+		</div>
+	</div>
+
+

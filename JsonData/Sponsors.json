@@ -1,0 +1,94 @@
+﻿{
+  
+    "City": [
+      {
+        "key": 0,
+        "value": "Lorem Ipsum1"
+      },
+      {
+        "key": 1,
+        "value": "Lorem Ipsum2"
+      },
+      {
+        "key": 2,
+        "value": "Lorem Ipsum3"
+      },
+      {
+        "key": 3,
+        "value": "Lorem Ipsum4"
+      },
+      {
+        "key": 4,
+        "value": "Lorem Ipsum5"
+      }
+
+    ],
+
+    "Sponsors": [
+      {
+        "id": 0,
+        "link": "Link1",
+        "city": 0,
+        "Logo": "../../images/logo-icon.png#",
+        "LogoName": "logo-icon.png",
+        "description": "Loren Ipsum1",
+        "name": "Loren Ipsum1",
+        "selected": false
+      },
+      {
+        "id": 1,
+        "link": "Link2",
+        "city": 1,
+        "Logo": "../../images/logo-icon.png#",
+        "LogoName": "logo-icon.png",
+        "description": "Loren Ipsum2",
+        "name": "Loren Ipsum2",
+        "selected": false
+      },
+      {
+        "id": 2,
+        "link": "Link3",
+        "city": 2,
+        "Logo": "../../images/logo-icon.png#",
+        "LogoName": "logo-icon.png",
+        "description": "Loren Ipsum3",
+        "name": "Loren Ipsum3",
+        "selected": false
+      },
+      {
+        "id": 3,
+        "link": "Link4",
+        "city": 3,
+        "Logo": "../../images/logo-icon.png#",
+        "LogoName": "logo-icon.png",
+        "description": "Loren Ipsum4",
+        "name": "Loren Ipsum4",
+        "selected": false
+      },
+      {
+        "id": 4,
+        "link": "Link5",
+        "city": 4,
+        "Logo": "../../images/logo-icon.png#",
+        "LogoName": "logo-icon.png",
+        "description": "Loren Ipsum5",
+        "name": "Loren Ipsum5",
+        "selected": false
+      },
+      {
+        "id": 5,
+        "link": "Link6",
+        "city": 4,
+        "Logo": "../../images/logo-icon.png#",
+        "LogoName": "logo-icon.png",
+        "description": "Loren Ipsum6",
+        "name": "Loren Ipsum6",
+        "selected": false
+      }
+    ],
+    "selected": { }
+  }
+    
+
+
+    

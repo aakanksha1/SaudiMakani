@@ -1,0 +1,85 @@
+﻿<div class="stadium-seat-details" ng-controller="BlockDetailsController">
+    <div class="row">
+        <div class="col-md-12">
+                <span class="left-data"><a href="" data-toggle="modal" data-target="#create-rows-cols">Creation of rows and columns</a> </span>
+                <span class="right-data"><a href="">118 Square</a> </span>
+
+                
+
+                       <div class="stadium-seat-details" id="seat-details" ng-show="seatInformation" style="overflow:auto">
+                           <svg id="boardSvgForSelectedBlock"></svg>
+                       </div>
+       
+
+            <!-- Modal -->
+            <div id="create-rows-cols" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Creation of rows and columns</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <label for="name">Number of Columns</label>
+                                    <select name="Gate" class="form-control input-width">
+                                        <option value="Gate1">10</option>
+                                        <option value="Gate2">20</option>
+                                        <option value="Gate3">30</option>
+                                        <option value="Gate4">40</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <label for="name">Number of rows</label>
+                                    <select name="Gate" class="form-control input-width">
+                                        <option value="Gate1">10</option>
+                                        <option value="Gate2">20</option>
+                                        <option value="Gate3">30</option>
+                                        <option value="Gate4">40</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <label for="name">The direction of increasing the columns</label>
+                                    <select name="Gate" class="form-control input-width">
+                                        <option value="Gate1">TOp</option>
+                                        <option value="Gate2">Right</option>
+                                        <option value="Gate3">Bottom</option>
+                                        <option value="Gate4">Left</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <label for="name">The direction of increasing rows</label>
+                                    <select name="Gate" class="form-control input-width">
+                                        <option value="Gate1">TOp</option>
+                                        <option value="Gate2">Right</option>
+                                        <option value="Gate3">Bottom</option>
+                                        <option value="Gate4">Left</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="footer">
+                            <input type="submit" class="btn btn-default" value="{{Save}}" />
+                            <button class="btn btn-default" data-dismiss="modal">{{Cancel}}</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="footer">
+                <input type="button" class="btn btn-default" value="Save" />
+                <input type="button" class="btn btn-default" value="Cancel" />
+            </div>
+        </div>
+    </div>
+
+</div>

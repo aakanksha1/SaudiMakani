@@ -1,0 +1,93 @@
+﻿{
+    "Seasons": [
+        {
+            "id": 0,
+            "enddate": "2013-01-09",
+            "startdate": "2013-01-08",
+            "enable": true,
+            "competition": 0,
+            "description": "Loren Ipsum1",
+            "name": "Loren Ipsum1",
+            "selected": false
+        },
+        {
+            "id": 1,
+            "enddate": "2013-01-09",
+            "startdate": "2013-01-08",
+            "enable": false,
+            "competition": 1,
+            "description": "Loren Ipsum2",
+            "name": "Loren Ipsum2",
+            "selected": false
+        },
+        {
+            "id": 2,
+            "enddate": "2013-01-09",
+            "startdate": "2013-01-08",
+            "enable": true,
+            "competition": 2,
+            "description": "Loren Ipsum3",
+            "name": "Loren Ipsum3",
+            "selected": false
+        },
+        {
+            "id": 3,
+            "enddate": "2013-01-09",
+            "startdate": "2013-01-08",
+            "enable": false,
+            "competition": 3,
+            "description": "Loren Ipsum4",
+            "name": "Loren Ipsum4",
+            "selected": false
+        },
+        {
+            "id": 4,
+            "enddate": "2013-01-09",
+            "startdate": "2013-01-08",
+            "enable": true,
+            "competition": 4,
+            "description": "Loren Ipsum5",
+            "name": "Loren Ipsum5",
+            "selected": false
+        },
+        {
+            "id": 5,
+            "enddate": "2013-01-09",
+            "startdate": "2013-01-08",
+            "enable": false,
+            "competition": 0,
+            "description": "Loren Ipsum6",
+            "name": "Loren Ipsum6",
+            "selected": false
+        }
+    ],
+    "selected": { },
+
+    "Competitions": [
+        {
+            "key": 0,
+            "value": "Lorem Ipsum1"
+        },
+        {
+            "key": 1,
+            "value": "Lorem Ipsum2"
+        },
+        {
+            "key": 2,
+            "value": "Lorem Ipsum3"
+        },
+        {
+            "key": 3,
+            "value": "Lorem Ipsum4"
+        },
+        {
+            "key": 4,
+            "value": "Lorem Ipsum5"
+        }
+
+    ]
+}
+    
+
+
+    

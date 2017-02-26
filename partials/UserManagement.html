@@ -1,0 +1,205 @@
+﻿<div class="event-manage" ng-controller="UserManagementController">
+    <div id="breadcrumb" class="right-data">
+        <ul class="crumbs">
+            <li><a href="#" class="first"><span></span>{{crum.tab}}</a></li>
+            <li><a href="#" class="second"><span></span>{{crum.sidebar}}</a></li>
+        </ul>
+    </div>
+    <div class="usermanagementheading"><h4 class="right-data">{{UserpurchasesHeader}}</h4></div>
+    <div class="userpurchasessearch">
+     
+
+        <div class="jumbotron userpurchases">
+            <h4>{{Selectmethodheader}}<span class="triangle-icon after" id="btnSelect" ng-click="open = !open"></span></h4>
+            <div ng-class="{ showMe: open }" class="collapsable">
+                <div class="customerinfo">
+                    <label for="" class="right-data">{{SearchCustomerInformation}} <input type="radio" class="right-data" ng-model="selectForSearch" value="customerInfo" /></label>
+                    <form name="myForm">
+                        <div ng-show="isShownDiv('customerInfo')">
+                            <div class="row">
+                                <div class="col-md-5 right-data commontext">
+
+                                    <label for="exampleSelect1" class="right-data">{{StartDate}}</label>
+                                    <input type="text" id="startDate" name="startDate" ng-change='checkDateValidation(startDate,endDate)' ng-model="startdate" class="form-control date-input calendar"/>
+                                </div>
+                                <div class="col-md-5 right-data commontext">
+
+                                    <label for="exampleSelect1" class="right-data">{{EndDate}}</label>
+                                    <input type="text" id="endDate" name="endDate" ng-change="checkDateValidation(startDate,endDate)" ng-model="enddate" class="form-control date-input calendar" />
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <span class="right-data error-message">{{errMessageCurrDate}}</span>
+                                <span class="left-data error-message">{{errMessageEndDate}}</span>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 right-data">
+
+                                    <label for="exampleSelect1">{{IdentityNumber}}</label>
+                                    <input type="text" id="txtInvoice" no-special-char class="form-control" maxlength="20" ng-model="identitynumber" />
+                                    <span class="error-message">{{errMessageIdentity}}</span> 
+                                </div>
+                                <div class="col-md-4 right-data">
+
+                                    <label for="exampleSelect1" class="right-data">{{MobileNumber}}</label>
+                                    <input type="text" name="myNumberField" id="txtmobile" no-special-char ng-model="mobilenumber" class="form-control" maxlength="12" ng-keypress="mobilevalidation(event)" />
+                                    <span class="error-message">{{errMessageMobile}}</span>
+                                </div>
+                                <div class="col-md-4 right-data">
+
+                                    <label for="exampleSelect1" class="right-data">{{Email}}</label>
+                                    <input type="text" id="txtEmail" maxlength="30" class="form-control" ng-model="email" />
+                                    <span class="left-data error-message">{{errMessageEmail}}</span>
+                                </div>
+
+                            </div>
+
+                            <span class="left-data error-message">{{errMessageCommon}}</span>
+                            <div class="row right-data last-search-user">
+
+                                <input type="submit" id="btnSeach" class="btn btn-default" name="Search" ng-click="searchByDate()" value="Search" />
+                            </div>
+
+
+                        </div>
+                        </form>
+</div>
+                <div class="invoicesearch">
+                    <label for="" class="right-data">{{SearchByInvoiceheader}}<input type="radio" class="right-data" ng-model="selectForSearch" value="invoiceIndication" /></label>
+                    <div ng-show="isShownDiv('invoiceIndication')" class="row">
+                        <div class="col-md-4 right-data">
+                            <label for="exampleSelect1">{{invoicenumberheader}}</label>
+                            <input type="text" no-special-char class="form-control" maxlength="20" ng-model="InvoiceNumberValue" />
+                        </div>
+                       
+                        <div class="row col-md-12 event-count right-data">
+
+                            <span class="right-data error-message">{{errMessageInvoice}}</span><br />
+                            <input type="submit" class="btn btn-default" name="Search" ng-click="searchByInvoice()" value="Search" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="right-data error-message">
+            <b> {{recordNotFoundMessage}}</b>
+        </div>
+        <div ng-show="IsVisible">
+            <table id="tblSearchResult" class="table tablehead">
+                <thead>
+                    <tr>
+                        <th>
+                            {{ticketsheader}}
+                        </th>
+                        <th>
+                            {{seasonheader}}
+                        </th>
+                        <th>
+                            {{competitionheader}}
+                        </th>
+                        <th>
+                            {{eventheader}}
+                        </th>
+                        <th>
+                            {{caseheader}}
+                        </th>
+                        <th>
+                            {{paymentmethodheader}}
+                        </th>
+                        <th>
+                            {{paymentdateheader}}
+                        </th>
+                        <th>
+                            {{totalamountheader}}
+                        </th>
+                        <th>
+                            {{applicationnumberheader}}
+                        </th>
+                        <th>
+                            {{purchasedateheader}}
+                        </th>
+                        <th>
+                            {{invoicenumberheader}}
+                        </th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="userpurchases in filteredList |orderBy:orderByField:reverseSort | filter:paginate ">
+                        <td><a href="" data-toggle="modal" ng-click="setClickedRow(userpurchases.id)" data-target="#myModal">{{userpurchases.tickets}}</a></td>
+                        <td>{{userpurchases.season}}</td>
+                        <td>{{userpurchases.competition}}</td>
+                        <td>{{userpurchases.event}}</td>
+                        <td>{{userpurchases.case}}</td>
+                        <td>{{userpurchases.methodOfPayment}}</td>
+                        <td>{{userpurchases.paymentDate}}</td>
+                        <td>{{userpurchases.totalAmount}}</td>
+                        <td>{{userpurchases.applicationNumber}}</td>
+                        <td>{{userpurchases.purchaseDate}}</td>
+                        <td>{{userpurchases.invoiceNumber}}</td>
+
+                    </tr>
+                </tbody>
+            </table>
+
+            <pagination total-items="totalItems" ng-model="currentPage"
+                        max-size="20" boundary-links="true"
+                        items-per-page="numPerPage" first-text="<<" previous-text="<" next-text=">" last-text=">>" class="pagination-sm">
+            </pagination>
+        </div>
+    </div>
+    <div class="modal fade modalclub" id="myModal" role="dialog">
+        <form ng-submit="submit()" name="CreateClub">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close left-data" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title right-data">{{billNumber.invoiceNumber}} {{BillNumbertickets}}</h4>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" ng-model="club.id" />
+                  
+                        <div class="row">
+                            <div class="col-md-10 col-sm-10 tblPurchage">
+                                <table class="table tablehead " style="left:50px;">
+                                    <thead>
+                                        <tr>
+                                            <th>{{Seatnumber}}</th>
+                                            <th>{{RowNumber}}</th>
+                                            <th>{{BoxNumber}}</th>
+                                            <th>{{Price}}</th>
+                                            <th>{{TicketCategory}}</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="idstadium">
+
+                                        <tr ng-repeat="billNumber in filteredBillNumber.tickets">
+                                            <td>{{billNumber.seatNumber}}</td>
+                                            <td>{{billNumber.rowNumber}}</td>
+                                            <td>{{billNumber.boxNumber}}</td>
+                                            <td>{{billNumber.Price}}</td>
+                                            <td>{{billNumber.ticketCategory}}</td>
+                                         
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer" style="background-color:white;">
+                        <button class="btn btn-default" data-dismiss="modal" ng-click="reset()">{{Close}}</button>
+                       
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+<div sidebar-page></div>

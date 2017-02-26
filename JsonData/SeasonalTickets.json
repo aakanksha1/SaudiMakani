@@ -1,0 +1,198 @@
+﻿{
+    "Clubs": [
+        {
+            "id": 1,
+            "name": "Lorem Ipsum1"
+        },
+        {
+            "id": 2,
+            "name": "Lorem Ipsum2"
+        },
+        {
+            "id": 3,
+            "name": "Lorem Ipsum3"
+        }
+    ],
+
+    "Competitions": [
+        {
+            "id": 1,
+            "name": "Lorem Ipsum1"
+        },
+        {
+            "id": 2,
+            "name": "Lorem Ipsum2"
+        },
+        {
+            "id": 3,
+            "name": "Lorem Ipsum3"
+        }
+    ],
+
+    "Seasons": [
+        {
+            "id": 1,
+            "name": "Lorem Ipsum1"
+        },
+        {
+            "id": 2,
+            "name": "Lorem Ipsum2"
+        },
+        {
+            "id": 3,
+            "name": "Lorem Ipsum3"
+        }
+    ],
+
+    "Stadium": [
+        {
+            "id": 1,
+            "name": "Lorem Ipsum1"
+        },
+        {
+            "id": 2,
+            "name": "Lorem Ipsum2"
+        },
+        {
+            "id": 3,
+            "name": "Lorem Ipsum3"
+        }
+    ],
+
+    "Events": [
+        {
+            "id": 1,
+            "name": "Lorem Ipsum1"
+        },
+        {
+            "id": 2,
+            "name": "Lorem Ipsum2"
+        },
+        {
+            "id": 3,
+            "name": "Lorem Ipsum3"
+        }
+    ],
+
+
+    "Alltype": [
+        {
+            "id": 1,
+            "name": "Ticket Clubs"
+        },
+        {
+            "id": 2,
+            "name": "Ticket Stadium"
+        },
+        {
+            "id": 3,
+            "name": "Ticket Events"
+        }
+    ],
+
+    "ClubEventStadium": [
+        {
+            "id": 1,
+            "name": "Clubs"
+        },
+        {
+            "id": 2,
+            "name": "Stadium"
+        },
+        {
+            "id": 3,
+            "name": "Events"
+        }
+    ],
+
+
+
+
+    "SeasonalTickets": [
+        {
+            "id": 1,
+            "validityofinvoice": "Loren Ipsum1",
+            "enddate": "2013-01-09",
+            "startdate": "2013-01-08",
+            "numberoftickets": 5,
+            "active": true,
+            "description": "Loren Ipsum1",
+            "addallcompetition" : false,
+            "competition": 1,
+            "clubeventstadium": 1,
+            "type": 1,
+            "selected": false
+        },
+        {
+            "id": 2,
+            "validityofinvoice": "Loren Ipsum2",
+            "enddate": "2013-01-09",
+            "startdate": "2013-01-08",
+            "numberoftickets": 5,
+            "active": true,
+            "description": "Loren Ipsum2",
+            "addallcompetition": false,
+            "competition": 2,
+            "clubeventstadium": 2,
+            "type": 2,
+            "selected": false
+        },
+        {
+            "id": 3,
+            "validityofinvoice": "Loren Ipsum3",
+            "enddate": "2013-01-09",
+            "startdate": "2013-01-08",
+            "numberoftickets": 5,
+            "active": true,
+            "description": "Loren Ipsum3",
+            "addallcompetition": false,
+            "competition": 3,
+            "clubeventstadium": 3,
+            "type": 3,
+            "selected": false
+        },
+        {
+            "id": 4,
+            "validityofinvoice": "Loren Ipsum4",
+            "enddate": "2013-01-09",
+            "startdate": "2013-01-08",
+            "numberoftickets": 5,
+            "active": false,
+            "description": "Loren Ipsum4",
+            "addallcompetition": false,
+            "competition": 1,
+            "clubeventstadium": 1,
+            "type": 1,
+            "selected": false
+        },
+        {
+            "id": 5,
+            "validityofinvoice": "Loren Ipsum4",
+            "enddate": "2013-01-09",
+            "startdate": "2013-01-08",
+            "numberoftickets": 5,
+            "active": false,
+            "description": "Loren Ipsum4",
+            "addallcompetition": false,
+            "competition": 1,
+            "clubeventstadium": 1,
+            "type": 1,
+            "selected": false
+        },
+        {
+            "id": 6,
+            "validityofinvoice": "Loren Ipsum4",
+            "enddate": "2013-01-09",
+            "startdate": "2013-01-08",
+            "numberoftickets": 5,
+            "active": false,
+            "description": "Loren Ipsum4",
+            "addallcompetition": false,
+            "competition": 1,
+            "clubeventstadium": 1,
+            "type": 1,
+            "selected": false
+        }
+    ],
+    "selected": { }
+}

@@ -1,0 +1,161 @@
+﻿<div class="stadium-block-details" id="block-details" ng-controller="BlockDetailsController">
+    <div class="row">
+    <!-- Stadium data-->
+         <div class="col-md-4" style="background-color:#f5f5f5;">
+            <div class="col-md-12 col-sm-12">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter Block Name">
+            </div>
+            <div class="col-md-12 col-sm-12">
+                <label for="name">No. of Seats</label>
+                <input type="text" class="form-control" id="NoOfSeats" placeholder="No. of Seats">
+            </div>
+
+            <div class="col-md-12 col-sm-12">
+                <label for="Color">Color</label>
+                <select name="Color" class="form-control">
+                    <option value="Blue">Blue</option>
+                    <option value="Red">Red</option>
+                    <option value="Green">Green</option>
+                    <option value="Orange">Orange</option>
+                </select>
+
+            </div>
+
+            <div class="col-md-12 col-sm-12">
+                <label for="Gate">Gate</label>
+                <select name="Gate" class="form-control">
+                    <option value="Gate1">Gate1</option>
+                    <option value="Gate2">Gate2</option>
+                    <option value="Gate3">Gate3</option>
+                    <option value="Gate4">Gate4</option>
+                </select>
+            </div>
+
+
+            <div class="col-md-12 col-sm-12">
+                <label for="E-Gate/Ramp">E-Gate/Ramp</label>
+                <select name="E-Gate/Ramp" class="form-control">
+                    <option value="Gate1">Gate1</option>
+                    <option value="Gate2">Gate2</option>
+                    <option value="Gate3">Gate3</option>
+                    <option value="Gate4">Gate4</option>
+                </select>
+            </div>
+
+            <div class="col-md-12 col-sm-12 ng-binding">
+                <input type="checkbox">Seats has defined
+            </div>
+
+            <div class="col-md-12 col-sm-12">
+                <label for="Category">Category</label>
+                <select name="Category" class="form-control">
+                    <option value="Category1">Category1</option>
+                    <option value="Category2">Category2</option>
+                    <option value="Category3">Category3</option>
+                    <option value="Category4">Category4</option>
+                </select>
+            </div>
+            <div class="col-md-12 col-sm-12 block-detail-footer">
+                <input class="col-md-3 btn btn-default" value="Cancel">
+                <input class="col-md-3 btn btn-default" value="Delete">
+                <input type="submit" class="col-md-3 btn btn-default" value="Save">
+            </div>
+        </div>
+
+
+
+        <div class="col-md-8">
+            <div class="thumb-nail" id="stadiumImg">
+                <img src="../Images/stadium2.png"  alt="stadium">
+            </div>
+            <div id="stadiumHolder">
+                <svg id="boardSvg"></svg>
+            </div>
+            <form id="defineBlockData" class="ng-pristine ng-valid">
+                <input placeholder="Block Name" id="blockNameField">
+            </form>
+            <button id="btnSaveStadium">Save</button>
+        </div>
+
+
+
+
+
+    </div>
+</div>
+
+
+<!--<div class="col-md-4" style="background-color:#f5f5f5;">
+    <div class="col-md-12 col-sm-12">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" placeholder="Enter Block Name">
+    </div>
+    <div class="col-md-12 col-sm-12">
+        <label for="name">No. of Seats</label>
+        <input type="text" class="form-control" id="NoOfSeats" placeholder="No. of Seats">
+    </div>
+
+    <div class="col-md-12 col-sm-12">
+        <label for="Color">Color</label>
+        <select name="Color" class="form-control">
+            <option value="Blue">Blue</option>
+            <option value="Red">Red</option>
+            <option value="Green">Green</option>
+            <option value="Orange">Orange</option>
+        </select>
+
+    </div>
+
+    <div class="col-md-12 col-sm-12">
+        <label for="Gate">Gate</label>
+        <select name="Gate" class="form-control">
+            <option value="Gate1">Gate1</option>
+            <option value="Gate2">Gate2</option>
+            <option value="Gate3">Gate3</option>
+            <option value="Gate4">Gate4</option>
+        </select>
+    </div>
+
+
+    <div class="col-md-12 col-sm-12">
+        <label for="E-Gate/Ramp">E-Gate/Ramp</label>
+        <select name="E-Gate/Ramp" class="form-control">
+            <option value="Gate1">Gate1</option>
+            <option value="Gate2">Gate2</option>
+            <option value="Gate3">Gate3</option>
+            <option value="Gate4">Gate4</option>
+        </select>
+    </div>
+
+    <div class="col-md-12 col-sm-12 ng-binding">
+        <input type="checkbox">Seats has defined
+    </div>
+
+    <div class="col-md-12 col-sm-12">
+        <label for="Category">Category</label>
+        <select name="Category" class="form-control">
+            <option value="Category1">Category1</option>
+            <option value="Category2">Category2</option>
+            <option value="Category3">Category3</option>
+            <option value="Category4">Category4</option>
+        </select>
+    </div>
+    <div class="col-md-12 col-sm-12 block-detail-footer">
+        <input class="col-md-3 btn btn-default" value="Cancel">
+        <input class="col-md-3 btn btn-default" value="Delete">
+        <input type="submit" class="col-md-3 btn btn-default" value="Save">
+    </div>
+</div>
+<div class="col-md-8">
+    <div class="thumb-nail" id="stadiumImg">
+        <img src="../Images/stadium2.png" width="100%" height="auto" alt="stadium">
+    </div>
+    <div id="stadiumHolder">
+        <svg id="boardSvg"></svg>
+    </div>
+    <form id="defineBlockData">
+        <input placeholder="Block Name" id="blockNameField" />
+    </form>
+    <button id="btnSaveStadium">Save</button>
+</div>-->

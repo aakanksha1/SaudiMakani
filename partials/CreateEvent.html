@@ -1,0 +1,775 @@
+<div class="createEvent" ng-controller="CreateEventController">
+    <form name="CreateEventForm" ng-submit="submitForm()">
+        <div>
+            <div id="breadcrumb" class="right-data">
+                <ul class="crumbs">
+                    <li><a href="#" class="first"><span></span>{{crum.tab}}</a></li>
+                    <li><a href="#" class="second"><span></span>{{crum.sidebar}}</a></li>
+                </ul>
+            </div>
+            <h4>{{Event}}</h4>
+            <ul class="nav nav-pills navtab">
+                <li class="active" id="eventDetails"><a data-toggle="pill" href="" ng-click="eventDetails()">{{EventDetailsHeader}} <span class="rounded">1</span></a></li>
+                <li id="defineBlocks"><a data-toggle="pill" href="" ng-click="defineBlock()">{{DefineBlock}} <span class="rounded">2</span></a></li>
+                <li id="defineSeats"><a data-toggle="pill" href="" ng-click="defineSeat()">{{DefineSeats}}<span class="rounded">3</span></a></li>
+            </ul>
+        </div>
+        <div class="tab-content">
+
+            <!-- Event Details start -->
+            <div id="eve-details" class="tab-pane fade in active" ng-hide="false" ng-show="eventDetailslInformation">
+                <div class="left-detail">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                            <label for="name">{{Description}}</label>
+                            <textarea class="form-control" ng-model="eventDetail.status" rows="4" placeholder="{{Description}}"></textarea>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="col-md-12 col-sm-12 commontext" show-errors>
+                                <label for="name">{{Name}}</label>
+                                <input type="text" name="Names" ng-model="eventDetail.eventstype" class="form-control" placeholder="{{EnterName}}" required>
+                            </div>
+                            <div class="col-md-12 col-sm-12 commontext modal-logo-padding" show-errors>
+                                <label for="name">{{Championship}}</label>
+                                <input type="text" name="ChampionshipName" ng-model="eventDetail.championship" class="form-control" placeholder="{{EnterChampionship}}" required>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <!-- Add the extra clearfix for only the required viewport -->
+                    <div class="clearfix visible-xs-block"></div>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 commontext" show-errors>
+                            <label for="exampleSelect1">{{SecondClub}}</label>
+                            <select id="ddlFirstClub" required ng-model="eventDetail.FirstClubselected" ng-change="checkClubValidation()" name="FirstClubselected" class="form-control selectstyle" ng-options="item.key as item.value for item in StadiumData.FirstClub">
+                                <option value="">-- {{select}} --</option>
+                            </select>                   
+                            <span class="error-msg">{{errMessageClub}}</span>
+                        </div>
+                        <div class="col-md-6 col-sm-6 commontext" show-errors>
+                            <label for="exampleSelect1">{{FirstClub}}</label>
+                            <select id="ddlSecondClub" required ng-model="eventDetail.SecondClubselected" ng-change="checkClubValidation()" name="SecondClubselected" class="selectstyle form-control selectstyle" ng-options="item.key as item.value for item in StadiumData.SecondClub">
+                                <option value="">-- {{select}} --</option>
+                            </select>
+                        </div>
+                      </div>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 commontext" show-errors>
+                            <label for="exampleSelect1">{{Stadium}}</label>
+                            <select required ng-model="selectedstadium" name="selectedstadium" ng-change="isShowHide()" class="form-control selectstyle" ng-options="item.key as item.value for item in StadiumData.Stadiums">
+                                <option value="">-- {{select}} --</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 commontext" show-errors>
+                            <label for="exampleSelect1">{{EventDate}}</label>
+                            <input type="text" ng-model="eventDetail.eventdate" ng-change='checkEventDateValidation(eventDate)' name="eventdate" class="form-control dateTime-input calendar" required id="eventDate" />
+                        </div>
+                        <span class="error-msg">{{errEventMessage}}</span>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 commontext" show-errors>
+                            <label for="exampleSelect1">{{TPEDate}}</label>
+                            <input type="text" name="enddate" id="endDate" ng-change='checkDateValidation(startDate,endDate)' ng-model="eventDetail.enddate" class="form-control date-input calendar" required />
+                            <span class="error-msg">{{errMessageEndDate}}</span>
+                        </div>
+                        <div class="col-md-6 col-sm-6 commontext" show-errors>
+                            <label for="exampleSelect1">{{TPSDate}}</label>
+                            <input type="text" name="startdate" id="startDate" ng-change='checkDateValidation(startDate,endDate)'  ng-model="eventDetail.startdate" class="form-control date-input calendar" required />
+                        </div>
+                        <span class="left-data error-msg">{{errMessagedDate}}</span>
+                        <span class="error-msg">{{errMessage}}</span>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 paddingtop">
+                            <div class="col-md-6 col-sm-6">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox">&nbsp;{{EnableSelling}}
+                                </label>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox">&nbsp; {{Active}}
+                                </label>
+                            </div>
+                        </div>                 
+                        <div class="col-md-6 col-sm-6 commontext" show-errors>
+                            <label for="exampleSelect1">{{Nooftickets}}</label>
+                            <select id="ddlnooftickets" required ng-model="eventDetail.Ticketsselected" name="Nooftickets" class="form-control selectstyle" ng-options="item.key as item.value for item in StadiumData.Tickets">
+                                <option value="">-- {{select}} --</option>
+                            </select>
+                        </div>                    
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                            <label class="form-check-label form-check-align">
+                                {{SBED}}  <input id="h_start_1" name="h_start_1" size="5" type="time" pattern="^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$" placeholder="09:00">
+                            </label>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6">
+                            <label class="form-check-label">
+                                {{BED}} <input id="h_start_1" name="h_start_1" size="5" type="time" pattern="^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$" placeholder="09:00">
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3 createEvent-align">
+                            <input type="checkbox"> {{ActivateSuites}}
+                        </div>
+                        <div class="col-md-3 col-sm-3  createEvent-align">
+                            <input type="checkbox">  {{Activateotherfans}}
+                        </div>
+
+                        <div class="col-md-3 col-sm-3 create-event-padding">
+                            <input type="checkbox"> {{EnableeventProfilling}}
+                        </div>
+
+                        <div class="col-md-3 col-sm-3 createEvent-align-left">
+                            <input type="checkbox"> {{ActivatingratingPitch}}
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div clss="row">
+                        <div class="col-md-5 col-sm-5 createEvent-align">
+                            <div class="form-group">
+                                <span class="left-data"><a class="icon-plus" href="" data-toggle="modal" data-target="#Mandatoryfields-Add-Modal" ng-click="addMandatoryfields()">{{Add}}</a></span>
+                                <span class="left-data" ng-disabled="Mandatoryfields_disableDelete()">
+                                    <a class="popupdelete" value="{{Delete}}" ng-model="selected" ng-click="Mandatoryfields_remove()">{{Delete}}</a>
+                                </span>
+                                <span class="right-data">{{mandatoryfield}}</span>
+                            </div>
+                            <table class="table details-stadium">
+                                <thead>
+                                    <tr>
+                                        <th>{{Name}}</th>
+                                        <th><input type="checkbox" ng-model="Mandatoryfields_selectedAll" ng-click="Mandatoryfields_checkAll()" class="right-data"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <tr ng-repeat="fields in Mandatoryfields">
+                                        <td>{{fields.fieldName}}</td>
+                                        <td><input type="checkbox" ng-model="fields.selected" ng-checked="fields.selected" ng-click="Mandatoryfields_UnCheckMain()" class="right-data" /></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-md-5 col-sm-5 createEvent-align">
+                            <div class="form-group">
+
+                                <span class="left-data"><a class="icon-plus" href="" data-toggle="modal" data-target="#Institution-Add-Modal" ng-click="addInstitutions()">{{Add}}</a></span>
+                                <!--<span class="left-data"><a class="deleteicon" href="">{{Delete}}</a></span>-->
+                                <span class="left-data" ng-disabled="RegulatedInstitutions_disableDelete()">
+                                    <a class="institutionsdelete" value="{{Delete}}" ng-model="selected" ng-click="RegulatedInstitutions_remove()">{{Delete}}</a>
+                                </span>
+                                <span class="right-data">{{Institutionsheader}}</span>
+                            </div>
+                            <table class="table details-stadium">
+                                <thead>
+                                    <tr>
+                                        <th>{{Name}}</th>
+                                        <th><input type="checkbox" ng-model="RegulatedInstitutions_selectedAll" ng-click="RegulatedInstitutions_checkAll()" class="right-data"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <tr ng-repeat="Institutions in RegulatedInstitutions">
+                                        <td>{{Institutions.Name}}</td>
+                                        <td><input type="checkbox" ng-model="Institutions.selected" ng-checked="Institutions.selected" ng-click="RegulatedInstitutions_UnCheckMain()" class="right-data" /></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+
+                        <div class="col-md-2 col-sm-2 checkbox-eventlast">
+
+                            <div class="col-md-12 col-sm-12">
+                                <input type="checkbox"> {{Activating}}
+                            </div>
+
+                            <div class="col-md-12 col-sm-12">
+                                <input type="checkbox"> {{ActivateSale}}
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                    <!--<div class="emptyfooter"></div>-->
+                </div>
+
+                <!--switch stadium details stadium drop down-->
+
+                <div class="right-detail" ng-switch="" ng-show="showval">
+                    <!--<div class="SelectDiv">-->
+
+                    <h5>{{StadiumName}}</h5>
+                    <label id="lblDescription" for="name">{{Description}}</label>
+
+                    <div class="form-group  createEvent-align">
+                        <div><b>{{TicketPriceDetails}}</b></div>
+                        <span class="left-data"><a href="" class="icon-plus" data-toggle="modal" data-target="#categoryPrice-Add-Modal" ng-click="addCategoryprice()">{{AddCategory}}</a></span>
+                        <span class="left-data"><a href="" class="icon-plus" data-toggle="modal" data-target="#categoryPrice-Add-Modal" ng-click="addCategoryprice()">{{Addnewprice}}</a></span>
+                        <!--<span class="right-data">{{TicketPriceDetails}}</span>-->
+                    </div>
+                    <div class="row">
+                        <table class="table details-stadium">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <a ng-click="orderByField='status'; reverseSort = !reverseSort">
+                                            {{ActivationDate}} <span ng-show="orderByField == 'status'">
+                                                <span ng-show="!reverseSort" class="icon-move-up"></span>
+                                                <span ng-show="reverseSort" class="icon-move-down"></span>
+                                            </span>
+                                        </a>
+                                    </th>
+                                    <th>{{Price}}</th>
+                                    <th>
+                                        <a ng-click="orderByField='status'; reverseSort = !reverseSort">
+                                            {{Category}} <span ng-show="orderByField == 'status'">
+                                                <span ng-show="!reverseSort" class="icon-move-up"></span>
+                                                <span ng-show="reverseSort" class="icon-move-down"></span>
+                                            </span>
+                                        </a>
+                                    </th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <tr ng-repeat="PriceDetail in TPDetails.tabledata |orderBy:orderByField:reverseSort">
+                                    <td>{{PriceDetail.ActivationDate | date:'yyyy-MM-dd'}}</td>
+                                    <td>{{PriceDetail.Price}}</td>
+                                    <td>{{PriceDetail.Category}}</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                    <h1 class="right-data">{{eventSubDetails.SuiteDetails}}</h1>
+                    <div class="form-group">
+                        <span class="left-data"></span>
+                        <span class="left-data "></span>
+                        <h6 class="right-data">{{Suitdetails}}</h6>
+                    </div>
+
+                    <div class="row">
+                        <table class="table details-stadium">
+
+                            <thead>
+                                <tr>
+                                    <th>{{Price}}</th>
+                                    <th>{{Active}}</th>
+                                    <th>
+                                        <a ng-click="orderSuites='Name'; reverseSuites = !reverseSuites">
+                                            {{Name}} <span ng-show="orderSuites == 'Name'">
+                                                <span ng-show="!reverseSuites" class="icon-move-up"></span>
+                                                <span ng-show="reverseSuites" class="icon-move-down"></span>
+                                            </span>
+                                        </a>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <tr ng-repeat="Suite in Suites.tabledata |orderBy:orderSuites:reverseSuites">
+                                    <td>{{Suite.Price}}</td>
+                                    <td><input type="checkbox" value="{{Suite.Active}}" /></td>
+                                    <td>{{Suite.Name}}</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+
+
+                    <div class="form-group">
+                        <div><b>{{Sponsors}}</b></div>
+                        <span class="left-data"><a href="" class="icon-plus" data-toggle="modal" data-target="#Sponsors-add-modal" ng-click="addSponsors()">{{AddSponsor}}</a></span>
+                        <span class="left-data" ng-disabled="Editevent_disableDelete()"><a class="deleteiconevespon" ng-click="Editevent_remove()">{{DeleteSponsor}}</a></span>
+                        <span class="right-data"><b>{{Sponsorsheader}}</b></span>
+                    </div>
+
+                    <div class="row">
+                        <table class="table details-stadium">
+
+                            <thead>
+                                <tr>
+                                    <th>{{Logo}}</th>
+                                    <th>{{Name}}</th>
+                                    <th><input type="checkbox" ng-model="Sponsor_selectedAll" ng-click="Editevent_checkAll()" class="right-data"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <tr ng-repeat="Sponsor in SponsorsName.tabledata">
+                                    <td><img class="logo-img" src="{{Sponsor.Logo}}" /></td>
+                                    <td>{{Sponsor.Name}}</td>
+                                    <td><input type="checkbox" ng-model="Sponsor.selected" ng-checked="Sponsor.selected" ng-click="Editevent_UnCheckMain()" class="right-data" /></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                    <div class="row">
+                        <label for="exampleSelect1" class="internet-browse-tkts">{{BrowserTemplates}}</label>
+                        <div class="col-md-12 col-sm-12">
+
+                            <label for="exampleSelect1">{{Computer}}</label>
+                            <select ng-model="eventDetail.computerbrowserselected" class="form-control selectstyle" ng-options="item.key as item.value for item in StadiumData.computerbrowser">
+                                <option value="">-- {{select}} --</option>
+                            </select>
+                            <label for="exampleSelect1">{{Mobile}}</label>
+                            <select ng-model="eventDetail.mobilebrowserselected" class="form-control selectstyle" ng-options="item.key as item.value for item in StadiumData.mobilebrowser">
+                                <option value="">-- {{select}} --</option>
+                            </select>
+                        </div>
+                        <div class="col-md-12 col-sm-12">
+                            <label for="exampleSelect1">{{Emailtemplate}}</label>
+                            <select ng-model="eventDetail.emailtemplateselected" class="form-control selectstyle" ng-options="item.key as item.value for item in StadiumData.emailtemplate">
+                                <option value="">-- {{select}} --</option>
+                            </select>
+                            <label for="exampleSelect1">{{Templatemobilemessages}}</label>
+                            <select ng-model="eventDetail.mobilemessagetemplateselected" class="form-control selectstyle" ng-options="item.key as item.value for item in StadiumData.mobilemessagetemplate">
+                                <option value="">-- {{select}} --</option>
+                            </select>
+                            <br /><br />
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="footer" ng-show="showfooter">
+                <a class="btn btn-default" href="" ng-click="reset()">{{Cancel}}</a>
+                <button id="btnLoadSavedStadium" class="btn btn-default" ng-click="save()">{{Save}}</button>
+            </div>
+
+         
+
+            <!--define block-->
+            <div id="define-block" ng-show="defineBlocklInformation">
+
+                <div class="col-md-12">
+                   
+
+                    <!--switch stadium details stadium drop down-->
+
+                    <div class="col-md-7" ng-switch="" ng-show="showval">
+                        <!--<div class="SelectDiv">-->
+
+                        <h5>119 Block</h5>
+
+
+                        <div class="form-group checkbox-align">
+
+
+                            <div class="col-md-6 col-sm-6">
+                                <input type="checkbox"> Box is available for sale online
+                            </div>
+
+                            <div class="col-md-6 col-sm-6">
+                                <input type="checkbox"> Manual box is available for sale
+
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="form-group">
+                            <span class="right-data"><b>Details of box</b></span>
+                        </div>
+
+
+                        <div class="row">
+                            <table class="table details-stadium">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Information
+                                        </th>
+                                        <th>Total</th>
+                                        <th>
+                                            Online
+                                        </th>
+                                        <th>Flashlight</th>
+                                        <th>Suspended</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <tr>
+                                        <td>Available</td>
+                                        <td>2000</td>
+                                        <td>1000</td>
+                                        <td>500</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sold</td>
+                                        <td>3000</td>
+                                        <td>500</td>
+                                        <td>200</td>
+                                        <td></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Total</td>
+                                        <td>5000</td>
+                                        <td>1500</td>
+                                        <td><input type="number" /></td>
+                                        <td><input type="number" /></td>
+                                    </tr>
+
+
+                                </tbody>
+                            </table>
+                        </div>
+
+
+
+                        <div class="form-group checkbox-align">
+                            <input type="checkbox"> Seat Sold Box
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <span class="left-data"><a href="" class="icon-plus">Add a category</a></span>
+                            <span class="left-data"><a href="" class="icon-plus">Add a price</a></span>
+                            <span class="left-data"><a class="icon-pencil">Edit</a></span>
+                            <span class="right-data"><b>Details of Ticket Prices</b></span>
+                        </div>
+
+                        <div class="row">
+                            <table class="table details-stadium">
+
+                                <thead>
+                                    <tr>
+                                        <th>Date of Activation Price</th>
+                                        <th>Price</th>
+                                        <th>Category</th>
+                                        <th><input type="checkbox" ng-model="Sponsor_selectedAll" ng-click="Editevent_checkAll()" class="right-data"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <tr>
+                                        <td>07/12/2016</td>
+                                        <td><input type="number" value="1000" /></td>
+                                        <td>Golden</td>
+                                        <td><input type="checkbox" class="right-data" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>07/12/2016</td>
+                                        <td><input type="number" value="500" /></td>
+                                        <td>Silver</td>
+                                        <td><input type="checkbox" class="right-data" /></td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="col-md-5" id="editStadiumHolder">
+
+                        <svg id="boardSvg">{{blocksInfo.blockname}}</svg>
+
+                    </div>
+
+
+
+
+
+                </div>
+
+
+
+                <div class="col-md-12">
+
+
+
+                    <div class="form-group">
+                        <span class="right-data"><b>Pricing Details</b></span>
+                    </div>
+
+                    <div class="form-group checkbox-align">
+
+
+                       <!-- <div class="col-md-6 col-sm-6 right-data">-->
+                            <input type="checkbox">Use the default Price Plan
+                        <!--</div>-->
+
+                        <div class="col-md-12">
+
+                            <div class="col-md-4">
+
+                                <label for="sel1">Box Price Category</label>
+                                <select class="form-control">
+                                    <option>Golden</option>
+                                    <option>Silver</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                </select>
+
+                            </div>
+                            <div class="col-md-4">
+                                <label for="sel1">Orientation Manual seats version</label>
+                                <select class="form-control">
+                                    <option>Boost</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                </select>
+
+                            </div>
+                            <div class="col-md-4">
+
+                                <label for="sel1">Classification</label>
+                                <select class="form-control">
+                                    <option>MapleStory</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                </select>
+                            </div>
+
+                       </div>
+
+
+                        <div class="col-md-12 footer">
+                            <a class="btn btn-default" href="" ng-click="reset()">{{Cancel}}</a>
+                            <button id="btnLoadSavedStadium" class="btn btn-default" ng-click="save()">{{Save}}</button>
+                        </div>
+
+
+                        </div>
+
+
+
+
+                    
+
+
+
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+    </form>
+
+
+    <div class="modal fade modalcompetition" id="Mandatoryfields-Add-Modal" role="dialog">
+        <form ng-submit="submitMandatoryfields()" name="AddMandatoryfieldsForm">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close left-data" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title right-data">{{AddMandatoryfield}}</h4>
+                    </div>
+                    <div>
+                        <div class="modal-body">
+                            <input type="hidden" ng-model="fields.id" />
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 commontext" show-errors>
+                                    <label class="left-data" for="name">{{Name}}</label>
+                                    <input type="text" class="form-control" required name="fieldName" ng-model="fields.fieldName" id="Pricing" placeholder="{{EnterName}}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer">
+                            <button class="btn btn-default" data-dismiss="modal" ng-click="resetMandatoryfields()">{{Cancel}}</button>
+                            <input type="submit" class="btn btn-default" ng-click="saveMandatoryfield()" value="{{Save}}" />
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+    <div class="modal fade modalcompetition" id="Institution-Add-Modal" role="dialog">
+        <form ng-submit="submitInstitutions()" name="AddInstitutionForm">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close left-data" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title rigth-data">{{AddInstitution}}</h4>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" ng-model="Institutions.id" />
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 commontext" show-errors>
+                                <label for="name">{{Name}}</label>
+                                <input type="text" class="form-control" ng-model="Institutions.Name" required name="InstitutionsName" id="InstitutionsName" placeholder="{{EnterName}}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer">
+                        <button class="btn btn-default" data-dismiss="modal" ng-click="resetInstitutions()">{{Cancel}}</button>
+                        <input type="submit" class="btn btn-default" ng-click="saveInstitution()" value="{{Save}}" />
+
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+
+    <div class="modal fade modalcompetition" id="categoryPrice-Add-Modal" role="dialog">
+        <form ng-submit="submitCategoryprice()" name="addcategoryprice">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close left-data" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title right-data">{{AddCategoryPriceheader}}</h4>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" ng-model="PriceDetail.id" />
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 commontext" show-errors>
+                                <label for="name">{{Price}}</label>
+                                <input type="number" min="0" class="form-control" required name="price" ng-model="PriceDetail.Price" placeholder="{{EnterPrice}}">
+                            </div>
+                            <div class="col-md-6 col-sm-6 commontext" show-errors>
+                                <label for="name">{{Category}}</label>
+                                <select ng-model="PriceDetail.Category" name="selectedCategory" required class="form-control input-width" ng-options="item.key as item.value for item in EventDetails.Category">
+                                    <option value="">-- {{select}} --</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="footer">
+                        <button class="btn btn-default" data-dismiss="modal" ng-click="resetCategoryprice()">{{Cancel}}</button>
+                        <input type="submit" class="btn btn-default" ng-click="saveCategoryPrice()" value="{{Save}}" />
+
+                    </div>
+                </div>
+
+            </div>
+        </form>
+
+
+
+
+
+
+
+
+    </div>
+
+    <div class="modal fade modalsponsor" id="Sponsors-add-modal" role="dialog">
+        <form ng-submit="submitSponsors()" name="CreateSponsor">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content" style="border:none;">
+                    <div class="modal-header">
+                        <button type="button" class="close left-data" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title right-data">{{AddSponsors}}</h4>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" ng-model="Sponsor.id" />
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 commontext" show-errors>
+                                <label class="right-data">{{Logo}}</label>
+                                <input type="file" id="fileUpload" required name="filepath" ng-model="Sponsor.Logo" fileread="Sponsor.Logo" accept="image/*" multiple app-filereader class="custom-file-upload-hidden">
+                                <input type="text" id="txtLogo" class="file-upload-input right-data form-control" readonly/>
+                                <span class="file-upload-button addsponsors-browse">{{Browse}}</span>
+                            </div>
+
+                            <div class="col-md-6 col-sm-6 commontext" show-errors>
+                                <label for="name">{{Name}}</label>
+                                <input type="text" class="form-control" required name="names" ng-model="Sponsor.Name" placeholder="{{EnterName}}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <button class="btn btn-default" data-dismiss="modal" ng-click="resetSponsors()">{{Cancel}}</button>
+                    <input type="submit" class="btn btn-default" ng-click="saveAddSponsors()" id="" value="{{Save}}" />
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+<div sidebar-page></div>
+
+
+<!--begin:scripts
+==================================================================================== -->
+<script src="../MakaniJS/SvgScripts/stadium-initial.js"></script>
+<script src="../MakaniJS/SvgScripts/stadium-define-block.js"></script>
+<script src="../MakaniJS/SvgScripts/stadium-draw.js"></script>
+<script src="../MakaniJS/SvgScripts/stadium-block-events.js"></script>
+<script src="../MakaniJS/SvgScripts/stadium-print-seats-by-colrows.js"></script>
+<script src="../MakaniJS/SvgScripts/stadium-print-seats-in-custom-shape.js"></script>
